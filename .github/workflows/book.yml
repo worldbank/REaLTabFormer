@@ -1,0 +1,35 @@
+name: Deploy documentation
+
+on:
+  push:
+    branches:
+      # - main
+      - docs
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+        - uses: actions/checkout@v2
+        - uses: conda-incubator/setup-miniconda@v2
+          with:
+            activate-environment: realtabformer-env
+            environment-file: environment.yml
+            python-version: 3.9
+            auto-activate-base: false
+        - name: Dependencies
+          shell: bash -l {0}
+          run: |
+            conda install pip
+            if [ -f docs/requirements.txt ]; then pip install -r docs/requirements.txt; fi
+        - name: Build
+          shell: bash -l {0}
+          run: |
+            jupyter-book build . --config docs/_config.yml --toc docs/_toc.yml
+        - name: Deploy
+          uses: peaceiris/actions-gh-pages@v3
+          if: github.ref == 'refs/heads/main' && job.status == 'success'
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: ./_build/html
+            enable_jekyll: false

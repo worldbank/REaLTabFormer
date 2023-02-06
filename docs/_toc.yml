@@ -1,0 +1,8 @@
+format: jb-book
+root: README
+
+parts:
+  - caption: Experiments
+    numbered: True
+    chapters:
+    - file: "experiments/notebooks/Model Experiments.ipynb"
