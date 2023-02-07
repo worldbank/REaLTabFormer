@@ -6,7 +6,7 @@ The REaLTabFormer (Realistic Relational and Tabular Data using Transformers) off
 <br>
 <br>
 <p align="center">
-<img src="https://github.com/avsolatorio/RealTabFormer/raw/main/img/REalTabFormer_Final_EQ.png" style="width:50%"/>
+<img src="https://github.com/avsolatorio/RealTabFormer/raw/main/img/REalTabFormer_Final_EQ.png" style="width:75%"/>
 </p>
 <p align="center">
 <strong>REaLTabFormer: Generating Realistic Relational and Tabular Data using Transformers</strong>
@@ -137,6 +137,7 @@ The REaLTabFormer framework provides an interface to easily build observation va
     <img src="https://github.com/avsolatorio/RealTabFormer/raw/main/img/CA-housing-raw-samples.png" style="width:35%; padding-right:5%;"/>
     <img src="https://github.com/avsolatorio/RealTabFormer/raw/main/img/CA-housing-validated-samples.png" style="width:35%; padding-left:5%;"/>
 </div>
+<br>
 
 ```Python
 # !pip install geopandas &> /dev/null
