@@ -1,23 +1,19 @@
+<a href="https://colab.research.google.com/github/avsolatorio/RealTabFormer/blob/main/colab/REaLTabFormer_GeoValidator_Example.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+
 # RealTabFormer
 
 The REaLTabFormer (Realistic Relational and Tabular Data using Transformers) offers a unified framework for synthesizing tabular data of different types. A sequence-to-sequence (Seq2Seq) model is used for generating synthetic relational datasets. The REaLTabFormer model for a non-relational tabular data uses GPT-2, and can be used out-of-the-box to model any tabular data with independent observations.
-
 <br>
 <br>
-
 <p align="center">
 <img src="https://github.com/avsolatorio/RealTabFormer/raw/main/img/REalTabFormer_Final_EQ.png" style="width:50%"/>
 </p>
-
 <p align="center">
 <strong>REaLTabFormer: Generating Realistic Relational and Tabular Data using Transformers</strong>
 <br>
 <a href="https://arxiv.org/abs/2302.02041">Paper on ArXiv</a>
 </p>
-
 <br>
-<br>
-
 Tabular data is a common form of organizing data. Multiple models are available to generate synthetic tabular datasets where observations are independent, but few have the ability to produce relational datasets. Modeling relational data is challenging as it requires modeling both a "parent" table and its relationships across tables. We introduce REaLTabFormer (Realistic Relational and Tabular Transformer), a tabular and relational synthetic data generation model. It first creates a parent table using an autoregressive GPT-2 model, then generates the relational dataset conditioned on the parent table using a sequence-to-sequence (Seq2Seq) model. We implement target masking to prevent data copying and propose the $Q_\delta$ statistic and statistical bootstrapping to detect overfitting. Experiments using real-world datasets show that REaLTabFormer captures the relational structure better than a baseline model. REaLTabFormer also achieves state-of-the-art results on prediction tasks, "out-of-the-box", for large non-relational datasets without needing fine-tuning.
 
 
