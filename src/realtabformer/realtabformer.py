@@ -73,7 +73,9 @@ def _validate_get_device(device: str) -> str:
         else:
             _device = "cpu"
 
-        warnings.warn(f"The device={device} is not available, using device={_device} instead.")
+        warnings.warn(
+            f"The device={device} is not available, using device={_device} instead."
+        )
         device = _device
 
     return device
@@ -867,12 +869,14 @@ class REaLTabFormer:
                 and coder.n_positions < self.relational_max_length
             ):
                 coder.n_positions = 128 + self.relational_max_length
-            elif coder_name == "encoder" and coder.n_positions < len(
-                self.vocab[coder_name]["column_token_ids"]
-            ):
-                coder.n_positions = 128 + len(
-                    self.vocab[coder_name]["column_token_ids"]
-                )
+            elif coder_name == "encoder" and getattr(
+                coder, "n_positions", getattr(coder, "max_position_embeddings")
+            ) < len(self.vocab[coder_name]["column_token_ids"]):
+                positions = 128 + len(self.vocab[coder_name]["column_token_ids"])
+                try:
+                    coder.n_positions = positions
+                except:
+                    coder.max_position_embeddings = positions
 
         # This must be set to True for the EncoderDecoderModel to work at least
         # with GPT2 as the decoder.
