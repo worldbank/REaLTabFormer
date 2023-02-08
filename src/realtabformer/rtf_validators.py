@@ -27,7 +27,6 @@ class RangeValidator(ValidatorBase):
     def validate(  # type: ignore
         self, val: Union[float, int, np.number], *args: Any, **kwargs: Any
     ) -> bool:
-
         return self.min_val <= val <= self.max_val
 
 
