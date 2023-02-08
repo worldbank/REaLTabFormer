@@ -743,5 +743,4 @@ class SyntheticDataExperiment:
         target_col: str,
         target_pos_val: Any = None,
     ) -> None:
-
         pass

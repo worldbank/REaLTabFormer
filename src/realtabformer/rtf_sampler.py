@@ -53,7 +53,6 @@ class REaLSampler:
         random_state: Optional[int] = 1029,
         device="cuda",
     ) -> None:
-
         self.model_type = model_type
         self.vocab = vocab
         self.processed_columns = processed_columns
@@ -256,7 +255,6 @@ class REaLSampler:
         return _samples
 
     def _validate_synth_sample(self, synth_sample: pd.DataFrame) -> pd.DataFrame:
-
         # Validate data
         valid_mask = []
 
@@ -375,7 +373,6 @@ class REaLSampler:
         relate_ids: Optional[List[Any]] = None,
         validator: Optional[ObservationValidator] = None,
     ) -> pd.DataFrame:
-
         assert isinstance(sample_outputs, np.ndarray)
 
         def _decode_tokens(s):
@@ -604,7 +601,6 @@ class TabularSampler(REaLSampler):
         forced_decoder_ids: Optional[List[List[int]]] = None,
         **generate_kwargs,
     ) -> pd.DataFrame:
-
         device = torch.device(device)
 
         if self.model.device != device:
@@ -893,10 +889,14 @@ class RelationalSampler(REaLSampler):
             start = 0
 
             if isinstance(related_num, str) and related_num in input_df.columns:
-                init_min_max_length = self._get_min_max_length(input_df[related_num].max())
+                init_min_max_length = self._get_min_max_length(
+                    input_df[related_num].max()
+                )
 
                 if init_min_max_length["max_length"] > samples.shape[1]:
-                    samples = np.ones((input_df.shape[0], init_min_max_length["max_length"]))
+                    samples = np.ones(
+                        (input_df.shape[0], init_min_max_length["max_length"])
+                    )
                     samples *= self.vocab["decoder"]["token2id"][SpecialTokens.PAD]
 
                 _input_unique_ids = []
@@ -909,8 +909,7 @@ class RelationalSampler(REaLSampler):
 
                 for related_num, _input_df in input_df.groupby(related_num):
                     _input_unique_ids.append(_input_df.pop(NQ_COL))
-                    generate_kwargs.update(
-                        self._get_min_max_length(related_num))
+                    generate_kwargs.update(self._get_min_max_length(related_num))
 
                     for _samples in self._sample_input_batch(
                         input_df=_input_df,
@@ -928,12 +927,13 @@ class RelationalSampler(REaLSampler):
 
                 input_unique_ids = pd.concat(_input_unique_ids)
             else:
-                generate_kwargs.update(
-                    self._get_min_max_length(related_num))
+                generate_kwargs.update(self._get_min_max_length(related_num))
 
                 if generate_kwargs["max_length"] > samples.shape[1]:
                     # Create a fixed-size matrix to store the data filled with [PAD] token ids.
-                    samples = np.ones((input_df.shape[0], generate_kwargs["max_length"]))
+                    samples = np.ones(
+                        (input_df.shape[0], generate_kwargs["max_length"])
+                    )
                     samples *= self.vocab["decoder"]["token2id"][SpecialTokens.PAD]
 
                 for _samples in self._sample_input_batch(
@@ -981,9 +981,7 @@ class RelationalSampler(REaLSampler):
                     "The `related_num` must be greater than or equal to zero."
                 )
 
-        return dict(
-            min_length=min_length,
-            max_length=max_length)
+        return dict(min_length=min_length, max_length=max_length)
 
     def _sample_input_batch(
         self,
