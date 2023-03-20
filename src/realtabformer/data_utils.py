@@ -492,7 +492,7 @@ def process_data(
         series.name = col_name
         processed_series.append(series)
 
-    processed_df = pd.concat(processed_series, axis=1)
+    processed_df = pd.concat([pd.DataFrame()] + processed_series, axis=1)
 
     if not processed_df.empty:
         # Combine the processed numeric and datetime data.
