@@ -1,0 +1,1117 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>realtabformer.rtf_analyze &#8212; REaLTabFormer</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/realtabformer/rtf_analyze';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/REalTabFormer_Final_EQ.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/REalTabFormer_Final_EQ.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+    <p class="title logo__title">REaLTabFormer 0.1.3</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">REaLTabFormer</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../autoapi/index.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../autoapi/realtabformer/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../autoapi/realtabformer/__main__/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.__main__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../autoapi/realtabformer/data_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.data_utils</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../autoapi/realtabformer/realtabformer/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.realtabformer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../autoapi/realtabformer/rtf_analyze/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_analyze</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../autoapi/realtabformer/rtf_datacollator/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_datacollator</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../autoapi/realtabformer/rtf_exceptions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_exceptions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../autoapi/realtabformer/rtf_sampler/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_sampler</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../autoapi/realtabformer/rtf_trainer/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_trainer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../autoapi/realtabformer/rtf_validators/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_validators</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/worldbank/realtabformer" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/worldbank/realtabformer/issues/new?title=Issue%20on%20page%20%2F_modules/realtabformer/rtf_analyze.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for realtabformer.rtf_analyze</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span>
+
+<span class="kn">import</span> <span class="nn">joblib</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">sklearn</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">from</span> <span class="nn">sklearn.compose</span> <span class="kn">import</span> <span class="n">ColumnTransformer</span>
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">TruncatedSVD</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics.pairwise</span> <span class="kn">import</span> <span class="n">manhattan_distances</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">OneHotEncoder</span><span class="p">,</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span> <span class="nn">tqdm.auto</span> <span class="kn">import</span> <span class="n">tqdm</span>
+
+
+<div class="viewcode-block" id="SyntheticDataBench"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_analyze/index.html#realtabformer.rtf_analyze.SyntheticDataBench">[docs]</a><span class="k">class</span> <span class="nc">SyntheticDataBench</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This class handles all the assessments</span>
+<span class="sd">    needed for testing the synthetic data.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+        <span class="n">target_col</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">categorical</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+        <span class="n">target_pos_val</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">test_size</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span>
+        <span class="n">test_df</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">random_state</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1029</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="p">(</span>
+            <span class="n">test_size</span> <span class="o">&lt;</span> <span class="mi">1</span>
+        <span class="p">),</span> <span class="s2">&quot;The test_size must be a fraction of the data, and should be less than 1.&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">random_state</span> <span class="o">=</span> <span class="n">random_state</span>
+
+        <span class="c1"># Target column in the data for the ML efficiency</span>
+        <span class="c1"># measure.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">target_col</span> <span class="o">=</span> <span class="n">target_col</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">categorical</span> <span class="o">=</span> <span class="n">categorical</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">target_pos_val</span> <span class="o">=</span> <span class="n">target_pos_val</span>
+
+        <span class="k">if</span> <span class="n">test_df</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">test_df</span> <span class="o">=</span> <span class="n">test_df</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">train_df</span> <span class="o">=</span> <span class="n">data</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">test_size</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">test_df</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span>
+                <span class="n">frac</span><span class="o">=</span><span class="n">test_size</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">random_state</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">train_df</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">test_df</span><span class="o">.</span><span class="n">index</span><span class="p">)]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">test_size</span> <span class="o">=</span> <span class="n">test_size</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">train_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+            <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">train_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">target_col</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">train_df</span><span class="p">[</span><span class="n">target_col</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">test_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+            <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">test_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">target_col</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">test_df</span><span class="p">[</span><span class="n">target_col</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_test</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">test_df</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_train</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">train_df</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">synth_train_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">synth_test_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="SyntheticDataBench.register_synthetic_data"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_analyze/index.html#realtabformer.rtf_analyze.SyntheticDataBench.register_synthetic_data">[docs]</a>    <span class="k">def</span> <span class="nf">register_synthetic_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">synthetic</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Registers synthetic data for the assessment.</span>
+
+<span class="sd">        The synthetic data is split into training and test sets according</span>
+<span class="sd">        to the values of n_train and n_test. The split is done by sampling</span>
+<span class="sd">        the data without replacement.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">        synthetic: A DataFrame containing synthetic data.</span>
+<span class="sd">        The DataFrame must have at least as many rows as n_train + n_test.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">        None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">assert</span> <span class="n">synthetic</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_test</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_train</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">synth_train_df</span> <span class="o">=</span> <span class="n">synthetic</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span>
+            <span class="n">n</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n_train</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">random_state</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">synth_test_df</span> <span class="o">=</span> <span class="n">synthetic</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+            <span class="n">synthetic</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">synth_train_df</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+        <span class="p">]</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n_test</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">random_state</span><span class="p">)</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="SyntheticDataBench.compute_distance_to_closest_records"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_analyze/index.html#realtabformer.rtf_analyze.SyntheticDataBench.compute_distance_to_closest_records">[docs]</a>    <span class="k">def</span> <span class="nf">compute_distance_to_closest_records</span><span class="p">(</span>
+        <span class="n">original</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+        <span class="n">synthetic</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+        <span class="n">n_test</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">distance</span><span class="p">:</span> <span class="n">manhattan_distances</span> <span class="o">=</span> <span class="n">manhattan_distances</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        original: The dataframe of the training data used to train the generative model.</span>
+<span class="sd">        synthetic: The dataframe generated by the generative model or any data we want to compare</span>
+<span class="sd">         with the original data.</span>
+<span class="sd">        n_test: The number of observations we want to compare with the original data</span>
+<span class="sd">         from the synthetic data. Ideally, this should be the same size as the test data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="n">n_test</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">synthetic</span><span class="p">)</span>
+        <span class="n">synthetic</span> <span class="o">=</span> <span class="n">synthetic</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="n">n_test</span><span class="p">]</span>
+
+        <span class="n">distances</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="n">distance</span><span class="p">(</span><span class="n">original</span><span class="p">,</span> <span class="n">synthetic</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">distances</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="n">synthetic</span><span class="o">.</span><span class="n">index</span><span class="p">)</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="SyntheticDataBench.measure_ml_efficiency"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_analyze/index.html#realtabformer.rtf_analyze.SyntheticDataBench.measure_ml_efficiency">[docs]</a>    <span class="k">def</span> <span class="nf">measure_ml_efficiency</span><span class="p">(</span>
+        <span class="n">model</span><span class="p">:</span> <span class="n">sklearn</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">BaseEstimator</span><span class="p">,</span>
+        <span class="n">train</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+        <span class="n">synthetic</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+        <span class="n">test</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+        <span class="n">target_col</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">random_state</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1029</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This function trains the provided model on the original and synthetic training data,</span>
+<span class="sd">        and then uses the trained models to make predictions on the test data. It returns a</span>
+<span class="sd">        dataframe containing the actual values and predictions from both training sets. This</span>
+<span class="sd">        dataframe can be used to compare the performance of the model trained on the original</span>
+<span class="sd">        data with the model trained on the synthetic data.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">        model (sklearn.base.BaseEstimator): The model to be trained and used for prediction.</span>
+<span class="sd">        train (pd.DataFrame): The original training data.</span>
+<span class="sd">        synthetic (pd.DataFrame): The synthetic training data generated by a generative model.</span>
+<span class="sd">         Must have the same size as the `train`.</span>
+<span class="sd">        test (pd.DataFrame): The test data to be used for prediction.</span>
+<span class="sd">        target_col (str): The name of the target column in the train and test data.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">        pd.DataFrame: A dataframe containing the actual values and predictions from both</span>
+<span class="sd">         training sets.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">random_state</span><span class="p">)</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">random_state</span><span class="p">)</span>
+
+        <span class="k">assert</span> <span class="n">train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">synthetic</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="c1"># Train the model on the original training data</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">target_col</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">train</span><span class="p">[</span><span class="n">target_col</span><span class="p">])</span>
+
+        <span class="c1"># Make predictions on the test data using the original training data</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">original_predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">test</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">target_col</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="n">original_predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">target_col</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+
+        <span class="c1"># Train the model on the synthetic training data</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">synthetic</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">target_col</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">synthetic</span><span class="p">[</span><span class="n">target_col</span><span class="p">])</span>
+
+        <span class="c1"># Make predictions on the test data using the synthetic training data</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">synthetic_predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">test</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">target_col</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="n">synthetic_predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">target_col</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+
+        <span class="c1"># Return a dataframe with the actual values and predictions from both training sets</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;actual&quot;</span><span class="p">:</span> <span class="n">test</span><span class="p">[</span><span class="n">target_col</span><span class="p">],</span>
+                <span class="s2">&quot;original_predictions&quot;</span><span class="p">:</span> <span class="n">original_predictions</span><span class="p">,</span>
+                <span class="s2">&quot;synthetic_predictions&quot;</span><span class="p">:</span> <span class="n">synthetic_predictions</span><span class="p">,</span>
+            <span class="p">}</span>
+        <span class="p">)</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="SyntheticDataBench.preprocess_data"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_analyze/index.html#realtabformer.rtf_analyze.SyntheticDataBench.preprocess_data">[docs]</a>    <span class="k">def</span> <span class="nf">preprocess_data</span><span class="p">(</span>
+        <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+        <span class="n">other</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">fillna</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Preprocesses a DataFrame containing mixed data types and returns a feature matrix.</span>
+
+<span class="sd">        The function first extracts the categorical and numerical columns from the DataFrame,</span>
+<span class="sd">        and then applies a processing pipeline that one-hot encodes the categorical features</span>
+<span class="sd">        and standardizes the numerical features.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            data (pandas.DataFrame): A DataFrame containing mixed data types.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict:</span>
+<span class="sd">             - preprocessor: The trained feature processor pipeline.</span>
+<span class="sd">             - column_names: The new column names for the processed data.</span>
+<span class="sd">             - data: A feature matrix containing only numerical values for the input data.</span>
+<span class="sd">             - other (optional): A feature matrix containing only numerical values</span>
+<span class="sd">              for the input other.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Define a processing pipeline for the data</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">index</span>
+        <span class="n">numeric_features</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s2">&quot;number&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span>
+        <span class="n">categorical_features</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s2">&quot;object&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span>
+
+        <span class="n">transformers</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">column_names</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">numeric_cols</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">categorical_cols</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">numeric_features</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+            <span class="n">numeric_transformer</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+            <span class="n">transformers</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s2">&quot;num&quot;</span><span class="p">,</span> <span class="n">numeric_transformer</span><span class="p">,</span> <span class="n">numeric_features</span><span class="p">))</span>
+            <span class="n">column_names</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">numeric_features</span><span class="p">)</span>
+            <span class="n">numeric_cols</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">numeric_features</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">categorical_features</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+            <span class="n">categorical_transformer</span> <span class="o">=</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+            <span class="n">transformers</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="n">categorical_transformer</span><span class="p">,</span> <span class="n">categorical_features</span><span class="p">))</span>
+
+        <span class="n">preprocessor</span> <span class="o">=</span> <span class="n">ColumnTransformer</span><span class="p">(</span><span class="n">transformers</span><span class="o">=</span><span class="n">transformers</span><span class="p">)</span>
+        <span class="n">preprocessor</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">categorical_features</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">transf</span> <span class="ow">in</span> <span class="n">preprocessor</span><span class="o">.</span><span class="n">transformers_</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">transf</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">OneHotEncoder</span><span class="p">):</span>
+                    <span class="n">column_names</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">transf</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">())</span>
+                    <span class="n">categorical_cols</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">transf</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">())</span>
+
+        <span class="n">data</span> <span class="o">=</span> <span class="n">preprocessor</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+        <span class="n">payload</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">preprocessor</span><span class="o">=</span><span class="n">preprocessor</span><span class="p">,</span>
+            <span class="n">numeric_cols</span><span class="o">=</span><span class="n">numeric_cols</span><span class="p">,</span>
+            <span class="n">column_names</span><span class="o">=</span><span class="n">column_names</span><span class="p">,</span>
+            <span class="n">categorical_cols</span><span class="o">=</span><span class="n">categorical_cols</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+                <span class="c1"># Sometimes the transform method returns a sparse matrix.</span>
+                <span class="c1"># So we convert it to an array if the data is not a numpy</span>
+                <span class="c1"># array.</span>
+                <span class="n">data</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="k">else</span> <span class="n">data</span><span class="o">.</span><span class="n">toarray</span><span class="p">(),</span>
+                <span class="n">columns</span><span class="o">=</span><span class="n">column_names</span><span class="p">,</span>
+                <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">,</span>
+            <span class="p">),</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">fillna</span><span class="p">:</span>
+            <span class="n">payload</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">payload</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">payload</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+
+        <span class="k">if</span> <span class="n">other</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">transformed_other</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">is_df</span> <span class="o">=</span> <span class="kc">False</span>
+
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
+                <span class="n">is_df</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="n">other</span> <span class="o">=</span> <span class="p">[</span><span class="n">other</span><span class="p">]</span>
+
+            <span class="k">for</span> <span class="n">_other</span> <span class="ow">in</span> <span class="n">other</span><span class="p">:</span>
+                <span class="n">index</span> <span class="o">=</span> <span class="n">_other</span><span class="o">.</span><span class="n">index</span>
+                <span class="n">_other</span> <span class="o">=</span> <span class="n">preprocessor</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">_other</span><span class="p">)</span>
+
+                <span class="n">_other</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+                    <span class="n">_other</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">_other</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="k">else</span> <span class="n">_other</span><span class="o">.</span><span class="n">toarray</span><span class="p">(),</span>
+                    <span class="n">columns</span><span class="o">=</span><span class="n">column_names</span><span class="p">,</span>
+                    <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="k">if</span> <span class="n">fillna</span><span class="p">:</span>
+                    <span class="n">_other</span> <span class="o">=</span> <span class="n">_other</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">_other</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+                <span class="n">transformed_other</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_other</span><span class="p">)</span>
+
+            <span class="n">payload</span><span class="p">[</span><span class="s2">&quot;other&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">transformed_other</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">is_df</span> <span class="k">else</span> <span class="n">transformed_other</span>
+
+        <span class="k">return</span> <span class="n">payload</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="SyntheticDataBench.compute_discriminator_predictions"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_analyze/index.html#realtabformer.rtf_analyze.SyntheticDataBench.compute_discriminator_predictions">[docs]</a>    <span class="k">def</span> <span class="nf">compute_discriminator_predictions</span><span class="p">(</span>
+        <span class="n">original</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+        <span class="n">synthetic</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+        <span class="n">test</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+        <span class="n">model</span><span class="p">:</span> <span class="n">sklearn</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">BaseEstimator</span><span class="p">,</span>
+        <span class="n">random_state</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1029</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Builds a discriminator model that attempts to distinguish between original and synthetic data.</span>
+
+<span class="sd">        The function first preprocesses the data by extracting the categorical and numerical columns,</span>
+<span class="sd">        then applies a processing pipeline that one-hot encodes the categorical features</span>
+<span class="sd">        and standardizes the numerical features.</span>
+<span class="sd">        Next, it adds labels to the original and synthetic data to indicate which is which,</span>
+<span class="sd">        then combines the data into one DataFrame and splits it into training and test sets.</span>
+<span class="sd">        Finally, it trains a classifier model on the training data and returns the model.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            original (pandas.DataFrame): A DataFrame containing original data.</span>
+<span class="sd">            synthetic (pandas.DataFrame): A DataFrame containing synthetic data.</span>
+<span class="sd">            model (Type[LogisticRegression]): A type of scikit-learn model to use.</span>
+<span class="sd">                Defaults to LogisticRegression.</span>
+<span class="sd">            test_size (float): The proportion of data to include in the test set.</span>
+<span class="sd">                Defaults to 0.2.</span>
+<span class="sd">            random_state (int): The random seed to use for splitting the data.</span>
+<span class="sd">                Defaults to 1029.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict:</span>
+<span class="sd">             - y_test: Labels for the test/synthetic test data.</span>
+<span class="sd">             - y_preds: Predictions for the label.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="n">synthetic</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">original</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">test</span><span class="p">))</span>
+
+        <span class="n">train_synthetic</span> <span class="o">=</span> <span class="n">synthetic</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span>
+            <span class="n">n</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">original</span><span class="p">),</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span>
+        <span class="p">)</span>
+        <span class="n">test_synthetic</span> <span class="o">=</span> <span class="n">synthetic</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+            <span class="n">synthetic</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">train_synthetic</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+        <span class="p">]</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">test</span><span class="p">),</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span>
+
+        <span class="c1"># Preprocess the original and synthetic data</span>
+        <span class="n">processed</span> <span class="o">=</span> <span class="n">SyntheticDataBench</span><span class="o">.</span><span class="n">preprocess_data</span><span class="p">(</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">original</span><span class="p">,</span> <span class="n">other</span><span class="o">=</span><span class="p">[</span><span class="n">train_synthetic</span><span class="p">,</span> <span class="n">test</span><span class="p">,</span> <span class="n">test_synthetic</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="n">original</span> <span class="o">=</span> <span class="n">processed</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span>
+        <span class="n">train_synthetic</span> <span class="o">=</span> <span class="n">processed</span><span class="p">[</span><span class="s2">&quot;other&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">test</span> <span class="o">=</span> <span class="n">processed</span><span class="p">[</span><span class="s2">&quot;other&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">test_synthetic</span> <span class="o">=</span> <span class="n">processed</span><span class="p">[</span><span class="s2">&quot;other&quot;</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+
+        <span class="n">label_col_name</span> <span class="o">=</span> <span class="s2">&quot;discriminator_label&quot;</span>
+
+        <span class="k">assert</span> <span class="n">label_col_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">processed</span><span class="p">[</span><span class="s2">&quot;column_names&quot;</span><span class="p">]</span>
+
+        <span class="c1"># Add labels to the original and synthetic data</span>
+        <span class="n">original</span><span class="p">[</span><span class="n">label_col_name</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">train_synthetic</span><span class="p">[</span><span class="n">label_col_name</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="c1"># Combine the original and synthetic data</span>
+        <span class="n">combined_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">original</span><span class="p">,</span> <span class="n">train_synthetic</span><span class="p">])</span>
+
+        <span class="n">feat_train</span> <span class="o">=</span> <span class="n">combined_data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">label_col_name</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">y_train</span> <span class="o">=</span> <span class="n">combined_data</span><span class="p">[</span><span class="n">label_col_name</span><span class="p">]</span>
+        <span class="n">feat_train</span> <span class="o">=</span> <span class="n">feat_train</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">feat_train</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+
+        <span class="c1"># Train a logistic regression model on the training data</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">feat_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+        <span class="n">oob_score</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">oob_score</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">oob_score_</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Discriminator OOB Score:&quot;</span><span class="p">,</span> <span class="n">oob_score</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+        <span class="c1"># Transform the test data and the synthetic test data</span>
+        <span class="n">test</span><span class="p">[</span><span class="n">label_col_name</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">test_synthetic</span><span class="p">[</span><span class="n">label_col_name</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">combined_test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">test</span><span class="p">,</span> <span class="n">test_synthetic</span><span class="p">])</span>
+        <span class="n">feat_test</span> <span class="o">=</span> <span class="n">combined_test</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">label_col_name</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">y_test</span> <span class="o">=</span> <span class="n">combined_test</span><span class="p">[</span><span class="n">label_col_name</span><span class="p">]</span>
+        <span class="n">feat_test</span> <span class="o">=</span> <span class="n">feat_test</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">feat_test</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+
+        <span class="c1"># Estimate the discriminator on the test data</span>
+        <span class="n">y_preds</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">feat_test</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">y_test</span><span class="o">=</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_preds</span><span class="o">=</span><span class="n">y_preds</span><span class="p">,</span> <span class="n">oob_score</span><span class="o">=</span><span class="n">oob_score</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="SyntheticDataBench.get_dcr"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_analyze/index.html#realtabformer.rtf_analyze.SyntheticDataBench.get_dcr">[docs]</a>    <span class="k">def</span> <span class="nf">get_dcr</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">is_test</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">distance</span><span class="p">:</span> <span class="n">manhattan_distances</span> <span class="o">=</span> <span class="n">manhattan_distances</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the DCR values for this experiment.&quot;&quot;&quot;</span>
+        <span class="n">train</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">train_df</span>
+        <span class="n">other</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">test_df</span> <span class="k">if</span> <span class="n">is_test</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">synth_train_df</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">train</span><span class="o">.</span><span class="n">dtypes</span> <span class="o">==</span> <span class="s2">&quot;object&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+            <span class="n">proc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">preprocess_data</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">train</span><span class="p">,</span> <span class="n">other</span><span class="o">=</span><span class="n">other</span><span class="p">)</span>
+            <span class="n">train</span> <span class="o">=</span> <span class="n">proc</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span>
+            <span class="n">other</span> <span class="o">=</span> <span class="n">proc</span><span class="p">[</span><span class="s2">&quot;other&quot;</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">compute_distance_to_closest_records</span><span class="p">(</span>
+            <span class="n">train</span><span class="p">,</span>
+            <span class="n">other</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">n_test</span><span class="p">,</span>
+            <span class="n">distance</span><span class="o">=</span><span class="n">distance</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="SyntheticDataBench.get_ml_efficiency"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_analyze/index.html#realtabformer.rtf_analyze.SyntheticDataBench.get_ml_efficiency">[docs]</a>    <span class="k">def</span> <span class="nf">get_ml_efficiency</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="n">sklearn</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">synthetic</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the ML efficiency for this experiment.&quot;&quot;&quot;</span>
+        <span class="n">train</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">train_df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">test</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">test_df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">synthetic</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">synthetic</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">synth_train_df</span>
+
+        <span class="n">train_target</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">target_col</span><span class="p">]</span>
+        <span class="n">test_target</span> <span class="o">=</span> <span class="n">test</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">target_col</span><span class="p">]</span>
+        <span class="n">synthetic_target</span> <span class="o">=</span> <span class="n">synthetic</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">target_col</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">categorical</span><span class="p">:</span>
+            <span class="n">train_target</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_pos_val</span> <span class="o">==</span> <span class="n">train_target</span><span class="p">)</span>
+            <span class="n">test_target</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_pos_val</span> <span class="o">==</span> <span class="n">test_target</span><span class="p">)</span>
+            <span class="n">synthetic_target</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_pos_val</span> <span class="o">==</span> <span class="n">synthetic_target</span><span class="p">)</span>
+
+        <span class="n">train</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_col</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">test</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_col</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">synthetic</span> <span class="o">=</span> <span class="n">synthetic</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_col</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">proc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">preprocess_data</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">train</span><span class="p">,</span> <span class="n">other</span><span class="o">=</span><span class="p">[</span><span class="n">test</span><span class="p">,</span> <span class="n">synthetic</span><span class="p">])</span>
+        <span class="n">train</span> <span class="o">=</span> <span class="n">proc</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span>
+        <span class="n">test</span> <span class="o">=</span> <span class="n">proc</span><span class="p">[</span><span class="s2">&quot;other&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">synthetic</span> <span class="o">=</span> <span class="n">proc</span><span class="p">[</span><span class="s2">&quot;other&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="n">train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">train</span><span class="p">,</span> <span class="n">train_target</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">test</span><span class="p">,</span> <span class="n">test_target</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">synthetic</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">synthetic</span><span class="p">,</span> <span class="n">synthetic_target</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">measure_ml_efficiency</span><span class="p">(</span>
+            <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+            <span class="n">train</span><span class="o">=</span><span class="n">train</span><span class="p">,</span>
+            <span class="n">synthetic</span><span class="o">=</span><span class="n">synthetic</span><span class="p">,</span>
+            <span class="n">test</span><span class="o">=</span><span class="n">test</span><span class="p">,</span>
+            <span class="n">target_col</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">target_col</span><span class="p">,</span>
+            <span class="n">random_state</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">random_state</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="SyntheticDataBench.get_discriminator_performance"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_analyze/index.html#realtabformer.rtf_analyze.SyntheticDataBench.get_discriminator_performance">[docs]</a>    <span class="k">def</span> <span class="nf">get_discriminator_performance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="n">sklearn</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">BaseEstimator</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute the discriminator performance for this experiment.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">compute_discriminator_predictions</span><span class="p">(</span>
+            <span class="n">original</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">train_df</span><span class="p">,</span>
+            <span class="n">synthetic</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">synth_train_df</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">synth_test_df</span><span class="p">]),</span>
+            <span class="n">test</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">test_df</span><span class="p">,</span>
+            <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+            <span class="n">random_state</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">random_state</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="SyntheticDataBench.compute_data_copying_predictions"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_analyze/index.html#realtabformer.rtf_analyze.SyntheticDataBench.compute_data_copying_predictions">[docs]</a>    <span class="k">def</span> <span class="nf">compute_data_copying_predictions</span><span class="p">(</span>
+        <span class="n">original</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+        <span class="n">synthetic</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+        <span class="n">test</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+        <span class="n">model</span><span class="p">:</span> <span class="n">sklearn</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">BaseEstimator</span><span class="p">,</span>
+        <span class="n">random_state</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1029</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Builds a discriminator model that attempts to distinguish between original and synthetic data.</span>
+
+<span class="sd">        The function first preprocesses the data by extracting the categorical and numerical columns,</span>
+<span class="sd">        then applies a processing pipeline that one-hot encodes the categorical features</span>
+<span class="sd">        and standardizes the numerical features.</span>
+<span class="sd">        Next, it adds labels to the original and synthetic data to indicate which is which,</span>
+<span class="sd">        then combines the data into one DataFrame and splits it into training and test sets.</span>
+<span class="sd">        Finally, it trains a classifier model on the training data and returns the model.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            original (pandas.DataFrame): A DataFrame containing original data.</span>
+<span class="sd">            synthetic (pandas.DataFrame): A DataFrame containing synthetic data.</span>
+<span class="sd">            model (Type[LogisticRegression]): A type of scikit-learn model to use.</span>
+<span class="sd">                Defaults to LogisticRegression.</span>
+<span class="sd">            test_size (float): The proportion of data to include in the test set.</span>
+<span class="sd">                Defaults to 0.2.</span>
+<span class="sd">            random_state (int): The random seed to use for splitting the data.</span>
+<span class="sd">                Defaults to 1029.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict:</span>
+<span class="sd">             - y_test: Labels for the test/synthetic test data.</span>
+<span class="sd">             - y_preds: Predictions for the label.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># assert synthetic.shape[0] &gt;= (len(original) + len(test))</span>
+
+        <span class="c1"># Preprocess the original and test data</span>
+        <span class="n">processed</span> <span class="o">=</span> <span class="n">SyntheticDataBench</span><span class="o">.</span><span class="n">preprocess_data</span><span class="p">(</span><span class="n">original</span><span class="p">,</span> <span class="n">test</span><span class="p">)</span>
+        <span class="n">preprocessor</span> <span class="o">=</span> <span class="n">processed</span><span class="p">[</span><span class="s2">&quot;preprocessor&quot;</span><span class="p">]</span>
+        <span class="n">column_names</span> <span class="o">=</span> <span class="n">processed</span><span class="p">[</span><span class="s2">&quot;column_names&quot;</span><span class="p">]</span>
+        <span class="n">original</span> <span class="o">=</span> <span class="n">processed</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span>
+        <span class="n">test</span> <span class="o">=</span> <span class="n">processed</span><span class="p">[</span><span class="s2">&quot;other&quot;</span><span class="p">]</span>
+
+        <span class="n">label_col_name</span> <span class="o">=</span> <span class="s2">&quot;discriminator_label&quot;</span>
+
+        <span class="k">assert</span> <span class="n">label_col_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">processed</span><span class="p">[</span><span class="s2">&quot;column_names&quot;</span><span class="p">]</span>
+
+        <span class="c1"># Add labels to the original and test data</span>
+        <span class="n">original</span><span class="p">[</span><span class="n">label_col_name</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">test</span><span class="p">[</span><span class="n">label_col_name</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="c1"># Combine the original and test data</span>
+        <span class="n">combined_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">original</span><span class="p">,</span> <span class="n">test</span><span class="p">])</span>
+
+        <span class="n">X_train</span> <span class="o">=</span> <span class="n">combined_data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">label_col_name</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">y_train</span> <span class="o">=</span> <span class="n">combined_data</span><span class="p">[</span><span class="n">label_col_name</span><span class="p">]</span>
+        <span class="n">X_train</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+
+        <span class="c1"># Train a logistic regression model on the training data</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Discriminator OOB Score:&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">oob_score_</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+        <span class="c1"># Transform the test data and the synthetic test data</span>
+        <span class="n">synthetic</span> <span class="o">=</span> <span class="n">preprocessor</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">synthetic</span><span class="p">)</span>
+        <span class="n">synthetic</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+            <span class="n">synthetic</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">synthetic</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="k">else</span> <span class="n">synthetic</span><span class="o">.</span><span class="n">toarray</span><span class="p">(),</span>
+            <span class="n">columns</span><span class="o">=</span><span class="n">column_names</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">X_test</span> <span class="o">=</span> <span class="n">synthetic</span>
+        <span class="n">X_test</span> <span class="o">=</span> <span class="n">X_test</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+
+        <span class="c1"># Estimate the discriminator on the test data</span>
+        <span class="n">y_preds</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">y_preds</span><span class="o">=</span><span class="n">y_preds</span><span class="p">)</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="SyntheticDataBench.compute_sensitivity_metric"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_analyze/index.html#realtabformer.rtf_analyze.SyntheticDataBench.compute_sensitivity_metric">[docs]</a>    <span class="k">def</span> <span class="nf">compute_sensitivity_metric</span><span class="p">(</span>
+        <span class="n">original</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+        <span class="n">synthetic</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+        <span class="n">test</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+        <span class="n">qt_max</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">,</span>
+        <span class="n">qt_interval</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="n">distance</span><span class="p">:</span> <span class="n">manhattan_distances</span> <span class="o">=</span> <span class="n">manhattan_distances</span><span class="p">,</span>
+        <span class="n">tsvd</span><span class="p">:</span> <span class="n">TruncatedSVD</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">max_col_nums</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span>
+        <span class="n">use_ks</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">verbose</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">object_dtypes</span> <span class="o">=</span> <span class="n">original</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">exclude</span><span class="o">=</span><span class="s2">&quot;number&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">object_dtypes</span><span class="o">.</span><span class="n">empty</span> <span class="ow">or</span> <span class="n">original</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">max_col_nums</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Transforming data with non-numeric values...&quot;</span><span class="p">)</span>
+            <span class="n">processed</span> <span class="o">=</span> <span class="n">SyntheticDataBench</span><span class="o">.</span><span class="n">preprocess_data</span><span class="p">(</span>
+                <span class="n">original</span><span class="p">,</span> <span class="n">other</span><span class="o">=</span><span class="p">[</span><span class="n">test</span><span class="p">,</span> <span class="n">synthetic</span><span class="p">]</span>
+            <span class="p">)</span>
+
+            <span class="n">original</span> <span class="o">=</span> <span class="n">processed</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span>
+            <span class="n">test</span> <span class="o">=</span> <span class="n">processed</span><span class="p">[</span><span class="s2">&quot;other&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">synthetic</span> <span class="o">=</span> <span class="n">processed</span><span class="p">[</span><span class="s2">&quot;other&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">tsvd</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">original</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">max_col_nums</span><span class="p">:</span>
+            <span class="c1"># We use a truncated SVD with components at least 5 or</span>
+            <span class="c1"># equivalent to the square root of the original number</span>
+            <span class="c1"># of variables.</span>
+            <span class="n">tsvd</span> <span class="o">=</span> <span class="n">TruncatedSVD</span><span class="p">(</span>
+                <span class="n">n_components</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">original</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">))</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">tsvd</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Applying TruncatedSVD&quot;</span><span class="p">)</span>
+            <span class="c1"># We reduce the dimensionality of the transformed data</span>
+            <span class="n">original</span> <span class="o">=</span> <span class="n">tsvd</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">original</span><span class="p">)</span>
+            <span class="n">test</span> <span class="o">=</span> <span class="n">tsvd</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
+            <span class="n">synthetic</span> <span class="o">=</span> <span class="n">tsvd</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">synthetic</span><span class="p">)</span>
+
+        <span class="c1"># We compute the relative distances of each sub data with respect</span>
+        <span class="c1"># to the original data.</span>
+        <span class="n">test_distances</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="n">distance</span><span class="p">(</span><span class="n">original</span><span class="p">,</span> <span class="n">test</span><span class="p">)</span>
+        <span class="n">synth_distances</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="n">distance</span><span class="p">(</span><span class="n">original</span><span class="p">,</span> <span class="n">synthetic</span><span class="p">)</span>
+
+        <span class="c1"># We take the distance of the closest point from each sub data</span>
+        <span class="c1"># to observations in the original data.</span>
+        <span class="n">test_min</span> <span class="o">=</span> <span class="n">test_distances</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">synth_min</span> <span class="o">=</span> <span class="n">synth_distances</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">tr_test_min</span> <span class="o">=</span> <span class="n">test_distances</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">tr_synth_min</span> <span class="o">=</span> <span class="n">synth_distances</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="c1"># We don&#39;t include observations that have duplicates in both</span>
+        <span class="c1"># the synthetic and the test data.</span>
+        <span class="n">fltr</span> <span class="o">=</span> <span class="p">(</span><span class="n">synth_min</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">test_min</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">test_min</span> <span class="o">=</span> <span class="n">test_min</span><span class="p">[</span><span class="o">~</span><span class="n">fltr</span><span class="p">]</span>
+        <span class="n">synth_min</span> <span class="o">=</span> <span class="n">synth_min</span><span class="p">[</span><span class="o">~</span><span class="n">fltr</span><span class="p">]</span>
+
+        <span class="n">test_min</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">test_min</span><span class="p">,</span> <span class="n">tr_test_min</span><span class="p">])</span>
+        <span class="n">synth_min</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">synth_min</span><span class="p">,</span> <span class="n">tr_synth_min</span><span class="p">])</span>
+
+        <span class="n">statistic</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="n">use_ks</span><span class="p">:</span>
+            <span class="n">test_min</span> <span class="o">=</span> <span class="n">test_min</span><span class="p">[</span><span class="n">test_min</span> <span class="o">&lt;=</span> <span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">test_min</span><span class="p">,</span> <span class="n">qt_max</span><span class="p">)]</span>
+            <span class="n">synth_min</span> <span class="o">=</span> <span class="n">synth_min</span><span class="p">[</span><span class="n">synth_min</span> <span class="o">&lt;=</span> <span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">synth_min</span><span class="p">,</span> <span class="n">qt_max</span><span class="p">)]</span>
+
+            <span class="n">ks_stat</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ks_2samp</span><span class="p">(</span><span class="n">test_min</span><span class="p">,</span> <span class="n">synth_min</span><span class="p">)</span>
+
+            <span class="n">statistic</span> <span class="o">=</span> <span class="n">ks_stat</span><span class="o">.</span><span class="n">statistic</span>
+
+        <span class="k">elif</span> <span class="n">qt_interval</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">statistic</span> <span class="o">=</span> <span class="p">(</span><span class="n">synth_min</span> <span class="o">&lt;=</span> <span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">test_min</span><span class="p">,</span> <span class="n">qt_max</span><span class="p">))</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># We define the quantile set to assess the systematic</span>
+            <span class="c1"># bias in the distance of the synthetic data, if any.</span>
+            <span class="n">quantiles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">qt_max</span><span class="p">,</span> <span class="n">qt_interval</span><span class="p">)</span>
+
+            <span class="c1"># # The vectorized form is equivalent to the expanded form below:</span>
+            <span class="c1"># # We do not use the absolute value of the difference so that the</span>
+            <span class="c1"># # asymptotic value should be closer to 0. Anything that is significantly</span>
+            <span class="c1"># # different from 0 is anomalous.</span>
+            <span class="c1"># np.mean([((synth_min &lt;= np.quantile(test_min, qt)).mean() - qt) for qt in np.linspace(0, qt_max, qt_interval)])</span>
+
+            <span class="c1"># For each quantile of distances from the test data, we take the proportion</span>
+            <span class="c1"># of the synthetic data with distance values lower than the value in the given quantile.</span>
+            <span class="c1"># We expect that the more the model becomes overfitted, the closer to zero the distances</span>
+            <span class="c1"># coming from the synthetic data is. However, if the data comes from the same distribution,</span>
+            <span class="c1"># we expect to see this statistic to be closer to zero.</span>
+            <span class="c1"># We use `&lt;=` so that we can still capture the statistic correctly even when</span>
+            <span class="c1"># the quantile value is zero.</span>
+            <span class="n">statistic</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span>
+                <span class="p">(</span>
+                    <span class="n">synth_min</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+                    <span class="o">&lt;=</span> <span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">test_min</span><span class="p">,</span> <span class="n">quantiles</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                <span class="o">-</span> <span class="n">quantiles</span>
+            <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">statistic</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="SyntheticDataBench.compute_sensitivity_threshold"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_analyze/index.html#realtabformer.rtf_analyze.SyntheticDataBench.compute_sensitivity_threshold">[docs]</a>    <span class="k">def</span> <span class="nf">compute_sensitivity_threshold</span><span class="p">(</span>
+        <span class="n">train_data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+        <span class="n">num_bootstrap</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="n">test_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">frac</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">qt_max</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">,</span>
+        <span class="n">qt_interval</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="n">distance</span><span class="p">:</span> <span class="n">manhattan_distances</span> <span class="o">=</span> <span class="n">manhattan_distances</span><span class="p">,</span>
+        <span class="n">tsvd</span><span class="p">:</span> <span class="n">TruncatedSVD</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">return_values</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">quantile</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.95</span><span class="p">,</span>
+        <span class="n">max_col_nums</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span>
+        <span class="n">use_ks</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">full_sensitivity</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">sensitivity_orig_frac_multiple</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">List</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This method implements a bootstrapped estimation of the</span>
+<span class="sd">        sensitivity values derived from the training data.</span>
+
+<span class="sd">        We compute the sensitivity value for `num_bootstrap` rounds of random split</span>
+<span class="sd">        of the training data.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            quantile: Returns the sensitivity value at the given quantile from</span>
+<span class="sd">             the bootstrap set. Note that we use quantile &gt; 0.5 because we want to</span>
+<span class="sd">             detect whether the synthetic data tends to be closer to the training data</span>
+<span class="sd">             than expected. The statistic computes synth_min &lt; test_min, so if the</span>
+<span class="sd">             synthetic data systematically copies observation from the training data,</span>
+<span class="sd">             we expect that the statictic tends to become larger &gt;&gt; 0.</span>
+<span class="sd">            return_values: Instead of returning a single value based on the `quantile`</span>
+<span class="sd">             argument, return the full set of boostrap values.</span>
+<span class="sd">            sensitivity_orig_frac_multiple: The size of the training data relative to the chosen `frac` that will be</span>
+<span class="sd">             used in computing the sensitivity. The larger this value is, the more robust the sensitivity threshold</span>
+<span class="sd">             will be. However, `(sensitivity_orig_frac_multiple + 2)` multiplied by `frac` must be less than 1.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">test_size</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="p">(</span>
+                <span class="n">test_size</span> <span class="o">&gt;</span> <span class="mi">1</span>
+            <span class="p">),</span> <span class="s2">&quot;The test_size argument corresponds to the number of test samples&quot;</span>
+            <span class="n">frac</span> <span class="o">=</span> <span class="n">test_size</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_data</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">frac</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Either the test_size or frac must be provided&quot;</span><span class="p">)</span>
+
+        <span class="k">assert</span> <span class="p">(</span>
+            <span class="mi">2</span> <span class="o">*</span> <span class="n">frac</span>
+        <span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;This exceeds the test size and no training data will remain.&quot;</span>
+
+        <span class="n">values</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">full_sensitivity</span><span class="p">:</span>
+            <span class="c1"># We use the full fraction</span>
+            <span class="n">frac</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">frac</span>
+
+            <span class="c1"># We will be sampling data from the dataset that is</span>
+            <span class="c1"># `(sensitivity_orig_frac_multiple + 2) * frac` without</span>
+            <span class="c1"># replacement. We should make sure that we don&#39;t exceed this</span>
+            <span class="c1"># threshold.</span>
+            <span class="k">assert</span> <span class="p">(</span><span class="n">sensitivity_orig_frac_multiple</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">frac</span> <span class="o">&lt;=</span> <span class="mi">1</span>
+
+        <span class="k">def</span> <span class="nf">bootstrap_inner_loop</span><span class="p">():</span>
+            <span class="n">original</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">test</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="kc">None</span>
+
+            <span class="k">if</span> <span class="n">full_sensitivity</span><span class="p">:</span>
+                <span class="n">original</span><span class="p">,</span> <span class="n">test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mi">2</span> <span class="o">*</span> <span class="n">frac</span><span class="p">)</span>
+                <span class="n">synthetic</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span> <span class="nb">len</span><span class="p">(</span><span class="n">test</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span>
+                <span class="n">test</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">test</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">synthetic</span><span class="o">.</span><span class="n">index</span><span class="p">)]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">source</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="n">n_size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">train_data</span><span class="p">)</span> <span class="o">*</span> <span class="n">frac</span><span class="p">)</span>
+                <span class="n">n_train_size</span> <span class="o">=</span> <span class="n">sensitivity_orig_frac_multiple</span> <span class="o">*</span> <span class="n">n_size</span>
+                <span class="n">test_size</span> <span class="o">=</span> <span class="n">n_train_size</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">n_size</span><span class="p">)</span>
+
+                <span class="n">_</span><span class="p">,</span> <span class="n">source</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="n">test_size</span><span class="p">)</span>
+                <span class="n">original</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="n">n_train_size</span><span class="p">]</span>
+                <span class="n">synthetic</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">n_train_size</span> <span class="p">:</span> <span class="n">n_train_size</span> <span class="o">+</span> <span class="n">n_size</span><span class="p">]</span>
+                <span class="n">test</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">n_train_size</span> <span class="o">+</span> <span class="n">n_size</span> <span class="p">:]</span>
+
+                <span class="k">assert</span> <span class="n">synthetic</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+            <span class="k">return</span> <span class="n">SyntheticDataBench</span><span class="o">.</span><span class="n">compute_sensitivity_metric</span><span class="p">(</span>
+                <span class="n">original</span><span class="o">=</span><span class="n">original</span><span class="p">,</span>
+                <span class="n">synthetic</span><span class="o">=</span><span class="n">synthetic</span><span class="p">,</span>
+                <span class="n">test</span><span class="o">=</span><span class="n">test</span><span class="p">,</span>
+                <span class="n">qt_max</span><span class="o">=</span><span class="n">qt_max</span><span class="p">,</span>
+                <span class="n">qt_interval</span><span class="o">=</span><span class="n">qt_interval</span><span class="p">,</span>
+                <span class="n">distance</span><span class="o">=</span><span class="n">distance</span><span class="p">,</span>
+                <span class="n">tsvd</span><span class="o">=</span><span class="n">tsvd</span><span class="p">,</span>
+                <span class="n">max_col_nums</span><span class="o">=</span><span class="n">max_col_nums</span><span class="p">,</span>
+                <span class="n">use_ks</span><span class="o">=</span><span class="n">use_ks</span><span class="p">,</span>
+            <span class="p">)</span>
+
+        <span class="n">n_jobs</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">cpu_count</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">cpu_count</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">cpu_count</span> <span class="ow">and</span> <span class="n">cpu_count</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">:</span>
+            <span class="n">n_jobs</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">cpu_count</span> <span class="o">//</span> <span class="mi">4</span><span class="p">),</span> <span class="mi">16</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">n_jobs</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">num_bootstrap</span><span class="p">),</span> <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Bootstrap round&quot;</span><span class="p">):</span>
+                <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bootstrap_inner_loop</span><span class="p">())</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Using parallel computation!!!&quot;</span><span class="p">)</span>
+            <span class="k">with</span> <span class="n">joblib</span><span class="o">.</span><span class="n">Parallel</span><span class="p">(</span><span class="n">n_jobs</span><span class="o">=</span><span class="n">n_jobs</span><span class="p">)</span> <span class="k">as</span> <span class="n">parallel</span><span class="p">:</span>
+                <span class="n">values</span> <span class="o">=</span> <span class="n">parallel</span><span class="p">(</span>
+                    <span class="n">joblib</span><span class="o">.</span><span class="n">delayed</span><span class="p">(</span><span class="n">bootstrap_inner_loop</span><span class="p">)()</span>
+                    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">num_bootstrap</span><span class="p">),</span> <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Bootstrap round&quot;</span><span class="p">)</span>
+                <span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sensitivity threshold summary:&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">values</span><span class="p">)</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+
+        <span class="k">return</span> <span class="n">values</span> <span class="k">if</span> <span class="n">return_values</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">quantile</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="SyntheticDataExperiment"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_analyze/index.html#realtabformer.rtf_analyze.SyntheticDataExperiment">[docs]</a><span class="k">class</span> <span class="nc">SyntheticDataExperiment</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    For each data and model:</span>
+<span class="sd">    1. Split train/test data -&gt; save data</span>
+<span class="sd">    2. Train model with train data -&gt; save model</span>
+<span class="sd">    3. Generate N x train+test synthetic data -&gt; save samples</span>
+<span class="sd">    4. Perform analysis on the generated data.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">model_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">categorical</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+        <span class="n">target_col</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">target_pos_val</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">pass</span></div>
+</pre></div>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Aivin Solatorio
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023, World Bank.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

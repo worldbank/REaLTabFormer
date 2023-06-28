@@ -1,0 +1,1129 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>realtabformer.data_utils &#8212; REaLTabFormer</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/realtabformer/data_utils';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/REalTabFormer_Final_EQ.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/REalTabFormer_Final_EQ.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+    <p class="title logo__title">REaLTabFormer 0.1.3</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">REaLTabFormer</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../autoapi/index.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../autoapi/realtabformer/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../autoapi/realtabformer/__main__/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.__main__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../autoapi/realtabformer/data_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.data_utils</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../autoapi/realtabformer/realtabformer/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.realtabformer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../autoapi/realtabformer/rtf_analyze/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_analyze</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../autoapi/realtabformer/rtf_datacollator/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_datacollator</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../autoapi/realtabformer/rtf_exceptions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_exceptions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../autoapi/realtabformer/rtf_sampler/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_sampler</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../autoapi/realtabformer/rtf_trainer/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_trainer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../autoapi/realtabformer/rtf_validators/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_validators</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/worldbank/realtabformer" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/worldbank/realtabformer/issues/new?title=Issue%20on%20page%20%2F_modules/realtabformer/data_utils.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for realtabformer.data_utils</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">uuid</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">fields</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">datasets</span> <span class="kn">import</span> <span class="n">Dataset</span>
+
+<div class="viewcode-block" id="TEACHER_FORCING_PRE"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.TEACHER_FORCING_PRE">[docs]</a><span class="n">TEACHER_FORCING_PRE</span> <span class="o">=</span> <span class="s2">&quot;_TEACHERFORCING&quot;</span></div>
+<div class="viewcode-block" id="SPECIAL_COL_SEP"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.SPECIAL_COL_SEP">[docs]</a><span class="n">SPECIAL_COL_SEP</span> <span class="o">=</span> <span class="s2">&quot;___&quot;</span></div>
+<div class="viewcode-block" id="NUMERIC_NA_TOKEN"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.NUMERIC_NA_TOKEN">[docs]</a><span class="n">NUMERIC_NA_TOKEN</span> <span class="o">=</span> <span class="s2">&quot;@&quot;</span></div>
+<div class="viewcode-block" id="INVALID_NUMS_RE"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.INVALID_NUMS_RE">[docs]</a><span class="n">INVALID_NUMS_RE</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;[^\-.0-9]&quot;</span></div>
+
+
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="viewcode-block" id="TabularArtefact"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.TabularArtefact">[docs]</a><span class="k">class</span> <span class="nc">TabularArtefact</span><span class="p">:</span>
+<div class="viewcode-block" id="TabularArtefact.best_disc_model"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.TabularArtefact.best_disc_model">[docs]</a>    <span class="n">best_disc_model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;best-disc-model&quot;</span></div>
+<div class="viewcode-block" id="TabularArtefact.mean_best_disc_model"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.TabularArtefact.mean_best_disc_model">[docs]</a>    <span class="n">mean_best_disc_model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;mean-best-disc-model&quot;</span></div>
+<div class="viewcode-block" id="TabularArtefact.not_best_disc_model"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.TabularArtefact.not_best_disc_model">[docs]</a>    <span class="n">not_best_disc_model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;not-best-disc-model&quot;</span></div>
+<div class="viewcode-block" id="TabularArtefact.last_epoch_model"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.TabularArtefact.last_epoch_model">[docs]</a>    <span class="n">last_epoch_model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;last-epoch-model&quot;</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="TabularArtefact.artefacts"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.TabularArtefact.artefacts">[docs]</a>    <span class="k">def</span> <span class="nf">artefacts</span><span class="p">():</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">field</span><span class="o">.</span><span class="n">default</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">(</span><span class="n">TabularArtefact</span><span class="p">)]</span></div></div>
+
+
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="viewcode-block" id="ModelFileName"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.ModelFileName">[docs]</a><span class="k">class</span> <span class="nc">ModelFileName</span><span class="p">:</span>
+<div class="viewcode-block" id="ModelFileName.rtf_config_json"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.ModelFileName.rtf_config_json">[docs]</a>    <span class="n">rtf_config_json</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;rtf_config.json&quot;</span></div>
+<div class="viewcode-block" id="ModelFileName.rtf_model_pt"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.ModelFileName.rtf_model_pt">[docs]</a>    <span class="n">rtf_model_pt</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;rtf_model.pt&quot;</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="ModelFileName.names"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.ModelFileName.names">[docs]</a>    <span class="k">def</span> <span class="nf">names</span><span class="p">():</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">field</span><span class="o">.</span><span class="n">default</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">(</span><span class="n">ModelFileName</span><span class="p">)]</span></div></div>
+
+
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="viewcode-block" id="ModelType"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.ModelType">[docs]</a><span class="k">class</span> <span class="nc">ModelType</span><span class="p">:</span>
+<div class="viewcode-block" id="ModelType.tabular"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.ModelType.tabular">[docs]</a>    <span class="n">tabular</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;tabular&quot;</span></div>
+<div class="viewcode-block" id="ModelType.relational"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.ModelType.relational">[docs]</a>    <span class="n">relational</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;relational&quot;</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="ModelType.types"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.ModelType.types">[docs]</a>    <span class="k">def</span> <span class="nf">types</span><span class="p">():</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">field</span><span class="o">.</span><span class="n">default</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">(</span><span class="n">ModelType</span><span class="p">)]</span></div></div>
+
+
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="viewcode-block" id="ColDataType"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.ColDataType">[docs]</a><span class="k">class</span> <span class="nc">ColDataType</span><span class="p">:</span>
+<div class="viewcode-block" id="ColDataType.NUMERIC"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.ColDataType.NUMERIC">[docs]</a>    <span class="n">NUMERIC</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;NUMERIC&quot;</span></div>
+<div class="viewcode-block" id="ColDataType.DATETIME"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.ColDataType.DATETIME">[docs]</a>    <span class="n">DATETIME</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;DATETIME&quot;</span></div>
+<div class="viewcode-block" id="ColDataType.CATEGORICAL"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.ColDataType.CATEGORICAL">[docs]</a>    <span class="n">CATEGORICAL</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;CATEGORICAL&quot;</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="ColDataType.types"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.ColDataType.types">[docs]</a>    <span class="k">def</span> <span class="nf">types</span><span class="p">():</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">field</span><span class="o">.</span><span class="n">default</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">(</span><span class="n">ColDataType</span><span class="p">)]</span></div></div>
+
+
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="viewcode-block" id="SpecialTokens"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.SpecialTokens">[docs]</a><span class="k">class</span> <span class="nc">SpecialTokens</span><span class="p">:</span>
+<div class="viewcode-block" id="SpecialTokens.UNK"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.SpecialTokens.UNK">[docs]</a>    <span class="n">UNK</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;[UNK]&quot;</span></div>
+<div class="viewcode-block" id="SpecialTokens.SEP"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.SpecialTokens.SEP">[docs]</a>    <span class="n">SEP</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;[SEP]&quot;</span></div>
+<div class="viewcode-block" id="SpecialTokens.PAD"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.SpecialTokens.PAD">[docs]</a>    <span class="n">PAD</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;[PAD]&quot;</span></div>
+<div class="viewcode-block" id="SpecialTokens.CLS"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.SpecialTokens.CLS">[docs]</a>    <span class="n">CLS</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;[CLS]&quot;</span></div>
+<div class="viewcode-block" id="SpecialTokens.MASK"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.SpecialTokens.MASK">[docs]</a>    <span class="n">MASK</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;[MASK]&quot;</span></div>
+<div class="viewcode-block" id="SpecialTokens.BOS"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.SpecialTokens.BOS">[docs]</a>    <span class="n">BOS</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;[BOS]&quot;</span></div>
+<div class="viewcode-block" id="SpecialTokens.EOS"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.SpecialTokens.EOS">[docs]</a>    <span class="n">EOS</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;[EOS]&quot;</span></div>
+<div class="viewcode-block" id="SpecialTokens.BMEM"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.SpecialTokens.BMEM">[docs]</a>    <span class="n">BMEM</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;[BMEM]&quot;</span></div>
+<div class="viewcode-block" id="SpecialTokens.EMEM"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.SpecialTokens.EMEM">[docs]</a>    <span class="n">EMEM</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;[EMEM]&quot;</span></div>
+<div class="viewcode-block" id="SpecialTokens.RMASK"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.SpecialTokens.RMASK">[docs]</a>    <span class="n">RMASK</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;[RMASK]&quot;</span></div>
+<div class="viewcode-block" id="SpecialTokens.SPTYPE"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.SpecialTokens.SPTYPE">[docs]</a>    <span class="n">SPTYPE</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;[SPTYPE]&quot;</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="SpecialTokens.tokens"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.SpecialTokens.tokens">[docs]</a>    <span class="k">def</span> <span class="nf">tokens</span><span class="p">():</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">field</span><span class="o">.</span><span class="n">default</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">(</span><span class="n">SpecialTokens</span><span class="p">)]</span></div></div>
+
+
+<div class="viewcode-block" id="get_uuid"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.get_uuid">[docs]</a><span class="k">def</span> <span class="nf">get_uuid</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()</span><span class="o">.</span><span class="n">hex</span></div>
+
+
+<div class="viewcode-block" id="fix_multi_decimal"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.fix_multi_decimal">[docs]</a><span class="k">def</span> <span class="nf">fix_multi_decimal</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">v</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="s2">&quot;.&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">:])])</span>
+    <span class="k">return</span> <span class="n">v</span></div>
+
+
+<div class="viewcode-block" id="build_vocab"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.build_vocab">[docs]</a><span class="k">def</span> <span class="nf">build_vocab</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">special_tokens</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">add_columns</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="p">(</span>
+        <span class="n">df</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+    <span class="p">)</span> <span class="ow">or</span> <span class="n">special_tokens</span><span class="p">,</span> <span class="s2">&quot;At least one of `df` or `special_tokens` must not be None.&quot;</span>
+
+    <span class="k">if</span> <span class="n">add_columns</span> <span class="ow">and</span> <span class="n">df</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># We limit this feature to data that are likely</span>
+        <span class="c1"># to have been processed using the convention imposed</span>
+        <span class="c1"># where we keep track of the column index in the processed data.</span>
+        <span class="k">assert</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+
+    <span class="n">id2token</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">curr_id</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">special_tokens</span><span class="p">:</span>
+        <span class="n">id2token</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">special_tokens</span><span class="p">)))</span>
+        <span class="n">curr_id</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">id2token</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">column_token_ids</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">if</span> <span class="n">df</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="n">id2token</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()),</span> <span class="n">curr_id</span><span class="p">)))</span>
+            <span class="n">column_token_ids</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">curr_id</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">id2token</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+            <span class="n">curr_id</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">id2token</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+
+        <span class="k">if</span> <span class="n">add_columns</span><span class="p">:</span>
+            <span class="n">id2token</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+                <span class="nb">dict</span><span class="p">(</span>
+                    <span class="nb">enumerate</span><span class="p">(</span>
+                        <span class="p">[</span><span class="n">extract_processed_column</span><span class="p">(</span><span class="n">col</span><span class="p">)</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">],</span> <span class="n">curr_id</span>
+                    <span class="p">)</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+
+            <span class="c1"># Add this here to prevent a semantic error in case we add another</span>
+            <span class="c1"># set of tokens later.</span>
+            <span class="n">curr_id</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">id2token</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="n">token2id</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">id2token</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">id2token</span><span class="o">=</span><span class="n">id2token</span><span class="p">,</span>
+        <span class="n">token2id</span><span class="o">=</span><span class="n">token2id</span><span class="p">,</span>
+        <span class="n">column_token_ids</span><span class="o">=</span><span class="n">column_token_ids</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="process_numeric_data"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.process_numeric_data">[docs]</a><span class="k">def</span> <span class="nf">process_numeric_data</span><span class="p">(</span>
+    <span class="n">series</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span>
+    <span class="n">max_len</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="n">numeric_precision</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="n">transform_data</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="n">Dict</span><span class="p">]:</span>
+    <span class="n">is_transform</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">if</span> <span class="n">transform_data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">transform_data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="n">is_transform</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">if</span> <span class="n">is_transform</span><span class="p">:</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+            <span class="s2">&quot;Default values will be overridden because transform_data was passed...&quot;</span>
+        <span class="p">)</span>
+        <span class="n">max_len</span> <span class="o">=</span> <span class="n">transform_data</span><span class="p">[</span><span class="s2">&quot;max_len&quot;</span><span class="p">]</span>
+        <span class="n">numeric_precision</span> <span class="o">=</span> <span class="n">transform_data</span><span class="p">[</span><span class="s2">&quot;numeric_precision&quot;</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">transform_data</span><span class="p">[</span><span class="s2">&quot;max_len&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">max_len</span>
+        <span class="n">transform_data</span><span class="p">[</span><span class="s2">&quot;numeric_precision&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">numeric_precision</span>
+
+    <span class="c1"># Note that at this point, we should have casted int-like values to</span>
+    <span class="c1"># pd.Int64Dtype but just to be very sure, let&#39;s do that again here.</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">series</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Int64Dtype</span><span class="p">())</span>
+    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="k">if</span> <span class="n">series</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">pd</span><span class="o">.</span><span class="n">Int64Dtype</span><span class="p">():</span>
+        <span class="n">series</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># We convert float-like values to string with the specified</span>
+        <span class="c1"># maximum precision.</span>
+        <span class="c1"># NOTE: Don&#39;t use series.round(numeric_precision).astype(str)</span>
+        <span class="c1"># In some cases, this introduces scientific notation in the</span>
+        <span class="c1"># string version causing &quot;invalid&quot; values.</span>
+
+        <span class="c1"># Note that our purpose for doing this is to actually truncate</span>
+        <span class="c1"># the precision and not increase the precision.</span>
+        <span class="c1"># So, we strip the right trailing zeros because the formatting</span>
+        <span class="c1"># pads the series to the numeric_precision even when not needed.</span>
+        <span class="n">series</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">.</span><span class="si">{</span><span class="n">numeric_precision</span><span class="si">}</span><span class="s2">f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">&quot;0&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Get the most significant digit</span>
+    <span class="k">if</span> <span class="n">is_transform</span><span class="p">:</span>
+        <span class="n">mx_sig</span> <span class="o">=</span> <span class="n">transform_data</span><span class="p">[</span><span class="s2">&quot;mx_sig&quot;</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">mx_sig</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+        <span class="n">transform_data</span><span class="p">[</span><span class="s2">&quot;mx_sig&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">mx_sig</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">mx_sig</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># The data has no decimal point.</span>
+        <span class="c1"># Pad the data with leading zeros if not</span>
+        <span class="c1"># aligned to the largest value.</span>
+        <span class="c1"># We also don&#39;t apply the max_len to integral</span>
+        <span class="c1"># valued data because it will basically</span>
+        <span class="c1"># remove important information.</span>
+        <span class="k">if</span> <span class="n">is_transform</span><span class="p">:</span>
+            <span class="n">zfill</span> <span class="o">=</span> <span class="n">transform_data</span><span class="p">[</span><span class="s2">&quot;zfill&quot;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">zfill</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+            <span class="n">transform_data</span><span class="p">[</span><span class="s2">&quot;zfill&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">zfill</span><span class="p">)</span>
+        <span class="n">series</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="n">zfill</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Make sure that we don&#39;t exessively truncate the data.</span>
+        <span class="c1"># The max_len should be greater than the mx_sig.</span>
+        <span class="c1"># Add a +1 to generate a minimum of tenth place resolution</span>
+        <span class="c1"># for this data.</span>
+        <span class="k">assert</span> <span class="n">max_len</span> <span class="o">&gt;</span> <span class="p">(</span>
+            <span class="n">mx_sig</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;The target length </span><span class="si">{</span><span class="n">max_len</span><span class="si">}</span><span class="s2"> of the data doesn&#39;t include the numeric precision at </span><span class="si">{</span><span class="n">mx_sig</span><span class="si">}</span><span class="s2">. Increase max_len to at least </span><span class="si">{</span><span class="n">max_len</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">mx_sig</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">max_len</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span>
+
+        <span class="c1"># Left align first based on the magnitude of the values.</span>
+        <span class="c1"># We compute the difference in the most significant digits</span>
+        <span class="c1"># of all values with respect to the largest value.</span>
+        <span class="c1"># We then pad a leading zero to values with lower most significant</span>
+        <span class="c1"># digits.</span>
+        <span class="c1"># For example we have the values 1029.61 and 4.269. This will</span>
+        <span class="c1"># determine that 1029.61 has the largest magnitude, with most significant</span>
+        <span class="c1"># digit of 4. It will pad the value 4.269 with three zeros and convert it</span>
+        <span class="c1"># to 0004.269.</span>
+        <span class="n">series</span> <span class="o">=</span> <span class="p">(</span><span class="n">mx_sig</span> <span class="o">-</span> <span class="n">series</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">series</span>
+        <span class="n">series</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">str</span><span class="p">[:</span><span class="n">max_len</span><span class="p">]</span>
+
+        <span class="c1"># We additionally apply left justify to align based on the trailing precision.</span>
+        <span class="c1"># For example, we have 1029.61 and 0004.269 as values. This time we transform the first</span>
+        <span class="c1"># value to become 1029.610 to align with the precision of the second value.</span>
+        <span class="k">if</span> <span class="n">is_transform</span><span class="p">:</span>
+            <span class="n">ljust</span> <span class="o">=</span> <span class="n">transform_data</span><span class="p">[</span><span class="s2">&quot;ljust&quot;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ljust</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+            <span class="n">transform_data</span><span class="p">[</span><span class="s2">&quot;ljust&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ljust</span><span class="p">)</span>
+
+        <span class="n">series</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="n">ljust</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">)</span>
+
+    <span class="c1"># If a number has a negative sign, make sure that it is placed properly.</span>
+    <span class="n">series</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">series</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">False</span><span class="p">)]</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="n">series</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="n">series</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">series</span><span class="p">,</span> <span class="n">transform_data</span></div>
+
+
+<div class="viewcode-block" id="process_datetime_data"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.process_datetime_data">[docs]</a><span class="k">def</span> <span class="nf">process_datetime_data</span><span class="p">(</span>
+    <span class="n">series</span><span class="p">,</span> <span class="n">transform_data</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="n">Dict</span><span class="p">]:</span>
+    <span class="c1"># Get the max_len from the current time.</span>
+    <span class="c1"># This will be ignored later if the actual max_len</span>
+    <span class="c1"># is shorter.</span>
+    <span class="n">max_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())))</span>
+
+    <span class="c1"># Convert the datetimes to</span>
+    <span class="c1"># their equivalent timestamp values.</span>
+
+    <span class="c1"># Make sure that we don&#39;t convert the NaT</span>
+    <span class="c1"># to some integer.</span>
+    <span class="n">series</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">series</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">series</span><span class="o">.</span><span class="n">notnull</span><span class="p">()]</span> <span class="o">=</span> <span class="p">(</span><span class="n">series</span><span class="p">[</span><span class="n">series</span><span class="o">.</span><span class="n">notnull</span><span class="p">()]</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1e9</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span>
+        <span class="nb">int</span>
+    <span class="p">)</span>
+    <span class="n">series</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">NA</span><span class="p">)</span>
+
+    <span class="c1"># Take the mean value to re-align the data.</span>
+    <span class="c1"># This will help reduce the scale of the numeric</span>
+    <span class="c1"># data that will need to be generated. Let&#39;s just</span>
+    <span class="c1"># add this offset back later before casting.</span>
+    <span class="n">mean_date</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">if</span> <span class="n">transform_data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">mean_date</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+        <span class="n">series</span> <span class="o">-=</span> <span class="n">mean_date</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># The mean_date should have been</span>
+        <span class="c1"># stored during fitting.</span>
+        <span class="n">series</span> <span class="o">-=</span> <span class="n">transform_data</span><span class="p">[</span><span class="s2">&quot;mean_date&quot;</span><span class="p">]</span>
+
+    <span class="c1"># Then apply the numeric data processing</span>
+    <span class="c1"># pipeline.</span>
+    <span class="n">series</span><span class="p">,</span> <span class="n">transform_data</span> <span class="o">=</span> <span class="n">process_numeric_data</span><span class="p">(</span>
+        <span class="n">series</span><span class="p">,</span>
+        <span class="n">max_len</span><span class="o">=</span><span class="n">max_len</span><span class="p">,</span>
+        <span class="n">numeric_precision</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">transform_data</span><span class="o">=</span><span class="n">transform_data</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Store the `mean_date` here because `process_numeric_data`</span>
+    <span class="c1"># expects a None transform_data during fitting.</span>
+    <span class="k">if</span> <span class="n">mean_date</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">transform_data</span><span class="p">[</span><span class="s2">&quot;mean_date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mean_date</span>
+
+    <span class="k">return</span> <span class="n">series</span><span class="p">,</span> <span class="n">transform_data</span></div>
+
+
+<div class="viewcode-block" id="process_categorical_data"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.process_categorical_data">[docs]</a><span class="k">def</span> <span class="nf">process_categorical_data</span><span class="p">(</span><span class="n">series</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
+    <span class="c1"># Simply convert the categorical data to string.</span>
+    <span class="k">return</span> <span class="n">series</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="encode_partition_numeric_col"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.encode_partition_numeric_col">[docs]</a><span class="k">def</span> <span class="nf">encode_partition_numeric_col</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">tr</span><span class="p">,</span> <span class="n">col_zfill</span><span class="p">):</span>
+    <span class="c1"># Generate a derived column name for the partitioned</span>
+    <span class="c1"># numeric data. For example: Latitude_00, Latitude_01, etc.</span>
+    <span class="k">return</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="n">col_zfill</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tr</span><span class="o">.</span><span class="n">columns</span><span class="p">))]</span></div>
+
+
+<div class="viewcode-block" id="decode_partition_numeric_col"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.decode_partition_numeric_col">[docs]</a><span class="k">def</span> <span class="nf">decode_partition_numeric_col</span><span class="p">(</span><span class="n">partition_col</span><span class="p">):</span>
+    <span class="c1"># Decode the encoded column for the partitioned numeric data.</span>
+    <span class="c1"># For example: Latitude_00 -&gt; Latitude, Latitude_01 -&gt; Latitude, etc.</span>
+    <span class="k">return</span> <span class="s2">&quot;_&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">partition_col</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span></div>
+
+
+<div class="viewcode-block" id="tokenize_numeric_col"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.tokenize_numeric_col">[docs]</a><span class="k">def</span> <span class="nf">tokenize_numeric_col</span><span class="p">(</span><span class="n">series</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="n">nparts</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">col_zfill</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="c1"># After normalizing the numeric values, we then segment</span>
+    <span class="c1"># them based on a fixed partition size (nparts).</span>
+    <span class="n">col</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">name</span>
+    <span class="n">max_len</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+
+    <span class="c1"># Take the observations that have non-numeric characters.</span>
+    <span class="c1"># These are NaNs.</span>
+    <span class="n">nan_obs</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">INVALID_NUMS_RE</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">nparts</span> <span class="o">&gt;</span> <span class="n">max_len</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="c1"># Allow minimum of 0-99 as acceptable singleton range.</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Partition size </span><span class="si">{</span><span class="n">nparts</span><span class="si">}</span><span class="s2"> is greater than the value length </span><span class="si">{</span><span class="n">max_len</span><span class="si">}</span><span class="s2">. Consider reducing the number of partitions...&quot;</span>
+        <span class="p">)</span>
+    <span class="n">mx</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+    <span class="n">tr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">series</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="n">i</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="n">nparts</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">mx</span><span class="p">,</span> <span class="n">nparts</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Replace values with NUMERIC_NA_TOKEN</span>
+    <span class="n">tr</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">nan_obs</span><span class="p">]</span> <span class="o">=</span> <span class="n">NUMERIC_NA_TOKEN</span> <span class="o">*</span> <span class="n">nparts</span>
+
+    <span class="n">tr</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">encode_partition_numeric_col</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">tr</span><span class="p">,</span> <span class="n">col_zfill</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">tr</span></div>
+
+
+<div class="viewcode-block" id="encode_column_values"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.encode_column_values">[docs]</a><span class="k">def</span> <span class="nf">encode_column_values</span><span class="p">(</span><span class="n">series</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">series</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="n">SPECIAL_COL_SEP</span> <span class="o">+</span> <span class="n">series</span></div>
+
+
+<div class="viewcode-block" id="decode_column_values"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.decode_column_values">[docs]</a><span class="k">def</span> <span class="nf">decode_column_values</span><span class="p">(</span><span class="n">series</span><span class="p">):</span>
+    <span class="c1"># return series.str.split(SPECIAL_COL_SEP).map(lambda x: x[-1])</span>
+    <span class="k">return</span> <span class="n">series</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">SPECIAL_COL_SEP</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span></div>
+
+
+<div class="viewcode-block" id="encode_processed_column"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.encode_processed_column">[docs]</a><span class="k">def</span> <span class="nf">encode_processed_column</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
+    <span class="c1"># The idx indicates the position of the column in the original</span>
+    <span class="c1"># data.</span>
+    <span class="c1"># The dtype corresponds to the data type of the column.</span>
+    <span class="c1"># The col is the actual column name of the data in the table.</span>
+    <span class="k">assert</span> <span class="n">dtype</span> <span class="ow">in</span> <span class="n">ColDataType</span><span class="o">.</span><span class="n">types</span><span class="p">()</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">idx</span><span class="si">}{</span><span class="n">SPECIAL_COL_SEP</span><span class="si">}{</span><span class="n">dtype</span><span class="si">}{</span><span class="n">SPECIAL_COL_SEP</span><span class="si">}{</span><span class="n">col</span><span class="si">}</span><span class="s2">&quot;</span></div>
+
+
+<div class="viewcode-block" id="decode_processed_column"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.decode_processed_column">[docs]</a><span class="k">def</span> <span class="nf">decode_processed_column</span><span class="p">(</span><span class="n">col</span><span class="p">):</span>
+    <span class="c1"># Reverts the process in `encode_processed_column`</span>
+    <span class="c1"># Do nothing if the format is not as expected.</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">([</span><span class="n">dtype</span> <span class="ow">in</span> <span class="n">col</span> <span class="k">for</span> <span class="n">dtype</span> <span class="ow">in</span> <span class="n">ColDataType</span><span class="o">.</span><span class="n">types</span><span class="p">()]):</span>
+        <span class="k">return</span> <span class="n">col</span>
+
+    <span class="c1"># Pattern is: [0-9]+___(NUMERIC|DATETIME|CATEGORICAL)___</span>
+    <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;[0-9]+</span><span class="si">{</span><span class="n">SPECIAL_COL_SEP</span><span class="si">}</span><span class="s2">(</span><span class="si">{</span><span class="s1">&#39;|&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ColDataType</span><span class="o">.</span><span class="n">types</span><span class="p">())</span><span class="si">}</span><span class="s2">)</span><span class="si">{</span><span class="n">SPECIAL_COL_SEP</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="n">col</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="extract_processed_column"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.extract_processed_column">[docs]</a><span class="k">def</span> <span class="nf">extract_processed_column</span><span class="p">(</span><span class="n">col</span><span class="p">):</span>
+    <span class="c1"># Extracts the data generated by `encode_processed_column`</span>
+    <span class="c1"># Return None if not found.</span>
+
+    <span class="c1"># Pattern is: ([0-9]+___(NUMERIC|DATETIME|CATEGORICAL)___.*)?____</span>
+    <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;[0-9]+</span><span class="si">{</span><span class="n">SPECIAL_COL_SEP</span><span class="si">}</span><span class="s2">(</span><span class="si">{</span><span class="s1">&#39;|&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ColDataType</span><span class="o">.</span><span class="n">types</span><span class="p">())</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">,</span>
+        <span class="n">col</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="k">if</span> <span class="n">match</span> <span class="k">else</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="is_numeric_col"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.is_numeric_col">[docs]</a><span class="k">def</span> <span class="nf">is_numeric_col</span><span class="p">(</span><span class="n">col</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">SPECIAL_COL_SEP</span><span class="si">}{</span><span class="n">ColDataType</span><span class="o">.</span><span class="n">NUMERIC</span><span class="si">}{</span><span class="n">SPECIAL_COL_SEP</span><span class="si">}</span><span class="s2">&quot;</span> <span class="ow">in</span> <span class="n">col</span></div>
+
+
+<div class="viewcode-block" id="is_datetime_col"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.is_datetime_col">[docs]</a><span class="k">def</span> <span class="nf">is_datetime_col</span><span class="p">(</span><span class="n">col</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">SPECIAL_COL_SEP</span><span class="si">}{</span><span class="n">ColDataType</span><span class="o">.</span><span class="n">DATETIME</span><span class="si">}{</span><span class="n">SPECIAL_COL_SEP</span><span class="si">}</span><span class="s2">&quot;</span> <span class="ow">in</span> <span class="n">col</span></div>
+
+
+<div class="viewcode-block" id="is_categorical_col"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.is_categorical_col">[docs]</a><span class="k">def</span> <span class="nf">is_categorical_col</span><span class="p">(</span><span class="n">col</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">SPECIAL_COL_SEP</span><span class="si">}{</span><span class="n">ColDataType</span><span class="o">.</span><span class="n">CATEGORICAL</span><span class="si">}{</span><span class="n">SPECIAL_COL_SEP</span><span class="si">}</span><span class="s2">&quot;</span> <span class="ow">in</span> <span class="n">col</span></div>
+
+
+<div class="viewcode-block" id="is_numeric_datetime_col"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.is_numeric_datetime_col">[docs]</a><span class="k">def</span> <span class="nf">is_numeric_datetime_col</span><span class="p">(</span><span class="n">col</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">is_numeric_col</span><span class="p">(</span><span class="n">col</span><span class="p">)</span> <span class="ow">or</span> <span class="n">is_datetime_col</span><span class="p">(</span><span class="n">col</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="process_data"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.process_data">[docs]</a><span class="k">def</span> <span class="nf">process_data</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">numeric_max_len</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">numeric_precision</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+    <span class="n">numeric_nparts</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">first_col_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">col_transform_data</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">target_col</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">Dict</span><span class="p">]:</span>
+    <span class="c1"># This should receive a dataframe with dtypes that have already been</span>
+    <span class="c1"># properly categorized between numeric and categorical.</span>
+    <span class="c1"># Date type can be converted as UNIX timestamps.</span>
+    <span class="k">assert</span> <span class="n">first_col_type</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="n">ColDataType</span><span class="o">.</span><span class="n">CATEGORICAL</span><span class="p">,</span> <span class="n">ColDataType</span><span class="o">.</span><span class="n">NUMERIC</span><span class="p">]</span>
+
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="c1"># Unify the variable for missing data</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">NA</span><span class="p">)</span>
+
+    <span class="c1"># Force cast integral values to Int64Dtype dtype</span>
+    <span class="c1"># to save precision if they are represented as float.</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">is_datetime64_any_dtype</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span><span class="p">):</span>
+                <span class="c1"># Don&#39;t cast datetime types.</span>
+                <span class="k">continue</span>
+
+            <span class="n">df</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Int64Dtype</span><span class="p">())</span>
+        <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+    <span class="k">if</span> <span class="n">target_col</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="p">(</span>
+            <span class="n">first_col_type</span> <span class="ow">is</span> <span class="kc">None</span>
+        <span class="p">),</span> <span class="s2">&quot;Implicit ordering of columns when teacher-forcing of target is used is not supported yet!&quot;</span>
+        <span class="n">tf_col_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">TEACHER_FORCING_PRE</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">target_col</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">assert</span> <span class="p">(</span>
+            <span class="n">tf_col_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+        <span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;The column name (</span><span class="si">{</span><span class="n">tf_col_name</span><span class="si">}</span><span class="s2">) must not be in the raw data. Found instead...&quot;</span>
+
+        <span class="n">target_ser</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">target_col</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">target_ser</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">tf_col_name</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">target_ser</span><span class="p">,</span> <span class="n">df</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Rename the columns to encode the original order by adding a suffix of increasing</span>
+    <span class="c1"># integer values.</span>
+    <span class="n">num_cols</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)))</span>
+    <span class="n">col_idx</span> <span class="o">=</span> <span class="p">{</span><span class="n">col</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="n">num_cols</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)}</span>
+
+    <span class="c1"># Create a dataframe that will hold the processed data</span>
+    <span class="n">processed_series</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># Process numerical data</span>
+    <span class="n">numeric_cols</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span>
+
+    <span class="k">if</span> <span class="n">col_transform_data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">col_transform_data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">numeric_cols</span><span class="p">:</span>
+        <span class="n">col_name</span> <span class="o">=</span> <span class="n">encode_processed_column</span><span class="p">(</span><span class="n">col_idx</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="n">ColDataType</span><span class="o">.</span><span class="n">NUMERIC</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+        <span class="n">_col_transform_data</span> <span class="o">=</span> <span class="n">col_transform_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+        <span class="n">series</span><span class="p">,</span> <span class="n">transform_data</span> <span class="o">=</span> <span class="n">process_numeric_data</span><span class="p">(</span>
+            <span class="n">df</span><span class="p">[</span><span class="n">c</span><span class="p">],</span>
+            <span class="n">max_len</span><span class="o">=</span><span class="n">numeric_max_len</span><span class="p">,</span>
+            <span class="n">numeric_precision</span><span class="o">=</span><span class="n">numeric_precision</span><span class="p">,</span>
+            <span class="n">transform_data</span><span class="o">=</span><span class="n">_col_transform_data</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">_col_transform_data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># This means that no transform data is available</span>
+            <span class="c1"># before the processing.</span>
+            <span class="n">col_transform_data</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">transform_data</span>
+        <span class="n">series</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">col_name</span>
+        <span class="n">processed_series</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">series</span><span class="p">)</span>
+
+    <span class="c1"># Process datetime data</span>
+    <span class="n">datetime_cols</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s2">&quot;datetime&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span>
+
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">datetime_cols</span><span class="p">:</span>
+        <span class="n">col_name</span> <span class="o">=</span> <span class="n">encode_processed_column</span><span class="p">(</span><span class="n">col_idx</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="n">ColDataType</span><span class="o">.</span><span class="n">DATETIME</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+
+        <span class="n">_col_transform_data</span> <span class="o">=</span> <span class="n">col_transform_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+        <span class="n">series</span><span class="p">,</span> <span class="n">transform_data</span> <span class="o">=</span> <span class="n">process_datetime_data</span><span class="p">(</span>
+            <span class="n">df</span><span class="p">[</span><span class="n">c</span><span class="p">],</span>
+            <span class="n">transform_data</span><span class="o">=</span><span class="n">_col_transform_data</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">_col_transform_data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># This means that no transform data is available</span>
+            <span class="c1"># before the processing.</span>
+            <span class="n">col_transform_data</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">transform_data</span>
+        <span class="n">series</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">col_name</span>
+        <span class="n">processed_series</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">series</span><span class="p">)</span>
+
+    <span class="n">processed_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()]</span> <span class="o">+</span> <span class="n">processed_series</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">processed_df</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+        <span class="c1"># Combine the processed numeric and datetime data.</span>
+        <span class="n">processed_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="n">tokenize_numeric_col</span><span class="p">(</span><span class="n">processed_df</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="n">nparts</span><span class="o">=</span><span class="n">numeric_nparts</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">processed_df</span><span class="o">.</span><span class="n">columns</span>
+            <span class="p">],</span>
+            <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="c1"># NOTE: The categorical data should be the last to be processed!</span>
+    <span class="n">categorical_cols</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">numeric_cols</span><span class="p">)</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">datetime_cols</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">categorical_cols</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+        <span class="c1"># Process the rest of the data, assumed to be categorical values.</span>
+        <span class="n">processed_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="n">processed_df</span><span class="p">,</span>
+                <span class="o">*</span><span class="p">(</span>
+                    <span class="n">process_categorical_data</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">c</span><span class="p">])</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+                        <span class="n">encode_processed_column</span><span class="p">(</span><span class="n">col_idx</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="n">ColDataType</span><span class="o">.</span><span class="n">CATEGORICAL</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+                    <span class="p">)</span>
+                    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">categorical_cols</span>
+                <span class="p">),</span>
+            <span class="p">],</span>
+            <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="c1"># Get the different sets of column types</span>
+    <span class="n">cat_cols</span> <span class="o">=</span> <span class="n">processed_df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span>
+        <span class="n">processed_df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">ColDataType</span><span class="o">.</span><span class="n">CATEGORICAL</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="n">numeric_cols</span> <span class="o">=</span> <span class="n">processed_df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span>
+        <span class="o">~</span><span class="n">processed_df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">ColDataType</span><span class="o">.</span><span class="n">CATEGORICAL</span><span class="p">)</span>
+    <span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">first_col_type</span> <span class="o">==</span> <span class="n">ColDataType</span><span class="o">.</span><span class="n">CATEGORICAL</span><span class="p">:</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">processed_df</span><span class="p">[</span><span class="n">cat_cols</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">numeric_cols</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">)]</span>
+    <span class="k">elif</span> <span class="n">first_col_type</span> <span class="o">==</span> <span class="n">ColDataType</span><span class="o">.</span><span class="n">NUMERIC</span><span class="p">:</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">processed_df</span><span class="p">[</span><span class="n">numeric_cols</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">cat_cols</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">)]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Reorder columns to the original order</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">processed_df</span><span class="p">[</span><span class="nb">sorted</span><span class="p">(</span><span class="n">processed_df</span><span class="o">.</span><span class="n">columns</span><span class="p">)]</span>
+
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="c1"># Add the column name as part of the value.</span>
+        <span class="n">df</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">encode_column_values</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">c</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">df</span><span class="p">,</span> <span class="n">col_transform_data</span></div>
+
+
+<div class="viewcode-block" id="get_token_id"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.get_token_id">[docs]</a><span class="k">def</span> <span class="nf">get_token_id</span><span class="p">(</span>
+    <span class="n">token</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">vocab_token2id</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span> <span class="n">mask_rate</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="n">token_id</span> <span class="o">=</span> <span class="n">vocab_token2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">vocab_token2id</span><span class="p">[</span><span class="n">SpecialTokens</span><span class="o">.</span><span class="n">UNK</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">mask_rate</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">token_id</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">vocab_token2id</span><span class="p">[</span><span class="n">SpecialTokens</span><span class="o">.</span><span class="n">RMASK</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">mask_rate</span>
+            <span class="k">else</span> <span class="n">token_id</span>
+        <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">token_id</span></div>
+
+
+<div class="viewcode-block" id="get_input_ids"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.get_input_ids">[docs]</a><span class="k">def</span> <span class="nf">get_input_ids</span><span class="p">(</span>
+    <span class="n">example</span><span class="p">,</span>
+    <span class="n">vocab</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span>
+    <span class="n">columns</span><span class="p">:</span> <span class="n">List</span><span class="p">,</span>
+    <span class="n">mask_rate</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="n">return_label_ids</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">return_token_type_ids</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">affix_bos</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">affix_eos</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+    <span class="c1"># Raise an assertion error while the implementation</span>
+    <span class="c1"># is not yet ready.</span>
+    <span class="k">assert</span> <span class="n">return_token_type_ids</span> <span class="ow">is</span> <span class="kc">False</span>
+    <span class="n">input_ids</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">token_type_ids</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">if</span> <span class="n">affix_bos</span><span class="p">:</span>
+        <span class="n">input_ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vocab</span><span class="p">[</span><span class="s2">&quot;token2id&quot;</span><span class="p">][</span><span class="n">SpecialTokens</span><span class="o">.</span><span class="n">BOS</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">return_token_type_ids</span><span class="p">:</span>
+            <span class="n">token_type_ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vocab</span><span class="p">[</span><span class="s2">&quot;token2id&quot;</span><span class="p">][</span><span class="n">SpecialTokens</span><span class="o">.</span><span class="n">SPTYPE</span><span class="p">])</span>
+
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
+        <span class="n">input_ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">get_token_id</span><span class="p">(</span><span class="n">example</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">vocab</span><span class="p">[</span><span class="s2">&quot;token2id&quot;</span><span class="p">],</span> <span class="n">mask_rate</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">return_token_type_ids</span><span class="p">:</span>
+            <span class="n">col_name</span> <span class="o">=</span> <span class="n">extract_processed_column</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+            <span class="n">token_type_ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vocab</span><span class="p">[</span><span class="s2">&quot;token2id&quot;</span><span class="p">][</span><span class="n">col_name</span><span class="p">])</span>
+
+    <span class="k">if</span> <span class="n">affix_eos</span><span class="p">:</span>
+        <span class="n">input_ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vocab</span><span class="p">[</span><span class="s2">&quot;token2id&quot;</span><span class="p">][</span><span class="n">SpecialTokens</span><span class="o">.</span><span class="n">EOS</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">return_token_type_ids</span><span class="p">:</span>
+            <span class="n">token_type_ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vocab</span><span class="p">[</span><span class="s2">&quot;token2id&quot;</span><span class="p">][</span><span class="n">SpecialTokens</span><span class="o">.</span><span class="n">SPTYPE</span><span class="p">])</span>
+
+    <span class="n">data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">input_ids</span><span class="o">=</span><span class="n">input_ids</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">return_label_ids</span><span class="p">:</span>
+        <span class="n">data</span><span class="p">[</span><span class="s2">&quot;label_ids&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">input_ids</span>
+
+    <span class="k">if</span> <span class="n">return_token_type_ids</span><span class="p">:</span>
+        <span class="n">data</span><span class="p">[</span><span class="s2">&quot;token_type_ids&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">token_type_ids</span>
+
+    <span class="k">return</span> <span class="n">data</span></div>
+
+
+<div class="viewcode-block" id="make_dataset"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.make_dataset">[docs]</a><span class="k">def</span> <span class="nf">make_dataset</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">vocab</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span>
+    <span class="n">mask_rate</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="n">affix_eos</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">return_token_type_ids</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dataset</span><span class="p">:</span>
+    <span class="c1"># Load the dataframe into a HuggingFace Dataset</span>
+    <span class="n">training_dataset</span> <span class="o">=</span> <span class="n">Dataset</span><span class="o">.</span><span class="n">from_pandas</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">preserve_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># Create the input_ids and label_ids columns</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Creating the input_ids and label_ids columns...&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">training_dataset</span><span class="o">.</span><span class="n">map</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">example</span><span class="p">:</span> <span class="n">get_input_ids</span><span class="p">(</span>
+            <span class="n">example</span><span class="p">,</span>
+            <span class="n">vocab</span><span class="p">,</span>
+            <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span>
+            <span class="n">mask_rate</span><span class="o">=</span><span class="n">mask_rate</span><span class="p">,</span>
+            <span class="n">affix_eos</span><span class="o">=</span><span class="n">affix_eos</span><span class="p">,</span>
+            <span class="n">return_token_type_ids</span><span class="o">=</span><span class="n">return_token_type_ids</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">remove_columns</span><span class="o">=</span><span class="n">training_dataset</span><span class="o">.</span><span class="n">column_names</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_relational_input_ids"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.get_relational_input_ids">[docs]</a><span class="k">def</span> <span class="nf">get_relational_input_ids</span><span class="p">(</span>
+    <span class="n">example</span><span class="p">,</span>
+    <span class="n">input_idx</span><span class="p">,</span>
+    <span class="n">vocab</span><span class="p">,</span>
+    <span class="n">columns</span><span class="p">,</span>
+    <span class="n">output_dataset</span><span class="p">,</span>
+    <span class="n">in_out_idx</span><span class="p">,</span>
+    <span class="n">output_max_length</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">return_token_type_ids</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="c1"># Start with 2 to take into account the [BOS] and [EOS] tokens</span>
+    <span class="n">sequence_len</span> <span class="o">=</span> <span class="mi">2</span>
+
+    <span class="c1"># Build the input_ids for the encoder</span>
+    <span class="n">input_payload</span> <span class="o">=</span> <span class="n">get_input_ids</span><span class="p">(</span>
+        <span class="n">example</span><span class="p">,</span>
+        <span class="n">vocab</span><span class="p">[</span><span class="s2">&quot;encoder&quot;</span><span class="p">],</span>
+        <span class="n">columns</span><span class="p">,</span>
+        <span class="n">return_label_ids</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">return_token_type_ids</span><span class="o">=</span><span class="n">return_token_type_ids</span><span class="p">,</span>
+        <span class="n">affix_bos</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">affix_eos</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">input_ids</span> <span class="o">=</span> <span class="n">input_payload</span><span class="p">[</span><span class="s2">&quot;input_ids&quot;</span><span class="p">]</span>
+    <span class="n">token_type_ids</span> <span class="o">=</span> <span class="n">input_payload</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;token_type_ids&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Build the label_ids for the decoder</span>
+    <span class="n">output_idx</span> <span class="o">=</span> <span class="n">in_out_idx</span><span class="p">[</span><span class="n">input_idx</span><span class="p">]</span>
+
+    <span class="n">valid</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="n">label_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">vocab</span><span class="p">[</span><span class="s2">&quot;decoder&quot;</span><span class="p">][</span><span class="s2">&quot;token2id&quot;</span><span class="p">][</span><span class="n">SpecialTokens</span><span class="o">.</span><span class="n">BOS</span><span class="p">]]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">output_idx</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">ids</span> <span class="ow">in</span> <span class="n">output_dataset</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">output_idx</span><span class="p">)[</span><span class="s2">&quot;input_ids&quot;</span><span class="p">]:</span>
+            <span class="c1"># Pad each observation with the [BMEM] and [EMEM] tokens</span>
+
+            <span class="n">tmp_label_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">vocab</span><span class="p">[</span><span class="s2">&quot;decoder&quot;</span><span class="p">][</span><span class="s2">&quot;token2id&quot;</span><span class="p">][</span><span class="n">SpecialTokens</span><span class="o">.</span><span class="n">BMEM</span><span class="p">]]</span>
+            <span class="n">tmp_label_ids</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">ids</span><span class="p">)</span>
+            <span class="n">tmp_label_ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vocab</span><span class="p">[</span><span class="s2">&quot;decoder&quot;</span><span class="p">][</span><span class="s2">&quot;token2id&quot;</span><span class="p">][</span><span class="n">SpecialTokens</span><span class="o">.</span><span class="n">EMEM</span><span class="p">])</span>
+
+            <span class="k">if</span> <span class="n">output_max_length</span><span class="p">:</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">sequence_len</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">tmp_label_ids</span><span class="p">))</span> <span class="o">&gt;</span> <span class="n">output_max_length</span><span class="p">:</span>
+                    <span class="c1"># This exceeds the expected limit.</span>
+                    <span class="c1"># Drop this observation.</span>
+                    <span class="n">valid</span> <span class="o">=</span> <span class="kc">False</span>
+                    <span class="k">break</span>
+
+            <span class="n">label_ids</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">tmp_label_ids</span><span class="p">)</span>
+            <span class="n">sequence_len</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tmp_label_ids</span><span class="p">)</span>
+
+    <span class="n">label_ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vocab</span><span class="p">[</span><span class="s2">&quot;decoder&quot;</span><span class="p">][</span><span class="s2">&quot;token2id&quot;</span><span class="p">][</span><span class="n">SpecialTokens</span><span class="o">.</span><span class="n">EOS</span><span class="p">])</span>
+
+    <span class="n">payload</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">input_ids</span><span class="o">=</span><span class="n">input_ids</span><span class="p">,</span>
+        <span class="c1"># The variable `labels` is used in the EncoderDecoder model</span>
+        <span class="c1"># instead of `label_ids`.</span>
+        <span class="n">labels</span><span class="o">=</span><span class="n">label_ids</span> <span class="k">if</span> <span class="n">valid</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">token_type_ids</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">payload</span><span class="p">[</span><span class="s2">&quot;token_type_ids&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">token_type_ids</span>
+
+    <span class="k">return</span> <span class="n">payload</span></div>
+
+
+<div class="viewcode-block" id="make_relational_dataset"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.make_relational_dataset">[docs]</a><span class="k">def</span> <span class="nf">make_relational_dataset</span><span class="p">(</span>
+    <span class="n">in_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">out_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">vocab</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
+    <span class="n">in_out_idx</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
+    <span class="n">mask_rate</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">output_max_length</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">return_token_type_ids</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dataset</span><span class="p">:</span>
+    <span class="c1"># Relational data</span>
+    <span class="c1"># Load the dataframe into a HuggingFace Dataset</span>
+    <span class="n">encoder_dataset</span> <span class="o">=</span> <span class="n">Dataset</span><span class="o">.</span><span class="n">from_pandas</span><span class="p">(</span><span class="n">in_df</span><span class="p">,</span> <span class="n">preserve_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># Load the dataframe into a HuggingFace Dataset</span>
+    <span class="n">decoder_dataset</span> <span class="o">=</span> <span class="n">Dataset</span><span class="o">.</span><span class="n">from_pandas</span><span class="p">(</span><span class="n">out_df</span><span class="p">,</span> <span class="n">preserve_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="c1"># Do not add [BOS] and [EOS] here. This will be handled</span>
+    <span class="c1"># in the creation of the training_dataset in `get_relational_input_ids`.</span>
+    <span class="n">decoder_dataset</span> <span class="o">=</span> <span class="n">decoder_dataset</span><span class="o">.</span><span class="n">map</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">example</span><span class="p">:</span> <span class="n">get_input_ids</span><span class="p">(</span>
+            <span class="n">example</span><span class="p">,</span>
+            <span class="n">vocab</span><span class="p">[</span><span class="s2">&quot;decoder&quot;</span><span class="p">],</span>
+            <span class="n">out_df</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span>
+            <span class="n">mask_rate</span><span class="o">=</span><span class="n">mask_rate</span><span class="p">,</span>
+            <span class="n">return_label_ids</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">return_token_type_ids</span><span class="o">=</span><span class="n">return_token_type_ids</span><span class="p">,</span>
+            <span class="n">affix_bos</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">affix_eos</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">remove_columns</span><span class="o">=</span><span class="n">decoder_dataset</span><span class="o">.</span><span class="n">column_names</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">training_dataset</span> <span class="o">=</span> <span class="n">encoder_dataset</span><span class="o">.</span><span class="n">map</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">example</span><span class="p">,</span> <span class="n">idx</span><span class="p">:</span> <span class="n">get_relational_input_ids</span><span class="p">(</span>
+            <span class="n">example</span><span class="p">,</span>
+            <span class="n">idx</span><span class="p">,</span>
+            <span class="n">vocab</span><span class="p">,</span>
+            <span class="n">in_df</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span>
+            <span class="n">decoder_dataset</span><span class="p">,</span>
+            <span class="n">in_out_idx</span><span class="p">,</span>
+            <span class="n">output_max_length</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">remove_columns</span><span class="o">=</span><span class="n">encoder_dataset</span><span class="o">.</span><span class="n">column_names</span><span class="p">,</span>
+        <span class="n">with_indices</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># If the output_max_length variable is specified, filter</span>
+    <span class="c1"># observations that exceed this length. The</span>
+    <span class="c1"># `get_relational_input_ids` should have set the</span>
+    <span class="c1"># `labels` to None if the output exceeds `output_max_length`.</span>
+    <span class="k">if</span> <span class="n">output_max_length</span><span class="p">:</span>
+        <span class="n">init_data_length</span> <span class="o">=</span> <span class="n">training_dataset</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="n">training_dataset</span> <span class="o">=</span> <span class="n">training_dataset</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">example</span><span class="p">:</span> <span class="n">example</span><span class="p">[</span><span class="s2">&quot;labels&quot;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="p">)</span>
+
+        <span class="n">removed_count</span> <span class="o">=</span> <span class="n">init_data_length</span> <span class="o">-</span> <span class="n">training_dataset</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">removed_count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;A total of </span><span class="si">{</span><span class="n">removed_count</span><span class="si">}</span><span class="s2"> out of </span><span class="si">{</span><span class="n">init_data_length</span><span class="si">}</span><span class="s2"> has been removed from the training data because they exceeded the `output_max_length` of </span><span class="si">{</span><span class="n">output_max_length</span><span class="si">}</span><span class="s2">.&quot;</span>
+            <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">training_dataset</span></div>
+</pre></div>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Aivin Solatorio
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023, World Bank.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

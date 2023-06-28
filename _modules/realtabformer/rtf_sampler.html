@@ -1,0 +1,1450 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>realtabformer.rtf_sampler &#8212; REaLTabFormer</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/realtabformer/rtf_sampler';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/REalTabFormer_Final_EQ.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/REalTabFormer_Final_EQ.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+    <p class="title logo__title">REaLTabFormer 0.1.3</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">REaLTabFormer</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../autoapi/index.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../autoapi/realtabformer/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../autoapi/realtabformer/__main__/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.__main__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../autoapi/realtabformer/data_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.data_utils</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../autoapi/realtabformer/realtabformer/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.realtabformer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../autoapi/realtabformer/rtf_analyze/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_analyze</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../autoapi/realtabformer/rtf_datacollator/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_datacollator</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../autoapi/realtabformer/rtf_exceptions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_exceptions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../autoapi/realtabformer/rtf_sampler/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_sampler</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../autoapi/realtabformer/rtf_trainer/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_trainer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../autoapi/realtabformer/rtf_validators/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_validators</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/worldbank/realtabformer" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/worldbank/realtabformer/issues/new?title=Issue%20on%20page%20%2F_modules/realtabformer/rtf_sampler.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for realtabformer.rtf_sampler</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;This module contains the implementation for the sampling</span>
+<span class="sd">algorithms used for tabular and relational data generation.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span>
+
+<span class="kn">import</span> <span class="nn">datasets</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
+<span class="kn">from</span> <span class="nn">tqdm.auto</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">DefaultDataCollator</span><span class="p">,</span> <span class="n">PreTrainedModel</span>
+
+<span class="kn">from</span> <span class="nn">.data_utils</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">INVALID_NUMS_RE</span><span class="p">,</span>
+    <span class="n">NUMERIC_NA_TOKEN</span><span class="p">,</span>
+    <span class="n">ModelType</span><span class="p">,</span>
+    <span class="n">SpecialTokens</span><span class="p">,</span>
+    <span class="n">decode_column_values</span><span class="p">,</span>
+    <span class="n">decode_partition_numeric_col</span><span class="p">,</span>
+    <span class="n">decode_processed_column</span><span class="p">,</span>
+    <span class="n">fix_multi_decimal</span><span class="p">,</span>
+    <span class="n">is_datetime_col</span><span class="p">,</span>
+    <span class="n">is_numeric_col</span><span class="p">,</span>
+    <span class="n">is_numeric_datetime_col</span><span class="p">,</span>
+    <span class="n">make_dataset</span><span class="p">,</span>
+    <span class="n">process_data</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">.rtf_exceptions</span> <span class="kn">import</span> <span class="n">SampleEmptyError</span><span class="p">,</span> <span class="n">SampleEmptyLimitError</span>
+<span class="kn">from</span> <span class="nn">.rtf_validators</span> <span class="kn">import</span> <span class="n">ObservationValidator</span>
+
+<div class="viewcode-block" id="NQ_COL"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.NQ_COL">[docs]</a><span class="n">NQ_COL</span> <span class="o">=</span> <span class="s2">&quot;_nq_ds_&quot;</span></div>
+
+
+<div class="viewcode-block" id="REaLSampler"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.REaLSampler">[docs]</a><span class="k">class</span> <span class="nc">REaLSampler</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">model_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">model</span><span class="p">:</span> <span class="n">PreTrainedModel</span><span class="p">,</span>
+        <span class="n">vocab</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span>
+        <span class="n">processed_columns</span><span class="p">:</span> <span class="n">List</span><span class="p">,</span>
+        <span class="n">max_length</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">col_size</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">col_idx_ids</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span>
+        <span class="n">columns</span><span class="p">:</span> <span class="n">List</span><span class="p">,</span>
+        <span class="n">datetime_columns</span><span class="p">:</span> <span class="n">List</span><span class="p">,</span>
+        <span class="n">column_dtypes</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span>
+        <span class="n">column_has_missing</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span>
+        <span class="n">drop_na_cols</span><span class="p">:</span> <span class="n">List</span><span class="p">,</span>
+        <span class="n">col_transform_data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span>
+        <span class="n">random_state</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1029</span><span class="p">,</span>
+        <span class="n">device</span><span class="o">=</span><span class="s2">&quot;cuda&quot;</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_type</span> <span class="o">=</span> <span class="n">model_type</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vocab</span> <span class="o">=</span> <span class="n">vocab</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">processed_columns</span> <span class="o">=</span> <span class="n">processed_columns</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">col_size</span> <span class="o">=</span> <span class="n">col_size</span>  <span class="c1"># relational_col_size or tabular_col_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">col_idx_ids</span> <span class="o">=</span> <span class="n">col_idx_ids</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_length</span> <span class="o">=</span> <span class="n">max_length</span>  <span class="c1"># relational_max_length or tabular_max_length</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">columns</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">datetime_columns</span> <span class="o">=</span> <span class="n">datetime_columns</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">column_dtypes</span> <span class="o">=</span> <span class="n">column_dtypes</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">column_has_missing</span> <span class="o">=</span> <span class="n">column_has_missing</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">drop_na_cols</span> <span class="o">=</span> <span class="n">drop_na_cols</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">col_transform_data</span> <span class="o">=</span> <span class="n">col_transform_data</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">random_state</span> <span class="o">=</span> <span class="n">random_state</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">model</span><span class="o">.</span><span class="n">device</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">invalid_gen_samples</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">total_gen_samples</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="c1"># Set the model to eval mode</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+
+<div class="viewcode-block" id="REaLSampler._prefix_allowed_tokens_fn"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.REaLSampler._prefix_allowed_tokens_fn">[docs]</a>    <span class="k">def</span> <span class="nf">_prefix_allowed_tokens_fn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_id</span><span class="p">,</span> <span class="n">input_ids</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">:</span>
+        <span class="c1"># https://huggingface.co/docs/transformers/v4.24.0/en/main_classes/text_generation#transformers.generation_utils.GenerationMixin.generate.prefix_allowed_tokens_fn</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<div class="viewcode-block" id="REaLSampler._convert_to_table"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.REaLSampler._convert_to_table">[docs]</a>    <span class="k">def</span> <span class="nf">_convert_to_table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">synth_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="c1"># Perform additional standardization</span>
+        <span class="c1"># processing.</span>
+        <span class="n">synth_df</span> <span class="o">=</span> <span class="n">synth_df</span><span class="p">[</span><span class="nb">sorted</span><span class="p">(</span><span class="n">synth_df</span><span class="o">.</span><span class="n">columns</span><span class="p">)]</span>
+        <span class="n">synth_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">synth_df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">decode_processed_column</span><span class="p">)</span>
+
+        <span class="c1"># Order based on the original data columns.</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">synth_df</span> <span class="o">=</span> <span class="n">synth_df</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">datetime_columns</span><span class="p">:</span>
+            <span class="c1"># Attempt to transform datetime data</span>
+            <span class="c1"># from the encoded timestamp into datetime.</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="c1"># Add the `mean_date` that we have subtracted during</span>
+                <span class="c1"># fitting of the data.</span>
+                <span class="n">series</span> <span class="o">=</span> <span class="n">synth_df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+                <span class="n">series</span><span class="p">[</span><span class="n">series</span><span class="o">.</span><span class="n">notna</span><span class="p">()]</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">col_transform_data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+                    <span class="s2">&quot;mean_date&quot;</span><span class="p">,</span> <span class="mi">0</span>
+                <span class="p">)</span>
+
+                <span class="c1"># Multiply by 1e9 since we divided by this</span>
+                <span class="c1"># the original timestamp in the processing step.</span>
+                <span class="n">synth_df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">series</span> <span class="o">*</span> <span class="mf">1e9</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="k">pass</span>
+
+        <span class="c1"># Attempt to cast the synthetic data to</span>
+        <span class="c1"># the original data types.</span>
+        <span class="n">valid_idx</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">synth_df</span><span class="p">)))</span>
+        <span class="n">_synth_df</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">column_dtypes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">series</span> <span class="o">=</span> <span class="n">synth_df</span><span class="p">[</span><span class="n">c</span><span class="p">]</span>
+
+                <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">is_numeric_dtype</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">column_has_missing</span><span class="p">[</span><span class="n">c</span><span class="p">]:</span>
+                        <span class="c1"># If original data type is numeric,</span>
+                        <span class="c1"># attempt to replace the &lt;NA&gt; token</span>
+                        <span class="c1"># with NaN for casting to work.</span>
+                        <span class="n">series</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&lt;NA&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;NaN&quot;</span><span class="p">)</span>
+
+                    <span class="k">if</span> <span class="n">series</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="s2">&quot;object&quot;</span><span class="p">:</span>
+                        <span class="c1"># Explicitly unify the data type</span>
+                        <span class="c1"># in case we have mixed types in the series.</span>
+                        <span class="n">series</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+
+                        <span class="n">nan_idx</span> <span class="o">=</span> <span class="kc">None</span>
+                        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">column_has_missing</span><span class="p">[</span><span class="n">c</span><span class="p">]:</span>
+                            <span class="c1"># Values where nan was generated first is treated</span>
+                            <span class="c1"># as a valid nan value.</span>
+                            <span class="n">nan_idx</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">NUMERIC_NA_TOKEN</span><span class="p">)</span>
+                            <span class="n">series</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">nan_idx</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;NaN&quot;</span>
+
+                        <span class="c1"># Removed indices of invalid values. Invalid values</span>
+                        <span class="c1"># are those where nan was generated somewhere after</span>
+                        <span class="c1"># the first token set for the variable or that any</span>
+                        <span class="c1"># non-numeric value is present.</span>
+                        <span class="n">re_invalid_pattern</span> <span class="o">=</span> <span class="n">INVALID_NUMS_RE</span>
+
+                        <span class="c1"># The initially changed &quot;NaN&quot; above will be</span>
+                        <span class="c1"># included by the pattern. Make sure we add indices</span>
+                        <span class="c1"># back to the valid_idx list.</span>
+                        <span class="n">invalid_idx</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span>
+                            <span class="n">re_invalid_pattern</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span>
+                        <span class="p">)</span>
+                        <span class="n">valid_idx</span> <span class="o">=</span> <span class="n">valid_idx</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">invalid_idx</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+
+                        <span class="k">if</span> <span class="n">nan_idx</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                            <span class="n">valid_idx</span> <span class="o">=</span> <span class="n">valid_idx</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">nan_idx</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+
+                        <span class="c1"># Temporarily set them to NaN, but we will remove these</span>
+                        <span class="c1"># observations later.</span>
+                        <span class="n">series</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">invalid_idx</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;NaN&quot;</span>
+                <span class="k">elif</span> <span class="n">pd</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">is_object_dtype</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+                    <span class="c1"># In case the values in this column is &quot;integral&quot;</span>
+                    <span class="c1"># but are cast as object in the real data, let&#39;s try</span>
+                    <span class="c1"># to convert them first to int before casting to the</span>
+                    <span class="c1"># correct object type.</span>
+                    <span class="c1"># Not doing this will incorrectly generate &quot;float&quot;-looking</span>
+                    <span class="c1"># data for object types, but are integral, in the</span>
+                    <span class="c1"># fb-comments dataset.</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">series</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Int64Dtype</span><span class="p">())</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+                    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+                        <span class="k">pass</span>
+                    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                        <span class="k">pass</span>
+
+                <span class="k">if</span> <span class="n">series</span><span class="o">.</span><span class="n">dtype</span> <span class="o">!=</span> <span class="n">d</span><span class="p">:</span>
+                    <span class="c1"># To speed up a bit, only cast if the dtypes</span>
+                    <span class="c1"># is not the same as the expected type.</span>
+                    <span class="n">series</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+                <span class="n">_synth_df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">series</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>  <span class="c1"># nolint</span>
+                <span class="n">_synth_df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">synth_df</span><span class="p">[</span><span class="n">c</span><span class="p">])</span>
+
+        <span class="n">synth_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">_synth_df</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1"># We expect columns that have no missing values in the</span>
+        <span class="c1"># training data should have no &lt;NA&gt; in them.</span>
+        <span class="n">with_missing_cols</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">col</span> <span class="k">for</span> <span class="n">col</span><span class="p">,</span> <span class="n">missing</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">column_has_missing</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">missing</span>
+        <span class="p">]</span>
+        <span class="k">if</span> <span class="n">with_missing_cols</span><span class="p">:</span>
+            <span class="n">synth_df</span><span class="p">[</span><span class="n">with_missing_cols</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">synth_df</span><span class="p">[</span><span class="n">with_missing_cols</span><span class="p">]</span>
+                <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;.*</span><span class="si">{</span><span class="n">NUMERIC_NA_TOKEN</span><span class="si">}</span><span class="s2">+.*&quot;</span><span class="p">,</span> <span class="s2">&quot;NaN&quot;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&lt;NA&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;NaN&quot;</span><span class="p">)</span>
+                <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;NaN&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">valid_idx</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">synth_df</span> <span class="o">=</span> <span class="n">synth_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="nb">sorted</span><span class="p">(</span><span class="n">valid_idx</span><span class="p">)]</span>
+
+        <span class="k">return</span> <span class="n">synth_df</span></div>
+
+<div class="viewcode-block" id="REaLSampler._generate"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.REaLSampler._generate">[docs]</a>    <span class="k">def</span> <span class="nf">_generate</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">device</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">,</span>
+        <span class="n">as_numpy</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">constrain_tokens_gen</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">generate_kwargs</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+        <span class="c1"># This leverages the generic interface of HuggingFace transformer models&#39; `.generate` method.</span>
+        <span class="c1"># Refer to the transformers documentation for valid arguments to `generate_kwargs`.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">constrain_tokens_gen</span><span class="p">:</span>
+            <span class="n">generate_kwargs</span><span class="p">[</span><span class="s2">&quot;prefix_allowed_tokens_fn&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prefix_allowed_tokens_fn</span>
+
+        <span class="n">vocab</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vocab</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_type</span> <span class="o">==</span> <span class="n">ModelType</span><span class="o">.</span><span class="n">tabular</span>
+            <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">vocab</span><span class="p">[</span><span class="s2">&quot;decoder&quot;</span><span class="p">]</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Make sure that the [RMASK] token will never be generated.</span>
+        <span class="n">RMASK_ID</span> <span class="o">=</span> <span class="n">vocab</span><span class="p">[</span><span class="s2">&quot;token2id&quot;</span><span class="p">][</span><span class="n">SpecialTokens</span><span class="o">.</span><span class="n">RMASK</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">generate_kwargs</span><span class="p">[</span><span class="s2">&quot;suppress_tokens&quot;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">generate_kwargs</span><span class="p">[</span><span class="s2">&quot;suppress_tokens&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">RMASK_ID</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">generate_kwargs</span><span class="p">[</span><span class="s2">&quot;suppress_tokens&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">RMASK_ID</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="s2">&quot;bos_token_id&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">generate_kwargs</span><span class="p">:</span>
+            <span class="n">generate_kwargs</span><span class="p">[</span><span class="s2">&quot;bos_token_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">vocab</span><span class="p">[</span><span class="s2">&quot;token2id&quot;</span><span class="p">][</span><span class="n">SpecialTokens</span><span class="o">.</span><span class="n">BOS</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="s2">&quot;pad_token_id&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">generate_kwargs</span><span class="p">:</span>
+            <span class="n">generate_kwargs</span><span class="p">[</span><span class="s2">&quot;pad_token_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">vocab</span><span class="p">[</span><span class="s2">&quot;token2id&quot;</span><span class="p">][</span><span class="n">SpecialTokens</span><span class="o">.</span><span class="n">PAD</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="s2">&quot;eos_token_id&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">generate_kwargs</span><span class="p">:</span>
+            <span class="n">generate_kwargs</span><span class="p">[</span><span class="s2">&quot;eos_token_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">vocab</span><span class="p">[</span><span class="s2">&quot;token2id&quot;</span><span class="p">][</span><span class="n">SpecialTokens</span><span class="o">.</span><span class="n">EOS</span><span class="p">]</span>
+
+        <span class="n">_samples</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="o">**</span><span class="n">generate_kwargs</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">as_numpy</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">device</span> <span class="o">==</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cpu&quot;</span><span class="p">):</span>
+                <span class="n">_samples</span> <span class="o">=</span> <span class="n">_samples</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">_samples</span> <span class="o">=</span> <span class="n">_samples</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">_samples</span></div>
+
+<div class="viewcode-block" id="REaLSampler._validate_synth_sample"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.REaLSampler._validate_synth_sample">[docs]</a>    <span class="k">def</span> <span class="nf">_validate_synth_sample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">synth_sample</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="c1"># Validate data</span>
+        <span class="n">valid_mask</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="c1"># Validate that the generated value for a column is correct.</span>
+        <span class="c1"># Use the column identifier as basis for the validation.</span>
+        <span class="c1"># Is this useful when we actually filter the vocabulary</span>
+        <span class="c1"># during generation???</span>
+        <span class="c1"># Let&#39;s try removing this for now and see what happens... XD</span>
+        <span class="c1"># We remove this because the operations here are expensive, and</span>
+        <span class="c1"># slow down the sampling.</span>
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">synth_sample</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="n">valid_mask</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">synth_sample</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">col</span><span class="p">))</span>
+
+        <span class="n">valid_mask</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">valid_mask</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">synth_sample</span> <span class="o">=</span> <span class="n">synth_sample</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">valid_mask</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">synth_sample</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+            <span class="c1"># Handle this exception in the sampling function.</span>
+            <span class="k">raise</span> <span class="n">SampleEmptyError</span><span class="p">(</span><span class="n">in_size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">valid_mask</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">synth_sample</span></div>
+
+<div class="viewcode-block" id="REaLSampler._recover_data_values"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.REaLSampler._recover_data_values">[docs]</a>    <span class="k">def</span> <span class="nf">_recover_data_values</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">synth_sample</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="n">processed_columns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Index</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processed_columns</span><span class="p">)</span>
+        <span class="n">numeric_datetime_cols</span> <span class="o">=</span> <span class="n">processed_columns</span><span class="p">[</span>
+            <span class="n">processed_columns</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">is_numeric_datetime_col</span><span class="p">)</span>
+        <span class="p">]</span>
+
+        <span class="n">_tmp_synth_df</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">_tmp_synth_cols</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="c1"># Get the actual column name for numerically</span>
+        <span class="c1"># transformed data.</span>
+        <span class="n">numeric_col_group</span> <span class="o">=</span> <span class="n">numeric_datetime_cols</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+            <span class="n">numeric_datetime_cols</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">decode_partition_numeric_col</span><span class="p">)</span>
+        <span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">col</span><span class="p">,</span> <span class="n">c_group</span> <span class="ow">in</span> <span class="n">numeric_col_group</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="c1"># Aggregate the partitioned data for the actual column.</span>
+            <span class="n">group_series</span> <span class="o">=</span> <span class="n">synth_sample</span><span class="p">[</span><span class="n">c_group</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">group_series</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="s2">&quot;object&quot;</span><span class="p">:</span>
+                <span class="c1"># This automatically casts into numeric type if all values are</span>
+                <span class="c1"># valid numbers.</span>
+                <span class="n">group_series</span> <span class="o">=</span> <span class="n">group_series</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s2">&quot;0&quot;</span><span class="p">)</span>
+
+                <span class="c1"># If all values are zeros for a group, then it will be left</span>
+                <span class="c1"># empty. Let&#39;s explicitly set the zero value back.</span>
+                <span class="c1"># TODO: review other use cases that this may not be correct.</span>
+                <span class="c1"># For example, zero may not be in the domain of the</span>
+                <span class="c1"># variable `CompetitionDistance` in the Rossmann dataset.</span>
+                <span class="n">group_series</span><span class="p">[</span><span class="n">group_series</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+                <span class="c1"># If the data is still an object type, try to fix potential</span>
+                <span class="c1"># errors.</span>
+                <span class="k">if</span> <span class="n">group_series</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="s2">&quot;object&quot;</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">is_numeric_col</span><span class="p">(</span><span class="n">col</span><span class="p">):</span>
+                        <span class="k">try</span><span class="p">:</span>
+                            <span class="c1"># This usually happens when the decimal point was generated</span>
+                            <span class="c1"># multiple times in the value. This simply removes the succeeding</span>
+                            <span class="c1"># occurence of the decimal point.</span>
+                            <span class="n">group_series</span> <span class="o">=</span> <span class="p">(</span>
+                                <span class="n">group_series</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">fix_multi_decimal</span><span class="p">)</span>
+                                <span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+                                <span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">NA</span><span class="p">)</span>
+                            <span class="p">)</span>
+                        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                            <span class="k">pass</span>
+                    <span class="k">elif</span> <span class="n">is_datetime_col</span><span class="p">(</span><span class="n">col</span><span class="p">):</span>
+                        <span class="c1"># We expect that timestamp data is represented fully</span>
+                        <span class="c1"># by numbers. Just remove all non-numeric characters.</span>
+                        <span class="c1"># This may introduce invalid values somehow, but validators</span>
+                        <span class="c1"># can later be implemented to remove these.</span>
+                        <span class="n">group_series</span> <span class="o">=</span> <span class="p">(</span>
+                            <span class="n">group_series</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;[^0-9]&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                            <span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+                            <span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">NA</span><span class="p">)</span>
+                        <span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown column dtype for </span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">is_numeric_col</span><span class="p">(</span><span class="n">col</span><span class="p">):</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="c1"># Try to force convert values to Int64Dtype</span>
+                        <span class="n">group_series</span> <span class="o">=</span> <span class="n">group_series</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Int64Dtype</span><span class="p">())</span>
+                    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+                        <span class="k">pass</span>
+                    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                        <span class="c1"># Example:</span>
+                        <span class="c1"># ValueError: invalid literal for int() with base 10: &#39;1271.0942&#39;</span>
+                        <span class="k">pass</span>
+
+            <span class="n">_tmp_synth_df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">group_series</span><span class="p">)</span>
+            <span class="n">_tmp_synth_cols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+
+        <span class="c1"># Add data for categorical columns</span>
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">synth_sample</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">numeric_datetime_cols</span><span class="p">:</span>
+                <span class="k">continue</span>
+
+            <span class="n">_tmp_synth_df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">synth_sample</span><span class="p">[</span><span class="n">col</span><span class="p">])</span>
+            <span class="n">_tmp_synth_cols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+
+        <span class="n">synth_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">_tmp_synth_df</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span>
+            <span class="n">drop</span><span class="o">=</span><span class="s2">&quot;index&quot;</span>
+        <span class="p">)</span>
+        <span class="n">synth_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">_tmp_synth_cols</span>
+        <span class="n">synth_df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">synth_sample</span><span class="o">.</span><span class="n">index</span>
+
+        <span class="k">return</span> <span class="n">synth_df</span></div>
+
+<div class="viewcode-block" id="REaLSampler._processes_sample"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.REaLSampler._processes_sample">[docs]</a>    <span class="k">def</span> <span class="nf">_processes_sample</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">sample_outputs</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+        <span class="n">vocab</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span>
+        <span class="n">relate_ids</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">validator</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ObservationValidator</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sample_outputs</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">_decode_tokens</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+            <span class="c1"># No need to remove [BOS] and [EOS] tokens</span>
+            <span class="c1"># here, it will be handled later.</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">vocab</span><span class="p">[</span><span class="s2">&quot;id2token&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">s</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_type</span> <span class="o">==</span> <span class="n">ModelType</span><span class="o">.</span><span class="n">tabular</span><span class="p">:</span>
+            <span class="c1"># Slice to remove the [BOS] and [EOS] tokens</span>
+            <span class="n">synth_sample</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">_decode_tokens</span><span class="p">(</span><span class="n">s</span><span class="p">)[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">sample_outputs</span><span class="p">],</span>
+                <span class="n">columns</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">processed_columns</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="n">relate_ids</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="n">_samples</span> <span class="o">=</span> <span class="p">[</span><span class="n">_decode_tokens</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">sample_outputs</span><span class="p">]</span>
+
+            <span class="c1"># Unpack the tokens and remove any special tokens.</span>
+            <span class="c1"># Also perform segmentation of observations for</span>
+            <span class="c1"># the relational model.</span>
+            <span class="n">group_ids</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">samples</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">ix</span><span class="p">,</span> <span class="p">(</span><span class="n">rel_id</span><span class="p">,</span> <span class="n">dg</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">relate_ids</span><span class="p">,</span> <span class="n">_samples</span><span class="p">)):</span>
+                <span class="n">group</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="n">ind</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="k">for</span> <span class="n">token_ix</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dg</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">v</span> <span class="ow">in</span> <span class="p">[</span><span class="n">SpecialTokens</span><span class="o">.</span><span class="n">BMEM</span><span class="p">,</span> <span class="n">SpecialTokens</span><span class="o">.</span><span class="n">EOS</span><span class="p">]:</span>
+                        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                            <span class="c1"># Review later whether we should void</span>
+                            <span class="c1"># the entire generation process for this</span>
+                            <span class="c1"># input or not. For now, let&#39;s just</span>
+                            <span class="c1"># throw this particular observation that didn&#39;t</span>
+                            <span class="c1"># satisfy the expected col_size.</span>
+                            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">col_size</span><span class="p">:</span>
+                                <span class="n">group</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span>
+                            <span class="k">else</span><span class="p">:</span>
+                                <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                                    <span class="sa">f</span><span class="s2">&quot;Discarding this observation for input index:</span><span class="si">{</span><span class="n">ix</span><span class="si">}</span><span class="s2"> with an invalid number of columns: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span>
+                                <span class="p">)</span>
+                            <span class="n">ind</span> <span class="o">=</span> <span class="p">[]</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">v</span> <span class="o">==</span> <span class="n">SpecialTokens</span><span class="o">.</span><span class="n">EOS</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">token_ix</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+                            <span class="k">break</span>
+                    <span class="k">elif</span> <span class="n">v</span> <span class="ow">in</span> <span class="p">[</span><span class="n">SpecialTokens</span><span class="o">.</span><span class="n">BOS</span><span class="p">,</span> <span class="n">SpecialTokens</span><span class="o">.</span><span class="n">EMEM</span><span class="p">]:</span>
+                        <span class="k">continue</span>
+                    <span class="k">elif</span> <span class="n">v</span> <span class="o">==</span> <span class="n">SpecialTokens</span><span class="o">.</span><span class="n">PAD</span><span class="p">:</span>
+                        <span class="c1"># This should not go here, but putting this just in case.</span>
+                        <span class="k">break</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">ind</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+
+                <span class="n">group_ids</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">rel_id</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">group</span><span class="p">))</span>
+                <span class="n">samples</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
+
+            <span class="c1"># Create a unique index for observations</span>
+            <span class="c1"># that are supposed to be generated by the</span>
+            <span class="c1"># same input data.</span>
+            <span class="n">synth_sample</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+                <span class="n">samples</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">processed_columns</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">group_ids</span>
+            <span class="p">)</span>
+
+        <span class="c1"># # Is this useful when we actually filter the vocabulary</span>
+        <span class="c1"># # during generation???</span>
+        <span class="c1"># # Let&#39;s try removing this for now and see what happens... XD</span>
+        <span class="c1"># # We remove this because the operations here are expensive, and</span>
+        <span class="c1"># # slow down the sampling.</span>
+        <span class="c1"># synth_sample = self._validate_synth_sample(synth_sample)</span>
+
+        <span class="c1"># Extract the values</span>
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">synth_sample</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="c1"># Filter only columns that we have explicitly processed.</span>
+            <span class="c1"># Since the column values have been previously validated</span>
+            <span class="c1"># to only contain values that match the column, then it</span>
+            <span class="c1"># is safe to just check the first row for this contraint.</span>
+            <span class="k">if</span> <span class="n">synth_sample</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">col</span><span class="p">):</span>
+                <span class="n">synth_sample</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">decode_column_values</span><span class="p">(</span><span class="n">synth_sample</span><span class="p">[</span><span class="n">col</span><span class="p">])</span>
+
+        <span class="n">synth_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_recover_data_values</span><span class="p">(</span><span class="n">synth_sample</span><span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Generation stats: </span><span class="si">{</span><span class="n">synth_df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">synth_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_convert_to_table</span><span class="p">(</span><span class="n">synth_df</span><span class="p">)</span>
+        <span class="n">synth_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_missing</span><span class="p">(</span><span class="n">synth_df</span><span class="p">)</span>
+        <span class="n">synth_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_data</span><span class="p">(</span><span class="n">synth_df</span><span class="p">,</span> <span class="n">validator</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">synth_df</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+            <span class="c1"># Handle this exception in the sampling function.</span>
+            <span class="k">raise</span> <span class="n">SampleEmptyError</span><span class="p">(</span><span class="n">in_size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">sample_outputs</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">synth_df</span></div>
+
+<div class="viewcode-block" id="REaLSampler._validate_data"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.REaLSampler._validate_data">[docs]</a>    <span class="k">def</span> <span class="nf">_validate_data</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">synth_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">validator</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ObservationValidator</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">validator</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">synth_df</span> <span class="o">=</span> <span class="n">synth_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">validator</span><span class="o">.</span><span class="n">validate_df</span><span class="p">(</span><span class="n">synth_df</span><span class="p">)]</span>
+
+        <span class="k">return</span> <span class="n">synth_df</span></div>
+
+<div class="viewcode-block" id="REaLSampler._validate_missing"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.REaLSampler._validate_missing">[docs]</a>    <span class="k">def</span> <span class="nf">_validate_missing</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">synth_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="c1"># Drop the rows where any one of the columns that should not have</span>
+        <span class="c1"># a missing value have at least one.</span>
+        <span class="k">return</span> <span class="n">synth_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">drop_na_cols</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="TabularSampler"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.TabularSampler">[docs]</a><span class="k">class</span> <span class="nc">TabularSampler</span><span class="p">(</span><span class="n">REaLSampler</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sampler class for tabular data generation.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">model_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">model</span><span class="p">:</span> <span class="n">PreTrainedModel</span><span class="p">,</span>
+        <span class="n">vocab</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span>
+        <span class="n">processed_columns</span><span class="p">:</span> <span class="n">List</span><span class="p">,</span>
+        <span class="n">max_length</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">col_size</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">col_idx_ids</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span>
+        <span class="n">columns</span><span class="p">:</span> <span class="n">List</span><span class="p">,</span>
+        <span class="n">datetime_columns</span><span class="p">:</span> <span class="n">List</span><span class="p">,</span>
+        <span class="n">column_dtypes</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span>
+        <span class="n">column_has_missing</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span>
+        <span class="n">drop_na_cols</span><span class="p">:</span> <span class="n">List</span><span class="p">,</span>
+        <span class="n">col_transform_data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span>
+        <span class="n">random_state</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1029</span><span class="p">,</span>
+        <span class="n">device</span><span class="o">=</span><span class="s2">&quot;cuda&quot;</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">model_type</span><span class="p">,</span>
+            <span class="n">model</span><span class="p">,</span>
+            <span class="n">vocab</span><span class="p">,</span>
+            <span class="n">processed_columns</span><span class="p">,</span>
+            <span class="n">max_length</span><span class="p">,</span>
+            <span class="n">col_size</span><span class="p">,</span>
+            <span class="n">col_idx_ids</span><span class="p">,</span>
+            <span class="n">columns</span><span class="p">,</span>
+            <span class="n">datetime_columns</span><span class="p">,</span>
+            <span class="n">column_dtypes</span><span class="p">,</span>
+            <span class="n">column_has_missing</span><span class="p">,</span>
+            <span class="n">drop_na_cols</span><span class="p">,</span>
+            <span class="n">col_transform_data</span><span class="p">,</span>
+            <span class="n">random_state</span><span class="p">,</span>
+            <span class="n">device</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">output_vocab</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vocab</span>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="TabularSampler.sampler_from_model"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.TabularSampler.sampler_from_model">[docs]</a>    <span class="k">def</span> <span class="nf">sampler_from_model</span><span class="p">(</span><span class="n">rtf_model</span><span class="p">,</span> <span class="n">device</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;cuda&quot;</span><span class="p">):</span>
+        <span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+        <span class="k">assert</span> <span class="n">rtf_model</span><span class="o">.</span><span class="n">tabular_max_length</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="k">assert</span> <span class="n">rtf_model</span><span class="o">.</span><span class="n">tabular_col_size</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="k">assert</span> <span class="n">rtf_model</span><span class="o">.</span><span class="n">col_transform_data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+
+        <span class="k">return</span> <span class="n">TabularSampler</span><span class="p">(</span>
+            <span class="n">model_type</span><span class="o">=</span><span class="n">rtf_model</span><span class="o">.</span><span class="n">model_type</span><span class="p">,</span>
+            <span class="n">model</span><span class="o">=</span><span class="n">rtf_model</span><span class="o">.</span><span class="n">model</span><span class="p">,</span>
+            <span class="n">vocab</span><span class="o">=</span><span class="n">rtf_model</span><span class="o">.</span><span class="n">vocab</span><span class="p">,</span>
+            <span class="n">processed_columns</span><span class="o">=</span><span class="n">rtf_model</span><span class="o">.</span><span class="n">processed_columns</span><span class="p">,</span>
+            <span class="n">max_length</span><span class="o">=</span><span class="n">rtf_model</span><span class="o">.</span><span class="n">tabular_max_length</span><span class="p">,</span>
+            <span class="n">col_size</span><span class="o">=</span><span class="n">rtf_model</span><span class="o">.</span><span class="n">tabular_col_size</span><span class="p">,</span>
+            <span class="n">col_idx_ids</span><span class="o">=</span><span class="n">rtf_model</span><span class="o">.</span><span class="n">col_idx_ids</span><span class="p">,</span>
+            <span class="n">columns</span><span class="o">=</span><span class="n">rtf_model</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span>
+            <span class="n">datetime_columns</span><span class="o">=</span><span class="n">rtf_model</span><span class="o">.</span><span class="n">datetime_columns</span><span class="p">,</span>
+            <span class="n">column_dtypes</span><span class="o">=</span><span class="n">rtf_model</span><span class="o">.</span><span class="n">column_dtypes</span><span class="p">,</span>
+            <span class="n">column_has_missing</span><span class="o">=</span><span class="n">rtf_model</span><span class="o">.</span><span class="n">column_has_missing</span><span class="p">,</span>
+            <span class="n">drop_na_cols</span><span class="o">=</span><span class="n">rtf_model</span><span class="o">.</span><span class="n">drop_na_cols</span><span class="p">,</span>
+            <span class="n">col_transform_data</span><span class="o">=</span><span class="n">rtf_model</span><span class="o">.</span><span class="n">col_transform_data</span><span class="p">,</span>
+            <span class="n">random_state</span><span class="o">=</span><span class="n">rtf_model</span><span class="o">.</span><span class="n">random_state</span><span class="p">,</span>
+            <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="TabularSampler._prefix_allowed_tokens_fn"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.TabularSampler._prefix_allowed_tokens_fn">[docs]</a>    <span class="k">def</span> <span class="nf">_prefix_allowed_tokens_fn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_id</span><span class="p">,</span> <span class="n">input_ids</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">:</span>
+        <span class="c1"># https://huggingface.co/docs/transformers/v4.24.0/en/main_classes/text_generation#transformers.generation_utils.GenerationMixin.generate.prefix_allowed_tokens_fn</span>
+        <span class="c1"># For the tabular data, len(input_ids) == 1 -&gt; [BOS]</span>
+
+        <span class="c1"># Subtract by 1 since the first valid token has index zero in</span>
+        <span class="c1"># col_idx_ids while the input_ids already contains the [BOS] token.</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">col_idx_ids</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="nb">len</span><span class="p">(</span><span class="n">input_ids</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">vocab</span><span class="p">[</span><span class="s2">&quot;token2id&quot;</span><span class="p">][</span><span class="n">SpecialTokens</span><span class="o">.</span><span class="n">EOS</span><span class="p">]]</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="TabularSampler._process_seed_input"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.TabularSampler._process_seed_input">[docs]</a>    <span class="k">def</span> <span class="nf">_process_seed_input</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">seed_input</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
+        <span class="c1"># TODO: The heuristic of choosing the valid columns shouldn&#39;t contradict</span>
+        <span class="c1"># with the `first_col_type` argument of `data_utils.process_data`.`</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">seed_input</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
+            <span class="n">input_cols</span> <span class="o">=</span> <span class="n">seed_input</span><span class="o">.</span><span class="n">columns</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">seed_input</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="n">input_cols</span> <span class="o">=</span> <span class="n">seed_input</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown seed_input type: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">seed_input</span><span class="p">)</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
+
+        <span class="n">valid_cols</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">col</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">input_cols</span><span class="p">:</span>
+                <span class="k">break</span>
+            <span class="n">valid_cols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">seed_input</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="n">seed_input</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">({</span><span class="mi">0</span><span class="p">:</span> <span class="n">seed_input</span><span class="p">},</span> <span class="n">orient</span><span class="o">=</span><span class="s2">&quot;index&quot;</span><span class="p">)</span>
+
+        <span class="n">seed_input</span> <span class="o">=</span> <span class="n">seed_input</span><span class="p">[</span><span class="n">valid_cols</span><span class="p">]</span>
+
+        <span class="n">seed_data</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">process_data</span><span class="p">(</span>
+            <span class="n">df</span><span class="o">=</span><span class="n">seed_input</span><span class="p">,</span> <span class="n">col_transform_data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">col_transform_data</span>
+        <span class="p">)</span>
+        <span class="n">seed_data</span> <span class="o">=</span> <span class="n">make_dataset</span><span class="p">(</span><span class="n">seed_data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">vocab</span><span class="p">,</span> <span class="n">mask_rate</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">affix_eos</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="n">generated</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">seed_data</span><span class="p">[</span><span class="s2">&quot;input_ids&quot;</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">generated</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">generated</span> <span class="o">=</span> <span class="n">generated</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">generated</span></div>
+
+<div class="viewcode-block" id="TabularSampler.sample_tabular"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.TabularSampler.sample_tabular">[docs]</a>    <span class="k">def</span> <span class="nf">sample_tabular</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">n_samples</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">gen_batch</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">128</span><span class="p">,</span>
+        <span class="n">device</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;cuda&quot;</span><span class="p">,</span>
+        <span class="n">seed_input</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">constrain_tokens_gen</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">validator</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ObservationValidator</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">continuous_empty_limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="n">suppress_tokens</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">forced_decoder_ids</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">generate_kwargs</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">device</span> <span class="o">!=</span> <span class="n">device</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+        <span class="n">synth_df</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">if</span> <span class="n">seed_input</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">generated</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span>
+                <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">vocab</span><span class="p">[</span><span class="s2">&quot;token2id&quot;</span><span class="p">][</span><span class="n">SpecialTokens</span><span class="o">.</span><span class="n">BOS</span><span class="p">]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">)]</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">generated</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process_seed_input</span><span class="p">(</span><span class="n">seed_input</span><span class="o">=</span><span class="n">seed_input</span><span class="p">)</span>
+
+        <span class="n">generated</span> <span class="o">=</span> <span class="n">generated</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+
+        <span class="k">with</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="n">n_samples</span><span class="p">)</span> <span class="k">as</span> <span class="n">pbar</span><span class="p">:</span>
+            <span class="n">pbar_num_gen</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">num_generated</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">empty_limit</span> <span class="o">=</span> <span class="n">continuous_empty_limit</span>
+
+            <span class="k">while</span> <span class="n">num_generated</span> <span class="o">&lt;</span> <span class="n">n_samples</span><span class="p">:</span>
+                <span class="c1"># https://huggingface.co/docs/transformers/internal/generation_utils</span>
+                <span class="n">sample_outputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_generate</span><span class="p">(</span>
+                    <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span>
+                    <span class="n">as_numpy</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                    <span class="n">constrain_tokens_gen</span><span class="o">=</span><span class="n">constrain_tokens_gen</span><span class="p">,</span>
+                    <span class="n">inputs</span><span class="o">=</span><span class="n">generated</span><span class="p">,</span>
+                    <span class="n">do_sample</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                    <span class="n">max_length</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_length</span><span class="p">,</span>
+                    <span class="n">num_return_sequences</span><span class="o">=</span><span class="n">gen_batch</span><span class="p">,</span>
+                    <span class="n">bos_token_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">vocab</span><span class="p">[</span><span class="s2">&quot;token2id&quot;</span><span class="p">][</span><span class="n">SpecialTokens</span><span class="o">.</span><span class="n">BOS</span><span class="p">],</span>
+                    <span class="n">pad_token_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">vocab</span><span class="p">[</span><span class="s2">&quot;token2id&quot;</span><span class="p">][</span><span class="n">SpecialTokens</span><span class="o">.</span><span class="n">PAD</span><span class="p">],</span>
+                    <span class="n">eos_token_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">vocab</span><span class="p">[</span><span class="s2">&quot;token2id&quot;</span><span class="p">][</span><span class="n">SpecialTokens</span><span class="o">.</span><span class="n">EOS</span><span class="p">],</span>
+                    <span class="n">suppress_tokens</span><span class="o">=</span><span class="n">suppress_tokens</span><span class="p">,</span>
+                    <span class="n">forced_decoder_ids</span><span class="o">=</span><span class="n">forced_decoder_ids</span><span class="p">,</span>
+                    <span class="o">**</span><span class="n">generate_kwargs</span><span class="p">,</span>
+                <span class="p">)</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">total_gen_samples</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">sample_outputs</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">invalid_gen_samples</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">sample_outputs</span><span class="p">)</span>
+
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">synth_sample</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_processes_sample</span><span class="p">(</span>
+                        <span class="n">sample_outputs</span><span class="o">=</span><span class="n">sample_outputs</span><span class="p">,</span>
+                        <span class="n">vocab</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">vocab</span><span class="p">,</span>
+                        <span class="n">validator</span><span class="o">=</span><span class="n">validator</span><span class="p">,</span>
+                    <span class="p">)</span>
+                    <span class="n">empty_limit</span> <span class="o">=</span> <span class="n">continuous_empty_limit</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">invalid_gen_samples</span> <span class="o">-=</span> <span class="nb">len</span><span class="p">(</span><span class="n">synth_sample</span><span class="p">)</span>
+
+                <span class="k">except</span> <span class="n">SampleEmptyError</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+                    <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;This batch returned an empty valid synth_sample!&quot;</span><span class="p">)</span>
+                    <span class="n">empty_limit</span> <span class="o">-=</span> <span class="mi">1</span>
+                    <span class="k">if</span> <span class="n">empty_limit</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="n">SampleEmptyLimitError</span><span class="p">(</span>
+                            <span class="sa">f</span><span class="s2">&quot;The model has generated empty sample batches for </span><span class="si">{</span><span class="n">continuous_empty_limit</span><span class="si">}</span><span class="s2"> consecutive rounds!&quot;</span>
+                        <span class="p">)</span> <span class="kn">from</span> <span class="nn">exc</span>
+                    <span class="k">continue</span>
+
+                <span class="n">num_generated</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">synth_sample</span><span class="p">)</span>
+                <span class="n">synth_df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">synth_sample</span><span class="p">)</span>
+
+                <span class="c1"># Update process bar</span>
+                <span class="n">pbar</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">num_generated</span> <span class="o">-</span> <span class="n">pbar_num_gen</span><span class="p">)</span>
+                <span class="n">pbar_num_gen</span> <span class="o">=</span> <span class="n">num_generated</span>
+
+        <span class="n">synth_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">synth_df</span><span class="p">)</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span>
+            <span class="n">n</span><span class="o">=</span><span class="n">n_samples</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">random_state</span>
+        <span class="p">)</span>
+        <span class="n">synth_df</span> <span class="o">=</span> <span class="n">synth_df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="s2">&quot;index&quot;</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Generated </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">invalid_gen_samples</span><span class="si">}</span><span class="s2"> invalid samples out of total </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">total_gen_samples</span><span class="si">}</span><span class="s2"> samples generated. Sampling efficiency is: </span><span class="si">{</span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="bp">self</span><span class="o">.</span><span class="n">invalid_gen_samples</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">total_gen_samples</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">%&quot;</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">synth_df</span></div>
+
+<div class="viewcode-block" id="TabularSampler.predict"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.TabularSampler.predict">[docs]</a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+        <span class="n">target_col</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">target_pos_val</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">batch</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">32</span><span class="p">,</span>
+        <span class="n">obs_sample</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
+        <span class="n">fillunk</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">device</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;cuda&quot;</span><span class="p">,</span>
+        <span class="n">disable_progress_bar</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">generate_kwargs</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        fillunk: Fill unknown tokens with the mode of the batch.</span>
+<span class="sd">        target_pos_val: Categorical value for the positive target. This is produces a</span>
+<span class="sd">         one-to-many prediction relative to `target_pos_val` for targets that are multi-categorical.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">device</span> <span class="o">!=</span> <span class="n">device</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+
+        <span class="n">preds</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">unk_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vocab</span><span class="p">[</span><span class="s2">&quot;token2id&quot;</span><span class="p">][</span><span class="n">SpecialTokens</span><span class="o">.</span><span class="n">UNK</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">target_col</span> <span class="ow">and</span> <span class="n">target_col</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">target_col</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">disable_progress_bar</span><span class="p">:</span>
+            <span class="n">datasets</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">disable_progress_bar</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="n">batch</span><span class="p">):</span>
+            <span class="n">seed_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process_seed_input</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="n">batch</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">fillunk</span><span class="p">:</span>
+                <span class="n">mode</span> <span class="o">=</span> <span class="n">seed_data</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
+                <span class="n">seed_data</span><span class="p">[</span><span class="n">seed_data</span> <span class="o">==</span> <span class="n">unk_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">seed_data</span><span class="p">),</span> <span class="mi">1</span><span class="p">))[</span>
+                    <span class="n">seed_data</span> <span class="o">==</span> <span class="n">unk_id</span>
+                <span class="p">]</span>
+
+            <span class="n">sample_outputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_generate</span><span class="p">(</span>
+                <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span>
+                <span class="n">do_sample</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">num_return_sequences</span><span class="o">=</span><span class="n">obs_sample</span><span class="p">,</span>
+                <span class="n">input_ids</span><span class="o">=</span><span class="n">seed_data</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span>
+                <span class="n">max_length</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_length</span><span class="p">,</span>
+                <span class="n">suppress_tokens</span><span class="o">=</span><span class="p">[</span><span class="n">unk_id</span><span class="p">],</span>
+                <span class="o">**</span><span class="n">generate_kwargs</span><span class="p">,</span>
+            <span class="p">)</span>
+
+            <span class="n">synth_sample</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_processes_sample</span><span class="p">(</span>
+                <span class="n">sample_outputs</span><span class="o">=</span><span class="n">sample_outputs</span><span class="p">,</span>
+                <span class="n">vocab</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">vocab</span><span class="p">,</span>
+                <span class="n">validator</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="c1"># Reset the index so that we are sure that</span>
+            <span class="c1"># the index is monotonically increasing.</span>
+            <span class="c1"># There could be instances where some generation</span>
+            <span class="c1"># problems arise for some records, we don&#39;t</span>
+            <span class="c1"># handle that here for now.</span>
+            <span class="n">synth_sample</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+            <span class="n">preds</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
+                <span class="n">synth_sample</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">synth_sample</span><span class="o">.</span><span class="n">index</span> <span class="o">//</span> <span class="n">obs_sample</span><span class="p">)[</span>
+                    <span class="n">target_col</span>
+                <span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+                    <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">target_pos_val</span> <span class="o">==</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+                    <span class="k">if</span> <span class="n">target_pos_val</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+                    <span class="k">else</span> <span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">disable_progress_bar</span><span class="p">:</span>
+            <span class="n">datasets</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">enable_progress_bar</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">preds</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="RelationalSampler"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.RelationalSampler">[docs]</a><span class="k">class</span> <span class="nc">RelationalSampler</span><span class="p">(</span><span class="n">REaLSampler</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sampler class for relational data generation.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">model_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">model</span><span class="p">:</span> <span class="n">PreTrainedModel</span><span class="p">,</span>
+        <span class="n">vocab</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span>
+        <span class="n">processed_columns</span><span class="p">:</span> <span class="n">List</span><span class="p">,</span>
+        <span class="n">max_length</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">col_size</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">col_idx_ids</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span>
+        <span class="n">columns</span><span class="p">:</span> <span class="n">List</span><span class="p">,</span>
+        <span class="n">datetime_columns</span><span class="p">:</span> <span class="n">List</span><span class="p">,</span>
+        <span class="n">column_dtypes</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span>
+        <span class="n">column_has_missing</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span>
+        <span class="n">drop_na_cols</span><span class="p">:</span> <span class="n">List</span><span class="p">,</span>
+        <span class="n">col_transform_data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span>
+        <span class="n">in_col_transform_data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span>
+        <span class="n">random_state</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1029</span><span class="p">,</span>
+        <span class="n">device</span><span class="o">=</span><span class="s2">&quot;cuda&quot;</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">model_type</span><span class="p">,</span>
+            <span class="n">model</span><span class="p">,</span>
+            <span class="n">vocab</span><span class="p">,</span>
+            <span class="n">processed_columns</span><span class="p">,</span>
+            <span class="n">max_length</span><span class="p">,</span>
+            <span class="n">col_size</span><span class="p">,</span>
+            <span class="n">col_idx_ids</span><span class="p">,</span>
+            <span class="n">columns</span><span class="p">,</span>
+            <span class="n">datetime_columns</span><span class="p">,</span>
+            <span class="n">column_dtypes</span><span class="p">,</span>
+            <span class="n">column_has_missing</span><span class="p">,</span>
+            <span class="n">drop_na_cols</span><span class="p">,</span>
+            <span class="n">col_transform_data</span><span class="p">,</span>
+            <span class="n">random_state</span><span class="p">,</span>
+            <span class="n">device</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">output_vocab</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vocab</span><span class="p">[</span><span class="s2">&quot;decoder&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">in_col_transform_data</span> <span class="o">=</span> <span class="n">in_col_transform_data</span>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="RelationalSampler.sampler_from_model"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.RelationalSampler.sampler_from_model">[docs]</a>    <span class="k">def</span> <span class="nf">sampler_from_model</span><span class="p">(</span><span class="n">rtf_model</span><span class="p">,</span> <span class="n">device</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;cuda&quot;</span><span class="p">):</span>
+        <span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+        <span class="k">assert</span> <span class="n">rtf_model</span><span class="o">.</span><span class="n">relational_max_length</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="k">assert</span> <span class="n">rtf_model</span><span class="o">.</span><span class="n">relational_col_size</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="k">assert</span> <span class="n">rtf_model</span><span class="o">.</span><span class="n">col_transform_data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="k">assert</span> <span class="n">rtf_model</span><span class="o">.</span><span class="n">in_col_transform_data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+
+        <span class="k">return</span> <span class="n">RelationalSampler</span><span class="p">(</span>
+            <span class="n">model_type</span><span class="o">=</span><span class="n">rtf_model</span><span class="o">.</span><span class="n">model_type</span><span class="p">,</span>
+            <span class="n">model</span><span class="o">=</span><span class="n">rtf_model</span><span class="o">.</span><span class="n">model</span><span class="p">,</span>
+            <span class="n">vocab</span><span class="o">=</span><span class="n">rtf_model</span><span class="o">.</span><span class="n">vocab</span><span class="p">,</span>
+            <span class="n">processed_columns</span><span class="o">=</span><span class="n">rtf_model</span><span class="o">.</span><span class="n">processed_columns</span><span class="p">,</span>
+            <span class="n">max_length</span><span class="o">=</span><span class="n">rtf_model</span><span class="o">.</span><span class="n">relational_max_length</span><span class="p">,</span>
+            <span class="n">col_size</span><span class="o">=</span><span class="n">rtf_model</span><span class="o">.</span><span class="n">relational_col_size</span><span class="p">,</span>
+            <span class="n">col_idx_ids</span><span class="o">=</span><span class="n">rtf_model</span><span class="o">.</span><span class="n">col_idx_ids</span><span class="p">,</span>
+            <span class="n">columns</span><span class="o">=</span><span class="n">rtf_model</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span>
+            <span class="n">datetime_columns</span><span class="o">=</span><span class="n">rtf_model</span><span class="o">.</span><span class="n">datetime_columns</span><span class="p">,</span>
+            <span class="n">column_dtypes</span><span class="o">=</span><span class="n">rtf_model</span><span class="o">.</span><span class="n">column_dtypes</span><span class="p">,</span>
+            <span class="n">column_has_missing</span><span class="o">=</span><span class="n">rtf_model</span><span class="o">.</span><span class="n">column_has_missing</span><span class="p">,</span>
+            <span class="n">drop_na_cols</span><span class="o">=</span><span class="n">rtf_model</span><span class="o">.</span><span class="n">drop_na_cols</span><span class="p">,</span>
+            <span class="n">col_transform_data</span><span class="o">=</span><span class="n">rtf_model</span><span class="o">.</span><span class="n">col_transform_data</span><span class="p">,</span>
+            <span class="n">in_col_transform_data</span><span class="o">=</span><span class="n">rtf_model</span><span class="o">.</span><span class="n">in_col_transform_data</span><span class="p">,</span>
+            <span class="n">random_state</span><span class="o">=</span><span class="n">rtf_model</span><span class="o">.</span><span class="n">random_state</span><span class="p">,</span>
+            <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="RelationalSampler.sample_relational"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.RelationalSampler.sample_relational">[docs]</a>    <span class="k">def</span> <span class="nf">sample_relational</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">input_unique_ids</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="n">List</span><span class="p">],</span>
+        <span class="n">input_df</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">input_ids</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">gen_batch</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">128</span><span class="p">,</span>
+        <span class="n">device</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;cuda&quot;</span><span class="p">,</span>
+        <span class="n">constrain_tokens_gen</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">validator</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ObservationValidator</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">continuous_empty_limit</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="n">suppress_tokens</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">forced_decoder_ids</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">related_num</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">generate_kwargs</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="c1"># input_unique_ids: Corresponds to the unique identifier</span>
+        <span class="c1"># that will be used to link the input</span>
+        <span class="c1"># data to the generated values.</span>
+        <span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">device</span> <span class="o">!=</span> <span class="n">device</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+
+        <span class="n">input_unique_ids</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">input_unique_ids</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">input_ids</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">related_num</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;The input provided is ids so related_num=</span><span class="si">{</span><span class="n">related_num</span><span class="si">}</span><span class="s2"> is ignored.&quot;</span>
+                <span class="p">)</span>
+                <span class="n">related_num</span> <span class="o">=</span> <span class="kc">None</span>
+
+            <span class="n">generate_kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_min_max_length</span><span class="p">(</span><span class="n">related_num</span><span class="p">))</span>
+
+            <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">input_unique_ids</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">input_ids</span><span class="p">)</span>
+            <span class="n">input_ids</span> <span class="o">=</span> <span class="n">input_ids</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+            <span class="n">samples</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_generate</span><span class="p">(</span>
+                <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span>
+                <span class="n">as_numpy</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">constrain_tokens_gen</span><span class="o">=</span><span class="n">constrain_tokens_gen</span><span class="p">,</span>
+                <span class="n">inputs</span><span class="o">=</span><span class="n">input_ids</span><span class="p">,</span>
+                <span class="c1"># num_return_sequences=gen_batch,</span>
+                <span class="n">do_sample</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">forced_decoder_ids</span><span class="o">=</span><span class="n">forced_decoder_ids</span><span class="p">,</span>
+                <span class="n">suppress_tokens</span><span class="o">=</span><span class="n">suppress_tokens</span><span class="p">,</span>
+                <span class="o">**</span><span class="n">generate_kwargs</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="n">input_df</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">input_unique_ids</span><span class="p">)</span> <span class="o">==</span> <span class="n">input_df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+            <span class="c1"># Create a fixed-size matrix to store the data filled with [PAD] token ids.</span>
+            <span class="n">samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">input_df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_length</span><span class="p">))</span>
+            <span class="n">samples</span> <span class="o">*=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vocab</span><span class="p">[</span><span class="s2">&quot;decoder&quot;</span><span class="p">][</span><span class="s2">&quot;token2id&quot;</span><span class="p">][</span><span class="n">SpecialTokens</span><span class="o">.</span><span class="n">PAD</span><span class="p">]</span>
+            <span class="n">start</span> <span class="o">=</span> <span class="mi">0</span>
+
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">related_num</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">related_num</span> <span class="ow">in</span> <span class="n">input_df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+                <span class="n">init_min_max_length</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_min_max_length</span><span class="p">(</span>
+                    <span class="n">input_df</span><span class="p">[</span><span class="n">related_num</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+                <span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">init_min_max_length</span><span class="p">[</span><span class="s2">&quot;max_length&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">samples</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+                    <span class="n">samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span>
+                        <span class="p">(</span><span class="n">input_df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">init_min_max_length</span><span class="p">[</span><span class="s2">&quot;max_length&quot;</span><span class="p">])</span>
+                    <span class="p">)</span>
+                    <span class="n">samples</span> <span class="o">*=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vocab</span><span class="p">[</span><span class="s2">&quot;decoder&quot;</span><span class="p">][</span><span class="s2">&quot;token2id&quot;</span><span class="p">][</span><span class="n">SpecialTokens</span><span class="o">.</span><span class="n">PAD</span><span class="p">]</span>
+
+                <span class="n">_input_unique_ids</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="n">input_df</span> <span class="o">=</span> <span class="n">input_df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+                <span class="c1"># Make sure that we couple the `input_unique_ids` with</span>
+                <span class="c1"># its intended data when sorting and grouping.</span>
+                <span class="n">input_df</span><span class="p">[</span><span class="n">NQ_COL</span><span class="p">]</span> <span class="o">=</span> <span class="n">input_unique_ids</span>
+                <span class="n">input_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">related_num</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+                <span class="k">for</span> <span class="n">related_num</span><span class="p">,</span> <span class="n">_input_df</span> <span class="ow">in</span> <span class="n">input_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">related_num</span><span class="p">):</span>
+                    <span class="n">_input_unique_ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_input_df</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">NQ_COL</span><span class="p">))</span>
+                    <span class="n">generate_kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_min_max_length</span><span class="p">(</span><span class="n">related_num</span><span class="p">))</span>
+
+                    <span class="k">for</span> <span class="n">_samples</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sample_input_batch</span><span class="p">(</span>
+                        <span class="n">input_df</span><span class="o">=</span><span class="n">_input_df</span><span class="p">,</span>
+                        <span class="n">gen_batch</span><span class="o">=</span><span class="n">gen_batch</span><span class="p">,</span>
+                        <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span>
+                        <span class="n">constrain_tokens_gen</span><span class="o">=</span><span class="n">constrain_tokens_gen</span><span class="p">,</span>
+                        <span class="n">suppress_tokens</span><span class="o">=</span><span class="n">suppress_tokens</span><span class="p">,</span>
+                        <span class="n">forced_decoder_ids</span><span class="o">=</span><span class="n">forced_decoder_ids</span><span class="p">,</span>
+                        <span class="o">**</span><span class="n">generate_kwargs</span><span class="p">,</span>
+                    <span class="p">):</span>
+                        <span class="n">end</span> <span class="o">=</span> <span class="n">start</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">_samples</span><span class="p">)</span>
+
+                        <span class="n">samples</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">,</span> <span class="p">:</span> <span class="n">_samples</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="n">_samples</span>
+                        <span class="n">start</span> <span class="o">=</span> <span class="n">end</span>
+
+                <span class="n">input_unique_ids</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">_input_unique_ids</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">generate_kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_min_max_length</span><span class="p">(</span><span class="n">related_num</span><span class="p">))</span>
+
+                <span class="k">if</span> <span class="n">generate_kwargs</span><span class="p">[</span><span class="s2">&quot;max_length&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">samples</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+                    <span class="c1"># Create a fixed-size matrix to store the data filled with [PAD] token ids.</span>
+                    <span class="n">samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span>
+                        <span class="p">(</span><span class="n">input_df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">generate_kwargs</span><span class="p">[</span><span class="s2">&quot;max_length&quot;</span><span class="p">])</span>
+                    <span class="p">)</span>
+                    <span class="n">samples</span> <span class="o">*=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vocab</span><span class="p">[</span><span class="s2">&quot;decoder&quot;</span><span class="p">][</span><span class="s2">&quot;token2id&quot;</span><span class="p">][</span><span class="n">SpecialTokens</span><span class="o">.</span><span class="n">PAD</span><span class="p">]</span>
+
+                <span class="k">for</span> <span class="n">_samples</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sample_input_batch</span><span class="p">(</span>
+                    <span class="n">input_df</span><span class="o">=</span><span class="n">input_df</span><span class="p">,</span>
+                    <span class="n">gen_batch</span><span class="o">=</span><span class="n">gen_batch</span><span class="p">,</span>
+                    <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span>
+                    <span class="n">constrain_tokens_gen</span><span class="o">=</span><span class="n">constrain_tokens_gen</span><span class="p">,</span>
+                    <span class="n">suppress_tokens</span><span class="o">=</span><span class="n">suppress_tokens</span><span class="p">,</span>
+                    <span class="n">forced_decoder_ids</span><span class="o">=</span><span class="n">forced_decoder_ids</span><span class="p">,</span>
+                    <span class="o">**</span><span class="n">generate_kwargs</span><span class="p">,</span>
+                <span class="p">):</span>
+                    <span class="n">end</span> <span class="o">=</span> <span class="n">start</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">_samples</span><span class="p">)</span>
+
+                    <span class="n">samples</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">,</span> <span class="p">:</span> <span class="n">_samples</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="n">_samples</span>
+                    <span class="n">start</span> <span class="o">=</span> <span class="n">end</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Either `input_ids` or `input_df` must not be None.&quot;</span><span class="p">)</span>
+
+        <span class="n">synth_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_processes_sample</span><span class="p">(</span>
+            <span class="n">sample_outputs</span><span class="o">=</span><span class="n">samples</span><span class="p">,</span>
+            <span class="n">vocab</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">vocab</span><span class="p">[</span><span class="s2">&quot;decoder&quot;</span><span class="p">],</span>
+            <span class="n">relate_ids</span><span class="o">=</span><span class="n">input_unique_ids</span><span class="p">,</span>
+            <span class="n">validator</span><span class="o">=</span><span class="n">validator</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">synth_df</span></div>
+
+<div class="viewcode-block" id="RelationalSampler._get_min_max_length"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.RelationalSampler._get_min_max_length">[docs]</a>    <span class="k">def</span> <span class="nf">_get_min_max_length</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">related_num</span><span class="p">):</span>
+        <span class="c1"># The `min_length = 2` corresponds to the ([EOS], [BOS])</span>
+        <span class="c1"># sequence that is used in the encoder-decoder</span>
+        <span class="c1"># model. This is why a related num of zero will have a</span>
+        <span class="c1"># max_length of (2 + 1) because we expect the next token</span>
+        <span class="c1"># in this sequence should be [EOS]. In the case where</span>
+        <span class="c1"># the `related_num &gt; 0` we add `2` to col_size to account</span>
+        <span class="c1"># for the [BMEM] and the [EMEM] tokens.</span>
+        <span class="n">min_length</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="n">max_length</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_length</span>
+
+        <span class="k">if</span> <span class="n">related_num</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">related_num</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">min_length</span> <span class="o">=</span> <span class="n">min_length</span> <span class="o">+</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">col_size</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">related_num</span><span class="p">)</span>
+                <span class="n">max_length</span> <span class="o">=</span> <span class="n">min_length</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s2">&quot;The `related_num` must be greater than or equal to zero.&quot;</span>
+                <span class="p">)</span>
+
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">min_length</span><span class="o">=</span><span class="n">min_length</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="n">max_length</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="RelationalSampler._sample_input_batch"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.RelationalSampler._sample_input_batch">[docs]</a>    <span class="k">def</span> <span class="nf">_sample_input_batch</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">input_df</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">gen_batch</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">128</span><span class="p">,</span>
+        <span class="n">device</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;cuda&quot;</span><span class="p">,</span>
+        <span class="n">constrain_tokens_gen</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">suppress_tokens</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">forced_decoder_ids</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">generate_kwargs</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="c1"># Let apply processing if `input_df` is given.</span>
+        <span class="n">input_df</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">process_data</span><span class="p">(</span>
+            <span class="n">input_df</span><span class="p">,</span> <span class="n">col_transform_data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">in_col_transform_data</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Load the dataframe into a HuggingFace Dataset</span>
+        <span class="n">dataset</span> <span class="o">=</span> <span class="n">make_dataset</span><span class="p">(</span><span class="n">input_df</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">vocab</span><span class="p">[</span><span class="s2">&quot;encoder&quot;</span><span class="p">])</span>
+
+        <span class="n">input_loader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span>
+            <span class="n">dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">gen_batch</span><span class="p">,</span> <span class="n">collate_fn</span><span class="o">=</span><span class="n">DefaultDataCollator</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">loader_iters</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">input_loader</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">loader_iters</span><span class="p">):</span>
+            <span class="n">input_ids</span> <span class="o">=</span> <span class="n">batch</span><span class="p">[</span><span class="s2">&quot;input_ids&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+            <span class="n">_samples</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_generate</span><span class="p">(</span>
+                <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span>
+                <span class="n">as_numpy</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">constrain_tokens_gen</span><span class="o">=</span><span class="n">constrain_tokens_gen</span><span class="p">,</span>
+                <span class="n">inputs</span><span class="o">=</span><span class="n">input_ids</span><span class="p">,</span>
+                <span class="c1"># num_return_sequences=gen_batch,</span>
+                <span class="n">do_sample</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">forced_decoder_ids</span><span class="o">=</span><span class="n">forced_decoder_ids</span><span class="p">,</span>
+                <span class="n">suppress_tokens</span><span class="o">=</span><span class="n">suppress_tokens</span><span class="p">,</span>
+                <span class="o">**</span><span class="n">generate_kwargs</span><span class="p">,</span>
+            <span class="p">)</span>
+
+            <span class="k">yield</span> <span class="n">_samples</span></div>
+
+<div class="viewcode-block" id="RelationalSampler._get_relational_col_idx_ids"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.RelationalSampler._get_relational_col_idx_ids">[docs]</a>    <span class="k">def</span> <span class="nf">_get_relational_col_idx_ids</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">len_ids</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This method returns the true index given the generation step `i`.</span>
+
+<span class="sd">        col_size: The expected number of variables for a single observation.</span>
+<span class="sd">            This is equal to the number of columns.</span>
+
+<span class="sd">        ### Generating constrained tokens per step</span>
+<span class="sd">        ```</span>
+<span class="sd">            1 -&gt; BOS</span>
+<span class="sd">            2 -&gt; BMEM or EOS</span>
+<span class="sd">            3 -&gt; col 0</span>
+<span class="sd">            ...</span>
+<span class="sd">            3 + col_size -&gt; col col_size - 1</span>
+<span class="sd">            3 + col_size + 1 -&gt; EMEM</span>
+<span class="sd">            3 + col_size + 2 -&gt; BMEM or EOS</span>
+<span class="sd">            3 + col_size + 3 -&gt; col 0</span>
+<span class="sd">        ```</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">len_ids</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">return_ids</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">vocab</span><span class="p">[</span><span class="s2">&quot;decoder&quot;</span><span class="p">][</span><span class="s2">&quot;token2id&quot;</span><span class="p">][</span><span class="n">SpecialTokens</span><span class="o">.</span><span class="n">EOS</span><span class="p">]]</span>
+        <span class="k">elif</span> <span class="n">len_ids</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="c1"># This is the decoder_start_token_id and we should generate the [BOS] token next.</span>
+            <span class="n">return_ids</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">vocab</span><span class="p">[</span><span class="s2">&quot;decoder&quot;</span><span class="p">][</span><span class="s2">&quot;token2id&quot;</span><span class="p">][</span><span class="n">SpecialTokens</span><span class="o">.</span><span class="n">BOS</span><span class="p">]]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Adjust such that idx = 0 produces either the [BMEM] or the [EOS] tokens.</span>
+            <span class="n">idx</span> <span class="o">=</span> <span class="n">len_ids</span> <span class="o">-</span> <span class="mi">2</span>
+
+            <span class="c1"># Number of columns in the data for each observation</span>
+            <span class="c1"># self.col_size = self.relational_col_size</span>
+
+            <span class="c1"># Number of pads between observations [EMEM], ([BMEM] | [EOS])</span>
+            <span class="n">num_pads</span> <span class="o">=</span> <span class="mi">2</span>
+
+            <span class="c1"># Derive `col_idx` such that at idx == 0, it will return -1 which</span>
+            <span class="c1"># maps to [[BMEM] or [EOS]]. Then idx == 1 will generate the first</span>
+            <span class="c1"># valid token, ..., then at idx == col_size, will generate the</span>
+            <span class="c1"># last valid token. At idx == col_size + 1, it will generate col_size</span>
+            <span class="c1"># which should generate the [[EMEM]] token.</span>
+            <span class="n">col_idx</span> <span class="o">=</span> <span class="p">(</span><span class="n">idx</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">col_size</span> <span class="o">+</span> <span class="n">num_pads</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="k">assert</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">col_idx</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">col_size</span>
+
+            <span class="k">if</span> <span class="n">col_idx</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">col_idx</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">col_idx</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">col_size</span><span class="p">:</span>
+                <span class="n">col_idx</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
+
+            <span class="n">return_ids</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">col_idx_ids</span><span class="p">[</span><span class="n">col_idx</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">return_ids</span></div>
+
+<div class="viewcode-block" id="RelationalSampler._prefix_allowed_tokens_fn"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.RelationalSampler._prefix_allowed_tokens_fn">[docs]</a>    <span class="k">def</span> <span class="nf">_prefix_allowed_tokens_fn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_id</span><span class="p">,</span> <span class="n">input_ids</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">:</span>
+        <span class="c1"># https://huggingface.co/docs/transformers/v4.24.0/en/main_classes/text_generation#transformers.generation_utils.GenerationMixin.generate.prefix_allowed_tokens_fn</span>
+        <span class="c1"># For the relational data, len(input_ids) == 2 -&gt; [EOS, BOS]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_relational_col_idx_ids</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">input_ids</span><span class="p">))</span></div></div>
+</pre></div>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Aivin Solatorio
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023, World Bank.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

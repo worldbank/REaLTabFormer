@@ -1,0 +1,1040 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>realtabformer.data_utils &#8212; REaLTabFormer</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'autoapi/realtabformer/data_utils/index';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/REalTabFormer_Final_EQ.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../../_static/REalTabFormer_Final_EQ.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+    <p class="title logo__title">REaLTabFormer 0.1.3</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">REaLTabFormer</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../index.html">API Reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer</span></code></a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../__main__/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.__main__</span></code></a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.data_utils</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../realtabformer/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.realtabformer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rtf_analyze/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_analyze</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rtf_datacollator/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_datacollator</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rtf_exceptions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_exceptions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rtf_sampler/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_sampler</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rtf_trainer/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_trainer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rtf_validators/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_validators</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/worldbank/realtabformer" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/worldbank/realtabformer/edit/main/autoapi/realtabformer/data_utils/index.rst" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/worldbank/realtabformer/issues/new?title=Issue%20on%20page%20%2Fautoapi/realtabformer/data_utils/index.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/autoapi/realtabformer/data_utils/index.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>realtabformer.data_utils</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.TEACHER_FORCING_PRE"><code class="docutils literal notranslate"><span class="pre">TEACHER_FORCING_PRE</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.SPECIAL_COL_SEP"><code class="docutils literal notranslate"><span class="pre">SPECIAL_COL_SEP</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.NUMERIC_NA_TOKEN"><code class="docutils literal notranslate"><span class="pre">NUMERIC_NA_TOKEN</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.INVALID_NUMS_RE"><code class="docutils literal notranslate"><span class="pre">INVALID_NUMS_RE</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.TabularArtefact"><code class="docutils literal notranslate"><span class="pre">TabularArtefact</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.TabularArtefact.best_disc_model"><code class="docutils literal notranslate"><span class="pre">TabularArtefact.best_disc_model</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.TabularArtefact.mean_best_disc_model"><code class="docutils literal notranslate"><span class="pre">TabularArtefact.mean_best_disc_model</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.TabularArtefact.not_best_disc_model"><code class="docutils literal notranslate"><span class="pre">TabularArtefact.not_best_disc_model</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.TabularArtefact.last_epoch_model"><code class="docutils literal notranslate"><span class="pre">TabularArtefact.last_epoch_model</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.TabularArtefact.artefacts"><code class="docutils literal notranslate"><span class="pre">TabularArtefact.artefacts()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.ModelFileName"><code class="docutils literal notranslate"><span class="pre">ModelFileName</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.ModelFileName.rtf_config_json"><code class="docutils literal notranslate"><span class="pre">ModelFileName.rtf_config_json</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.ModelFileName.rtf_model_pt"><code class="docutils literal notranslate"><span class="pre">ModelFileName.rtf_model_pt</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.ModelFileName.names"><code class="docutils literal notranslate"><span class="pre">ModelFileName.names()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.ModelType"><code class="docutils literal notranslate"><span class="pre">ModelType</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.ModelType.tabular"><code class="docutils literal notranslate"><span class="pre">ModelType.tabular</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.ModelType.relational"><code class="docutils literal notranslate"><span class="pre">ModelType.relational</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.ModelType.types"><code class="docutils literal notranslate"><span class="pre">ModelType.types()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.ColDataType"><code class="docutils literal notranslate"><span class="pre">ColDataType</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.ColDataType.NUMERIC"><code class="docutils literal notranslate"><span class="pre">ColDataType.NUMERIC</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.ColDataType.DATETIME"><code class="docutils literal notranslate"><span class="pre">ColDataType.DATETIME</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.ColDataType.CATEGORICAL"><code class="docutils literal notranslate"><span class="pre">ColDataType.CATEGORICAL</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.ColDataType.types"><code class="docutils literal notranslate"><span class="pre">ColDataType.types()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.SpecialTokens"><code class="docutils literal notranslate"><span class="pre">SpecialTokens</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.SpecialTokens.UNK"><code class="docutils literal notranslate"><span class="pre">SpecialTokens.UNK</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.SpecialTokens.SEP"><code class="docutils literal notranslate"><span class="pre">SpecialTokens.SEP</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.SpecialTokens.PAD"><code class="docutils literal notranslate"><span class="pre">SpecialTokens.PAD</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.SpecialTokens.CLS"><code class="docutils literal notranslate"><span class="pre">SpecialTokens.CLS</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.SpecialTokens.MASK"><code class="docutils literal notranslate"><span class="pre">SpecialTokens.MASK</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.SpecialTokens.BOS"><code class="docutils literal notranslate"><span class="pre">SpecialTokens.BOS</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.SpecialTokens.EOS"><code class="docutils literal notranslate"><span class="pre">SpecialTokens.EOS</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.SpecialTokens.BMEM"><code class="docutils literal notranslate"><span class="pre">SpecialTokens.BMEM</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.SpecialTokens.EMEM"><code class="docutils literal notranslate"><span class="pre">SpecialTokens.EMEM</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.SpecialTokens.RMASK"><code class="docutils literal notranslate"><span class="pre">SpecialTokens.RMASK</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.SpecialTokens.SPTYPE"><code class="docutils literal notranslate"><span class="pre">SpecialTokens.SPTYPE</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.SpecialTokens.tokens"><code class="docutils literal notranslate"><span class="pre">SpecialTokens.tokens()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.get_uuid"><code class="docutils literal notranslate"><span class="pre">get_uuid()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.fix_multi_decimal"><code class="docutils literal notranslate"><span class="pre">fix_multi_decimal()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.build_vocab"><code class="docutils literal notranslate"><span class="pre">build_vocab()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.process_numeric_data"><code class="docutils literal notranslate"><span class="pre">process_numeric_data()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.process_datetime_data"><code class="docutils literal notranslate"><span class="pre">process_datetime_data()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.process_categorical_data"><code class="docutils literal notranslate"><span class="pre">process_categorical_data()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.encode_partition_numeric_col"><code class="docutils literal notranslate"><span class="pre">encode_partition_numeric_col()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.decode_partition_numeric_col"><code class="docutils literal notranslate"><span class="pre">decode_partition_numeric_col()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.tokenize_numeric_col"><code class="docutils literal notranslate"><span class="pre">tokenize_numeric_col()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.encode_column_values"><code class="docutils literal notranslate"><span class="pre">encode_column_values()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.decode_column_values"><code class="docutils literal notranslate"><span class="pre">decode_column_values()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.encode_processed_column"><code class="docutils literal notranslate"><span class="pre">encode_processed_column()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.decode_processed_column"><code class="docutils literal notranslate"><span class="pre">decode_processed_column()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.extract_processed_column"><code class="docutils literal notranslate"><span class="pre">extract_processed_column()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.is_numeric_col"><code class="docutils literal notranslate"><span class="pre">is_numeric_col()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.is_datetime_col"><code class="docutils literal notranslate"><span class="pre">is_datetime_col()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.is_categorical_col"><code class="docutils literal notranslate"><span class="pre">is_categorical_col()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.is_numeric_datetime_col"><code class="docutils literal notranslate"><span class="pre">is_numeric_datetime_col()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.process_data"><code class="docutils literal notranslate"><span class="pre">process_data()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.get_token_id"><code class="docutils literal notranslate"><span class="pre">get_token_id()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.get_input_ids"><code class="docutils literal notranslate"><span class="pre">get_input_ids()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.make_dataset"><code class="docutils literal notranslate"><span class="pre">make_dataset()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.get_relational_input_ids"><code class="docutils literal notranslate"><span class="pre">get_relational_input_ids()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.make_relational_dataset"><code class="docutils literal notranslate"><span class="pre">make_relational_dataset()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="module-realtabformer.data_utils">
+<span id="realtabformer-data-utils"></span><h1><a class="reference internal" href="#module-realtabformer.data_utils" title="realtabformer.data_utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.data_utils</span></code></a><a class="headerlink" href="#module-realtabformer.data_utils" title="Permalink to this heading">#</a></h1>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this heading">#</a></h2>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this heading">#</a></h3>
+<table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#realtabformer.data_utils.TabularArtefact" title="realtabformer.data_utils.TabularArtefact"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TabularArtefact</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#realtabformer.data_utils.ModelFileName" title="realtabformer.data_utils.ModelFileName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ModelFileName</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#realtabformer.data_utils.ModelType" title="realtabformer.data_utils.ModelType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ModelType</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#realtabformer.data_utils.ColDataType" title="realtabformer.data_utils.ColDataType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ColDataType</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#realtabformer.data_utils.SpecialTokens" title="realtabformer.data_utils.SpecialTokens"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SpecialTokens</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h3>
+<table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#realtabformer.data_utils.get_uuid" title="realtabformer.data_utils.get_uuid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_uuid</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#realtabformer.data_utils.fix_multi_decimal" title="realtabformer.data_utils.fix_multi_decimal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fix_multi_decimal</span></code></a>(v)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#realtabformer.data_utils.build_vocab" title="realtabformer.data_utils.build_vocab"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_vocab</span></code></a>([df, special_tokens, add_columns])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#realtabformer.data_utils.process_numeric_data" title="realtabformer.data_utils.process_numeric_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">process_numeric_data</span></code></a>(→ Tuple[pandas.Series, Dict])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#realtabformer.data_utils.process_datetime_data" title="realtabformer.data_utils.process_datetime_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">process_datetime_data</span></code></a>(→ Tuple[pandas.Series, Dict])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#realtabformer.data_utils.process_categorical_data" title="realtabformer.data_utils.process_categorical_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">process_categorical_data</span></code></a>(→ pandas.Series)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#realtabformer.data_utils.encode_partition_numeric_col" title="realtabformer.data_utils.encode_partition_numeric_col"><code class="xref py py-obj docutils literal notranslate"><span class="pre">encode_partition_numeric_col</span></code></a>(col, tr, col_zfill)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#realtabformer.data_utils.decode_partition_numeric_col" title="realtabformer.data_utils.decode_partition_numeric_col"><code class="xref py py-obj docutils literal notranslate"><span class="pre">decode_partition_numeric_col</span></code></a>(partition_col)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#realtabformer.data_utils.tokenize_numeric_col" title="realtabformer.data_utils.tokenize_numeric_col"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tokenize_numeric_col</span></code></a>(series[, nparts, col_zfill])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#realtabformer.data_utils.encode_column_values" title="realtabformer.data_utils.encode_column_values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">encode_column_values</span></code></a>(series)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#realtabformer.data_utils.decode_column_values" title="realtabformer.data_utils.decode_column_values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">decode_column_values</span></code></a>(series)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#realtabformer.data_utils.encode_processed_column" title="realtabformer.data_utils.encode_processed_column"><code class="xref py py-obj docutils literal notranslate"><span class="pre">encode_processed_column</span></code></a>(idx, dtype, col)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#realtabformer.data_utils.decode_processed_column" title="realtabformer.data_utils.decode_processed_column"><code class="xref py py-obj docutils literal notranslate"><span class="pre">decode_processed_column</span></code></a>(col)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#realtabformer.data_utils.extract_processed_column" title="realtabformer.data_utils.extract_processed_column"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extract_processed_column</span></code></a>(col)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#realtabformer.data_utils.is_numeric_col" title="realtabformer.data_utils.is_numeric_col"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_numeric_col</span></code></a>(col)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#realtabformer.data_utils.is_datetime_col" title="realtabformer.data_utils.is_datetime_col"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_datetime_col</span></code></a>(col)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#realtabformer.data_utils.is_categorical_col" title="realtabformer.data_utils.is_categorical_col"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_categorical_col</span></code></a>(col)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#realtabformer.data_utils.is_numeric_datetime_col" title="realtabformer.data_utils.is_numeric_datetime_col"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_numeric_datetime_col</span></code></a>(col)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#realtabformer.data_utils.process_data" title="realtabformer.data_utils.process_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">process_data</span></code></a>(→ Tuple[pandas.DataFrame, Dict])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#realtabformer.data_utils.get_token_id" title="realtabformer.data_utils.get_token_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_token_id</span></code></a>(→ int)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#realtabformer.data_utils.get_input_ids" title="realtabformer.data_utils.get_input_ids"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_input_ids</span></code></a>(→ Dict)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#realtabformer.data_utils.make_dataset" title="realtabformer.data_utils.make_dataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_dataset</span></code></a>(→ datasets.Dataset)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#realtabformer.data_utils.get_relational_input_ids" title="realtabformer.data_utils.get_relational_input_ids"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_relational_input_ids</span></code></a>(→ dict)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#realtabformer.data_utils.make_relational_dataset" title="realtabformer.data_utils.make_relational_dataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_relational_dataset</span></code></a>(→ datasets.Dataset)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="attributes">
+<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this heading">#</a></h3>
+<table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#realtabformer.data_utils.TEACHER_FORCING_PRE" title="realtabformer.data_utils.TEACHER_FORCING_PRE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TEACHER_FORCING_PRE</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#realtabformer.data_utils.SPECIAL_COL_SEP" title="realtabformer.data_utils.SPECIAL_COL_SEP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SPECIAL_COL_SEP</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#realtabformer.data_utils.NUMERIC_NA_TOKEN" title="realtabformer.data_utils.NUMERIC_NA_TOKEN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NUMERIC_NA_TOKEN</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#realtabformer.data_utils.INVALID_NUMS_RE" title="realtabformer.data_utils.INVALID_NUMS_RE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">INVALID_NUMS_RE</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py data">
+<dt class="sig sig-object py" id="realtabformer.data_utils.TEACHER_FORCING_PRE">
+<span class="sig-prename descclassname"><span class="pre">realtabformer.data_utils.</span></span><span class="sig-name descname"><span class="pre">TEACHER_FORCING_PRE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'_TEACHERFORCING'</span></em><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#TEACHER_FORCING_PRE"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.TEACHER_FORCING_PRE" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="realtabformer.data_utils.SPECIAL_COL_SEP">
+<span class="sig-prename descclassname"><span class="pre">realtabformer.data_utils.</span></span><span class="sig-name descname"><span class="pre">SPECIAL_COL_SEP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'___'</span></em><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#SPECIAL_COL_SEP"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.SPECIAL_COL_SEP" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="realtabformer.data_utils.NUMERIC_NA_TOKEN">
+<span class="sig-prename descclassname"><span class="pre">realtabformer.data_utils.</span></span><span class="sig-name descname"><span class="pre">NUMERIC_NA_TOKEN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'&#64;'</span></em><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#NUMERIC_NA_TOKEN"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.NUMERIC_NA_TOKEN" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="realtabformer.data_utils.INVALID_NUMS_RE">
+<span class="sig-prename descclassname"><span class="pre">realtabformer.data_utils.</span></span><span class="sig-name descname"><span class="pre">INVALID_NUMS_RE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'[^\\-.0-9]'</span></em><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#INVALID_NUMS_RE"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.INVALID_NUMS_RE" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="realtabformer.data_utils.TabularArtefact">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">realtabformer.data_utils.</span></span><span class="sig-name descname"><span class="pre">TabularArtefact</span></span><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#TabularArtefact"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.TabularArtefact" title="Permalink to this definition">#</a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="realtabformer.data_utils.TabularArtefact.best_disc_model">
+<span class="sig-name descname"><span class="pre">best_disc_model</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'best-disc-model'</span></em><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#TabularArtefact.best_disc_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.TabularArtefact.best_disc_model" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="realtabformer.data_utils.TabularArtefact.mean_best_disc_model">
+<span class="sig-name descname"><span class="pre">mean_best_disc_model</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'mean-best-disc-model'</span></em><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#TabularArtefact.mean_best_disc_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.TabularArtefact.mean_best_disc_model" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="realtabformer.data_utils.TabularArtefact.not_best_disc_model">
+<span class="sig-name descname"><span class="pre">not_best_disc_model</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'not-best-disc-model'</span></em><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#TabularArtefact.not_best_disc_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.TabularArtefact.not_best_disc_model" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="realtabformer.data_utils.TabularArtefact.last_epoch_model">
+<span class="sig-name descname"><span class="pre">last_epoch_model</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'last-epoch-model'</span></em><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#TabularArtefact.last_epoch_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.TabularArtefact.last_epoch_model" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="realtabformer.data_utils.TabularArtefact.artefacts">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">artefacts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#TabularArtefact.artefacts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.TabularArtefact.artefacts" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="realtabformer.data_utils.ModelFileName">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">realtabformer.data_utils.</span></span><span class="sig-name descname"><span class="pre">ModelFileName</span></span><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#ModelFileName"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.ModelFileName" title="Permalink to this definition">#</a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="realtabformer.data_utils.ModelFileName.rtf_config_json">
+<span class="sig-name descname"><span class="pre">rtf_config_json</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'rtf_config.json'</span></em><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#ModelFileName.rtf_config_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.ModelFileName.rtf_config_json" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="realtabformer.data_utils.ModelFileName.rtf_model_pt">
+<span class="sig-name descname"><span class="pre">rtf_model_pt</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'rtf_model.pt'</span></em><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#ModelFileName.rtf_model_pt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.ModelFileName.rtf_model_pt" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="realtabformer.data_utils.ModelFileName.names">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#ModelFileName.names"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.ModelFileName.names" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="realtabformer.data_utils.ModelType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">realtabformer.data_utils.</span></span><span class="sig-name descname"><span class="pre">ModelType</span></span><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#ModelType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.ModelType" title="Permalink to this definition">#</a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="realtabformer.data_utils.ModelType.tabular">
+<span class="sig-name descname"><span class="pre">tabular</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'tabular'</span></em><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#ModelType.tabular"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.ModelType.tabular" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="realtabformer.data_utils.ModelType.relational">
+<span class="sig-name descname"><span class="pre">relational</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'relational'</span></em><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#ModelType.relational"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.ModelType.relational" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="realtabformer.data_utils.ModelType.types">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">types</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#ModelType.types"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.ModelType.types" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="realtabformer.data_utils.ColDataType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">realtabformer.data_utils.</span></span><span class="sig-name descname"><span class="pre">ColDataType</span></span><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#ColDataType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.ColDataType" title="Permalink to this definition">#</a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="realtabformer.data_utils.ColDataType.NUMERIC">
+<span class="sig-name descname"><span class="pre">NUMERIC</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'NUMERIC'</span></em><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#ColDataType.NUMERIC"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.ColDataType.NUMERIC" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="realtabformer.data_utils.ColDataType.DATETIME">
+<span class="sig-name descname"><span class="pre">DATETIME</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'DATETIME'</span></em><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#ColDataType.DATETIME"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.ColDataType.DATETIME" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="realtabformer.data_utils.ColDataType.CATEGORICAL">
+<span class="sig-name descname"><span class="pre">CATEGORICAL</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'CATEGORICAL'</span></em><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#ColDataType.CATEGORICAL"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.ColDataType.CATEGORICAL" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="realtabformer.data_utils.ColDataType.types">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">types</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#ColDataType.types"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.ColDataType.types" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="realtabformer.data_utils.SpecialTokens">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">realtabformer.data_utils.</span></span><span class="sig-name descname"><span class="pre">SpecialTokens</span></span><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#SpecialTokens"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.SpecialTokens" title="Permalink to this definition">#</a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="realtabformer.data_utils.SpecialTokens.UNK">
+<span class="sig-name descname"><span class="pre">UNK</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'[UNK]'</span></em><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#SpecialTokens.UNK"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.SpecialTokens.UNK" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="realtabformer.data_utils.SpecialTokens.SEP">
+<span class="sig-name descname"><span class="pre">SEP</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'[SEP]'</span></em><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#SpecialTokens.SEP"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.SpecialTokens.SEP" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="realtabformer.data_utils.SpecialTokens.PAD">
+<span class="sig-name descname"><span class="pre">PAD</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'[PAD]'</span></em><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#SpecialTokens.PAD"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.SpecialTokens.PAD" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="realtabformer.data_utils.SpecialTokens.CLS">
+<span class="sig-name descname"><span class="pre">CLS</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'[CLS]'</span></em><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#SpecialTokens.CLS"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.SpecialTokens.CLS" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="realtabformer.data_utils.SpecialTokens.MASK">
+<span class="sig-name descname"><span class="pre">MASK</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'[MASK]'</span></em><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#SpecialTokens.MASK"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.SpecialTokens.MASK" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="realtabformer.data_utils.SpecialTokens.BOS">
+<span class="sig-name descname"><span class="pre">BOS</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'[BOS]'</span></em><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#SpecialTokens.BOS"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.SpecialTokens.BOS" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="realtabformer.data_utils.SpecialTokens.EOS">
+<span class="sig-name descname"><span class="pre">EOS</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'[EOS]'</span></em><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#SpecialTokens.EOS"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.SpecialTokens.EOS" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="realtabformer.data_utils.SpecialTokens.BMEM">
+<span class="sig-name descname"><span class="pre">BMEM</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'[BMEM]'</span></em><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#SpecialTokens.BMEM"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.SpecialTokens.BMEM" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="realtabformer.data_utils.SpecialTokens.EMEM">
+<span class="sig-name descname"><span class="pre">EMEM</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'[EMEM]'</span></em><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#SpecialTokens.EMEM"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.SpecialTokens.EMEM" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="realtabformer.data_utils.SpecialTokens.RMASK">
+<span class="sig-name descname"><span class="pre">RMASK</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'[RMASK]'</span></em><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#SpecialTokens.RMASK"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.SpecialTokens.RMASK" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="realtabformer.data_utils.SpecialTokens.SPTYPE">
+<span class="sig-name descname"><span class="pre">SPTYPE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'[SPTYPE]'</span></em><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#SpecialTokens.SPTYPE"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.SpecialTokens.SPTYPE" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="realtabformer.data_utils.SpecialTokens.tokens">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tokens</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#SpecialTokens.tokens"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.SpecialTokens.tokens" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="realtabformer.data_utils.get_uuid">
+<span class="sig-prename descclassname"><span class="pre">realtabformer.data_utils.</span></span><span class="sig-name descname"><span class="pre">get_uuid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#get_uuid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.get_uuid" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="realtabformer.data_utils.fix_multi_decimal">
+<span class="sig-prename descclassname"><span class="pre">realtabformer.data_utils.</span></span><span class="sig-name descname"><span class="pre">fix_multi_decimal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#fix_multi_decimal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.fix_multi_decimal" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="realtabformer.data_utils.build_vocab">
+<span class="sig-prename descclassname"><span class="pre">realtabformer.data_utils.</span></span><span class="sig-name descname"><span class="pre">build_vocab</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pandas.DataFrame</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">special_tokens</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_columns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#build_vocab"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.build_vocab" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="realtabformer.data_utils.process_numeric_data">
+<span class="sig-prename descclassname"><span class="pre">realtabformer.data_utils.</span></span><span class="sig-name descname"><span class="pre">process_numeric_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pandas.Series</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_len</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numeric_precision</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">pandas.Series</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#process_numeric_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.process_numeric_data" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="realtabformer.data_utils.process_datetime_data">
+<span class="sig-prename descclassname"><span class="pre">realtabformer.data_utils.</span></span><span class="sig-name descname"><span class="pre">process_datetime_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">pandas.Series</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#process_datetime_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.process_datetime_data" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="realtabformer.data_utils.process_categorical_data">
+<span class="sig-prename descclassname"><span class="pre">realtabformer.data_utils.</span></span><span class="sig-name descname"><span class="pre">process_categorical_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pandas.Series</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pandas.Series</span></span></span><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#process_categorical_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.process_categorical_data" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="realtabformer.data_utils.encode_partition_numeric_col">
+<span class="sig-prename descclassname"><span class="pre">realtabformer.data_utils.</span></span><span class="sig-name descname"><span class="pre">encode_partition_numeric_col</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">col</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_zfill</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#encode_partition_numeric_col"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.encode_partition_numeric_col" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="realtabformer.data_utils.decode_partition_numeric_col">
+<span class="sig-prename descclassname"><span class="pre">realtabformer.data_utils.</span></span><span class="sig-name descname"><span class="pre">decode_partition_numeric_col</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">partition_col</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#decode_partition_numeric_col"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.decode_partition_numeric_col" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="realtabformer.data_utils.tokenize_numeric_col">
+<span class="sig-prename descclassname"><span class="pre">realtabformer.data_utils.</span></span><span class="sig-name descname"><span class="pre">tokenize_numeric_col</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pandas.Series</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nparts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_zfill</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#tokenize_numeric_col"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.tokenize_numeric_col" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="realtabformer.data_utils.encode_column_values">
+<span class="sig-prename descclassname"><span class="pre">realtabformer.data_utils.</span></span><span class="sig-name descname"><span class="pre">encode_column_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#encode_column_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.encode_column_values" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="realtabformer.data_utils.decode_column_values">
+<span class="sig-prename descclassname"><span class="pre">realtabformer.data_utils.</span></span><span class="sig-name descname"><span class="pre">decode_column_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#decode_column_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.decode_column_values" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="realtabformer.data_utils.encode_processed_column">
+<span class="sig-prename descclassname"><span class="pre">realtabformer.data_utils.</span></span><span class="sig-name descname"><span class="pre">encode_processed_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#encode_processed_column"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.encode_processed_column" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="realtabformer.data_utils.decode_processed_column">
+<span class="sig-prename descclassname"><span class="pre">realtabformer.data_utils.</span></span><span class="sig-name descname"><span class="pre">decode_processed_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">col</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#decode_processed_column"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.decode_processed_column" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="realtabformer.data_utils.extract_processed_column">
+<span class="sig-prename descclassname"><span class="pre">realtabformer.data_utils.</span></span><span class="sig-name descname"><span class="pre">extract_processed_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">col</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#extract_processed_column"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.extract_processed_column" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="realtabformer.data_utils.is_numeric_col">
+<span class="sig-prename descclassname"><span class="pre">realtabformer.data_utils.</span></span><span class="sig-name descname"><span class="pre">is_numeric_col</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">col</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#is_numeric_col"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.is_numeric_col" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="realtabformer.data_utils.is_datetime_col">
+<span class="sig-prename descclassname"><span class="pre">realtabformer.data_utils.</span></span><span class="sig-name descname"><span class="pre">is_datetime_col</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">col</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#is_datetime_col"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.is_datetime_col" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="realtabformer.data_utils.is_categorical_col">
+<span class="sig-prename descclassname"><span class="pre">realtabformer.data_utils.</span></span><span class="sig-name descname"><span class="pre">is_categorical_col</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">col</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#is_categorical_col"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.is_categorical_col" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="realtabformer.data_utils.is_numeric_datetime_col">
+<span class="sig-prename descclassname"><span class="pre">realtabformer.data_utils.</span></span><span class="sig-name descname"><span class="pre">is_numeric_datetime_col</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">col</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#is_numeric_datetime_col"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.is_numeric_datetime_col" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="realtabformer.data_utils.process_data">
+<span class="sig-prename descclassname"><span class="pre">realtabformer.data_utils.</span></span><span class="sig-name descname"><span class="pre">process_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pandas.DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numeric_max_len</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numeric_precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numeric_nparts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">first_col_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_transform_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_col</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">pandas.DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#process_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.process_data" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="realtabformer.data_utils.get_token_id">
+<span class="sig-prename descclassname"><span class="pre">realtabformer.data_utils.</span></span><span class="sig-name descname"><span class="pre">get_token_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">token</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">vocab_token2id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span></span><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#get_token_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.get_token_id" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="realtabformer.data_utils.get_input_ids">
+<span class="sig-prename descclassname"><span class="pre">realtabformer.data_utils.</span></span><span class="sig-name descname"><span class="pre">get_input_ids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">example</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vocab</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_label_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><span class="pre">bool</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_token_type_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><span class="pre">bool</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">affix_bos</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><span class="pre">bool</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">affix_eos</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><span class="pre">bool</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span></span></span><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#get_input_ids"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.get_input_ids" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="realtabformer.data_utils.make_dataset">
+<span class="sig-prename descclassname"><span class="pre">realtabformer.data_utils.</span></span><span class="sig-name descname"><span class="pre">make_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pandas.DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vocab</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">affix_eos</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_token_type_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">datasets.Dataset</span></span></span><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#make_dataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.make_dataset" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="realtabformer.data_utils.get_relational_input_ids">
+<span class="sig-prename descclassname"><span class="pre">realtabformer.data_utils.</span></span><span class="sig-name descname"><span class="pre">get_relational_input_ids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">example</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vocab</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_out_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_max_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_token_type_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><span class="pre">dict</span></a></span></span><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#get_relational_input_ids"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.get_relational_input_ids" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="realtabformer.data_utils.make_relational_dataset">
+<span class="sig-prename descclassname"><span class="pre">realtabformer.data_utils.</span></span><span class="sig-name descname"><span class="pre">make_relational_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pandas.DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pandas.DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vocab</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><span class="pre">dict</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_out_idx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><span class="pre">dict</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_max_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_token_type_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">datasets.Dataset</span></span></span><a class="reference internal" href="../../../_modules/realtabformer/data_utils.html#make_relational_dataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#realtabformer.data_utils.make_relational_dataset" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.TEACHER_FORCING_PRE"><code class="docutils literal notranslate"><span class="pre">TEACHER_FORCING_PRE</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.SPECIAL_COL_SEP"><code class="docutils literal notranslate"><span class="pre">SPECIAL_COL_SEP</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.NUMERIC_NA_TOKEN"><code class="docutils literal notranslate"><span class="pre">NUMERIC_NA_TOKEN</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.INVALID_NUMS_RE"><code class="docutils literal notranslate"><span class="pre">INVALID_NUMS_RE</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.TabularArtefact"><code class="docutils literal notranslate"><span class="pre">TabularArtefact</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.TabularArtefact.best_disc_model"><code class="docutils literal notranslate"><span class="pre">TabularArtefact.best_disc_model</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.TabularArtefact.mean_best_disc_model"><code class="docutils literal notranslate"><span class="pre">TabularArtefact.mean_best_disc_model</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.TabularArtefact.not_best_disc_model"><code class="docutils literal notranslate"><span class="pre">TabularArtefact.not_best_disc_model</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.TabularArtefact.last_epoch_model"><code class="docutils literal notranslate"><span class="pre">TabularArtefact.last_epoch_model</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.TabularArtefact.artefacts"><code class="docutils literal notranslate"><span class="pre">TabularArtefact.artefacts()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.ModelFileName"><code class="docutils literal notranslate"><span class="pre">ModelFileName</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.ModelFileName.rtf_config_json"><code class="docutils literal notranslate"><span class="pre">ModelFileName.rtf_config_json</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.ModelFileName.rtf_model_pt"><code class="docutils literal notranslate"><span class="pre">ModelFileName.rtf_model_pt</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.ModelFileName.names"><code class="docutils literal notranslate"><span class="pre">ModelFileName.names()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.ModelType"><code class="docutils literal notranslate"><span class="pre">ModelType</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.ModelType.tabular"><code class="docutils literal notranslate"><span class="pre">ModelType.tabular</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.ModelType.relational"><code class="docutils literal notranslate"><span class="pre">ModelType.relational</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.ModelType.types"><code class="docutils literal notranslate"><span class="pre">ModelType.types()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.ColDataType"><code class="docutils literal notranslate"><span class="pre">ColDataType</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.ColDataType.NUMERIC"><code class="docutils literal notranslate"><span class="pre">ColDataType.NUMERIC</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.ColDataType.DATETIME"><code class="docutils literal notranslate"><span class="pre">ColDataType.DATETIME</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.ColDataType.CATEGORICAL"><code class="docutils literal notranslate"><span class="pre">ColDataType.CATEGORICAL</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.ColDataType.types"><code class="docutils literal notranslate"><span class="pre">ColDataType.types()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.SpecialTokens"><code class="docutils literal notranslate"><span class="pre">SpecialTokens</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.SpecialTokens.UNK"><code class="docutils literal notranslate"><span class="pre">SpecialTokens.UNK</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.SpecialTokens.SEP"><code class="docutils literal notranslate"><span class="pre">SpecialTokens.SEP</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.SpecialTokens.PAD"><code class="docutils literal notranslate"><span class="pre">SpecialTokens.PAD</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.SpecialTokens.CLS"><code class="docutils literal notranslate"><span class="pre">SpecialTokens.CLS</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.SpecialTokens.MASK"><code class="docutils literal notranslate"><span class="pre">SpecialTokens.MASK</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.SpecialTokens.BOS"><code class="docutils literal notranslate"><span class="pre">SpecialTokens.BOS</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.SpecialTokens.EOS"><code class="docutils literal notranslate"><span class="pre">SpecialTokens.EOS</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.SpecialTokens.BMEM"><code class="docutils literal notranslate"><span class="pre">SpecialTokens.BMEM</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.SpecialTokens.EMEM"><code class="docutils literal notranslate"><span class="pre">SpecialTokens.EMEM</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.SpecialTokens.RMASK"><code class="docutils literal notranslate"><span class="pre">SpecialTokens.RMASK</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.SpecialTokens.SPTYPE"><code class="docutils literal notranslate"><span class="pre">SpecialTokens.SPTYPE</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.SpecialTokens.tokens"><code class="docutils literal notranslate"><span class="pre">SpecialTokens.tokens()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.get_uuid"><code class="docutils literal notranslate"><span class="pre">get_uuid()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.fix_multi_decimal"><code class="docutils literal notranslate"><span class="pre">fix_multi_decimal()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.build_vocab"><code class="docutils literal notranslate"><span class="pre">build_vocab()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.process_numeric_data"><code class="docutils literal notranslate"><span class="pre">process_numeric_data()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.process_datetime_data"><code class="docutils literal notranslate"><span class="pre">process_datetime_data()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.process_categorical_data"><code class="docutils literal notranslate"><span class="pre">process_categorical_data()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.encode_partition_numeric_col"><code class="docutils literal notranslate"><span class="pre">encode_partition_numeric_col()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.decode_partition_numeric_col"><code class="docutils literal notranslate"><span class="pre">decode_partition_numeric_col()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.tokenize_numeric_col"><code class="docutils literal notranslate"><span class="pre">tokenize_numeric_col()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.encode_column_values"><code class="docutils literal notranslate"><span class="pre">encode_column_values()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.decode_column_values"><code class="docutils literal notranslate"><span class="pre">decode_column_values()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.encode_processed_column"><code class="docutils literal notranslate"><span class="pre">encode_processed_column()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.decode_processed_column"><code class="docutils literal notranslate"><span class="pre">decode_processed_column()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.extract_processed_column"><code class="docutils literal notranslate"><span class="pre">extract_processed_column()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.is_numeric_col"><code class="docutils literal notranslate"><span class="pre">is_numeric_col()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.is_datetime_col"><code class="docutils literal notranslate"><span class="pre">is_datetime_col()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.is_categorical_col"><code class="docutils literal notranslate"><span class="pre">is_categorical_col()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.is_numeric_datetime_col"><code class="docutils literal notranslate"><span class="pre">is_numeric_datetime_col()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.process_data"><code class="docutils literal notranslate"><span class="pre">process_data()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.get_token_id"><code class="docutils literal notranslate"><span class="pre">get_token_id()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.get_input_ids"><code class="docutils literal notranslate"><span class="pre">get_input_ids()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.make_dataset"><code class="docutils literal notranslate"><span class="pre">make_dataset()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.get_relational_input_ids"><code class="docutils literal notranslate"><span class="pre">get_relational_input_ids()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer.data_utils.make_relational_dataset"><code class="docutils literal notranslate"><span class="pre">make_relational_dataset()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Aivin Solatorio
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023, World Bank.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,753 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>REaLTabFormer &#8212; REaLTabFormer</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/REalTabFormer_Final_EQ.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/REalTabFormer_Final_EQ.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+    <p class="title logo__title">REaLTabFormer 0.1.3</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">REaLTabFormer</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="autoapi/index.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="autoapi/realtabformer/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/realtabformer/__main__/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.__main__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/realtabformer/data_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.data_utils</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/realtabformer/realtabformer/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.realtabformer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/realtabformer/rtf_analyze/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_analyze</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/realtabformer/rtf_datacollator/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_datacollator</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/realtabformer/rtf_exceptions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_exceptions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/realtabformer/rtf_sampler/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_sampler</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/realtabformer/rtf_trainer/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_trainer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/realtabformer/rtf_validators/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_validators</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/worldbank/realtabformer" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/worldbank/realtabformer/edit/main/index.rst" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/worldbank/realtabformer/issues/new?title=Issue%20on%20page%20%2Findex.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/index.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>REaLTabFormer</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">REaLTabFormer</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer-for-regular-tabular-data">REaLTabFormer for regular tabular data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer-for-relational-data">REaLTabFormer for relational data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validators-for-synthetic-samples">Validators for synthetic samples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citation">Citation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">Acknowledgments</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><a href="https://colab.research.google.com/github/avsolatorio/RealTabFormer/blob/main/colab/REaLTabFormer_GeoValidator_Example.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<section id="realtabformer">
+<h1>REaLTabFormer<a class="headerlink" href="#realtabformer" title="Permalink to this heading">#</a></h1>
+<p>The REaLTabFormer (Realistic Relational and Tabular Data using Transformers) offers a unified framework for synthesizing tabular data of different types. A sequence-to-sequence (Seq2Seq) model is used for generating synthetic relational datasets. The REaLTabFormer model for a non-relational tabular data uses GPT-2, and can be used out-of-the-box to model any tabular data with independent observations.
+<br>
+<br></p>
+<p align="center">
+<img src="https://github.com/avsolatorio/RealTabFormer/raw/main/img/REalTabFormer_Final_EQ.png" style="width:75%"/>
+</p>
+<p align="center">
+<strong>REaLTabFormer: Generating Realistic Relational and Tabular Data using Transformers</strong>
+<br>
+<a href="https://arxiv.org/abs/2302.02041">Paper on ArXiv</a>
+</p>
+<br>
+<!---
+Tabular data is a common form of organizing data. Multiple models are available to generate synthetic tabular datasets where observations are independent, but few have the ability to produce relational datasets. Modeling relational data is challenging as it requires modeling both a "parent" table and its relationships across tables. We introduce REaLTabFormer (Realistic Relational and Tabular Transformer), a tabular and relational synthetic data generation model. It first creates a parent table using an autoregressive GPT-2 model, then generates the relational dataset conditioned on the parent table using a sequence-to-sequence (Seq2Seq) model. We implement target masking to prevent data copying and propose the $Q_\delta$ statistic and statistical bootstrapping to detect overfitting. Experiments using real-world datasets show that REaLTabFormer captures the relational structure better than a baseline model. REaLTabFormer also achieves state-of-the-art results on prediction tasks, "out-of-the-box", for large non-relational datasets without needing fine-tuning. --->
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h2>
+<p>REaLTabFormer is available on PyPi and can be easily installed with <a class="reference external" href="https://pypi.org/project/pip/">pip</a> (Python version &gt;= 3.7):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>realtabformer
+</pre></div>
+</div>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">#</a></h2>
+<p>We show examples of using the REaLTabFormer for modeling and generating synthetic data from a trained model.</p>
+<section id="realtabformer-for-regular-tabular-data">
+<h3>REaLTabFormer for regular tabular data<a class="headerlink" href="#realtabformer-for-regular-tabular-data" title="Permalink to this heading">#</a></h3>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># pip install realtabformer</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">realtabformer</span> <span class="kn">import</span> <span class="n">REaLTabFormer</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;foo.csv&quot;</span><span class="p">)</span>
+
+<span class="c1"># NOTE: Remove any unique identifiers in the</span>
+<span class="c1"># data that you don&#39;t want to be modeled.</span>
+
+<span class="c1"># Non-relational or parent table.</span>
+<span class="n">rtf_model</span> <span class="o">=</span> <span class="n">REaLTabFormer</span><span class="p">(</span>
+    <span class="n">model_type</span><span class="o">=</span><span class="s2">&quot;tabular&quot;</span><span class="p">,</span>
+    <span class="n">gradient_accumulation_steps</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+    <span class="n">logging_steps</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Fit the model on the dataset.</span>
+<span class="c1"># Additional parameters can be</span>
+<span class="c1"># passed to the `.fit` method.</span>
+<span class="n">rtf_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="c1"># Save the model to the current directory.</span>
+<span class="c1"># A new directory `rtf_model/` will be created.</span>
+<span class="c1"># In it, a directory with the model&#39;s</span>
+<span class="c1"># experiment id `idXXXX` will also be created</span>
+<span class="c1"># where the artefacts of the model will be stored.</span>
+<span class="n">rtf_model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;rtf_model/&quot;</span><span class="p">)</span>
+
+<span class="c1"># Generate synthetic data with the same</span>
+<span class="c1"># number of observations as the real dataset.</span>
+<span class="n">samples</span> <span class="o">=</span> <span class="n">rtf_model</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+
+<span class="c1"># Load the saved model. The directory to the</span>
+<span class="c1"># experiment must be provided.</span>
+<span class="n">rtf_model2</span> <span class="o">=</span> <span class="n">REaLTabFormer</span><span class="o">.</span><span class="n">load_from_dir</span><span class="p">(</span>
+    <span class="n">path</span><span class="o">=</span><span class="s2">&quot;rtf_model/idXXXX&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="realtabformer-for-relational-data">
+<h3>REaLTabFormer for relational data<a class="headerlink" href="#realtabformer-for-relational-data" title="Permalink to this heading">#</a></h3>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># pip install realtabformer</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">realtabformer</span> <span class="kn">import</span> <span class="n">REaLTabFormer</span>
+
+<span class="n">parent_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;foo.csv&quot;</span><span class="p">)</span>
+<span class="n">child_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;bar.csv&quot;</span><span class="p">)</span>
+<span class="n">join_on</span> <span class="o">=</span> <span class="s2">&quot;unique_id&quot;</span>
+
+<span class="c1"># Make sure that the key columns in both the</span>
+<span class="c1"># parent and the child table have the same name.</span>
+<span class="k">assert</span> <span class="p">((</span><span class="n">join_on</span> <span class="ow">in</span> <span class="n">parent_df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="ow">and</span>
+        <span class="p">(</span><span class="n">join_on</span> <span class="ow">in</span> <span class="n">child_df</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span>
+
+<span class="c1"># Non-relational or parent table. Don&#39;t include the</span>
+<span class="c1"># unique_id field.</span>
+<span class="n">parent_model</span> <span class="o">=</span> <span class="n">REaLTabFormer</span><span class="p">(</span><span class="n">model_type</span><span class="o">=</span><span class="s2">&quot;tabular&quot;</span><span class="p">)</span>
+<span class="n">parent_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">parent_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">join_on</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="n">pdir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;rtf_parent/&quot;</span><span class="p">)</span>
+<span class="n">parent_model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">pdir</span><span class="p">)</span>
+
+<span class="c1"># # Get the most recently saved parent model,</span>
+<span class="c1"># # or a specify some other saved model.</span>
+<span class="c1"># parent_model_path = pdir / &quot;idXXX&quot;</span>
+<span class="n">parent_model_path</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([</span>
+    <span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pdir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;id*&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">is_dir</span><span class="p">()],</span>
+    <span class="n">key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getmtime</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">child_model</span> <span class="o">=</span> <span class="n">REaLTabFormer</span><span class="p">(</span>
+    <span class="n">model_type</span><span class="o">=</span><span class="s2">&quot;relational&quot;</span><span class="p">,</span>
+    <span class="n">parent_realtabformer_path</span><span class="o">=</span><span class="n">parent_model_path</span><span class="p">,</span>
+    <span class="n">output_max_length</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">train_size</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+
+<span class="n">child_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+    <span class="n">df</span><span class="o">=</span><span class="n">child_df</span><span class="p">,</span>
+    <span class="n">in_df</span><span class="o">=</span><span class="n">parent_df</span><span class="p">,</span>
+    <span class="n">join_on</span><span class="o">=</span><span class="n">join_on</span><span class="p">)</span>
+
+<span class="c1"># Generate parent samples.</span>
+<span class="n">parent_samples</span> <span class="o">=</span> <span class="n">parent_model</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">parend_df</span><span class="p">))</span>
+
+<span class="c1"># Create the unique ids based on the index.</span>
+<span class="n">parent_samples</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">join_on</span>
+<span class="n">parent_samples</span> <span class="o">=</span> <span class="n">parent_samples</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="c1"># Generate the relational observations.</span>
+<span class="n">child_samples</span> <span class="o">=</span> <span class="n">child_model</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span>
+    <span class="n">input_unique_ids</span><span class="o">=</span><span class="n">parent_samples</span><span class="p">[</span><span class="n">join_on</span><span class="p">],</span>
+    <span class="n">input_df</span><span class="o">=</span><span class="n">parent_samples</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">join_on</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+    <span class="n">gen_batch</span><span class="o">=</span><span class="mi">64</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="validators-for-synthetic-samples">
+<h2>Validators for synthetic samples<a class="headerlink" href="#validators-for-synthetic-samples" title="Permalink to this heading">#</a></h2>
+<p>The REaLTabFormer framework provides an interface to easily build observation validators for filtering invalid synthetic samples. We show an example of using the <code class="docutils literal notranslate"><span class="pre">GeoValidator</span></code> below. The chart on the left shows the distribution of the generated latitude and longitude without validation. The chart on the right shows the synthetic samples with observations that have been validated using the <code class="docutils literal notranslate"><span class="pre">GeoValidator</span></code> with the California boundary. Still, even when we did not optimally train the model for generating this, the invalid samples (falling outside of the boundary) are scarce from the generated data with no validator.</p>
+<div align=center>
+    <img src="https://github.com/avsolatorio/RealTabFormer/raw/main/img/CA-housing-raw-samples.png" style="width:35%; padding-right:5%;"/>
+    <img src="https://github.com/avsolatorio/RealTabFormer/raw/main/img/CA-housing-validated-samples.png" style="width:35%; padding-left:5%;"/>
+</div>
+<br>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># !pip install geopandas &amp;&gt; /dev/null</span>
+<span class="c1"># !pip install realtabformer &amp;&gt; /dev/null</span>
+<span class="c1"># !git clone https://github.com/joncutrer/geopandas-tutorial.git &amp;&gt; /dev/null</span>
+<span class="kn">import</span> <span class="nn">geopandas</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">realtabformer</span> <span class="kn">import</span> <span class="n">REaLTabFormer</span>
+<span class="kn">from</span> <span class="nn">realtabformer</span> <span class="kn">import</span> <span class="n">rtf_validators</span> <span class="k">as</span> <span class="n">rtf_val</span>
+<span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">Polygon</span><span class="p">,</span> <span class="n">LineString</span><span class="p">,</span> <span class="n">Point</span><span class="p">,</span> <span class="n">MultiPolygon</span>
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">fetch_california_housing</span>
+
+
+<span class="k">def</span> <span class="nf">plot_sf</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">samples</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">xlims</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">126</span><span class="p">,</span> <span class="o">-</span><span class="mf">113.5</span><span class="p">)</span>
+    <span class="n">ylims</span> <span class="o">=</span> <span class="p">(</span><span class="mi">31</span><span class="p">,</span> <span class="mi">43</span><span class="p">)</span>
+    <span class="n">bins</span> <span class="o">=</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+
+    <span class="n">dd</span> <span class="o">=</span> <span class="n">samples</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">pp</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="n">dd</span><span class="p">[</span><span class="s2">&quot;Longitude&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;Longitude&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;Longitude&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span> <span class="o">&amp;</span>
+        <span class="n">dd</span><span class="p">[</span><span class="s2">&quot;Latitude&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;Latitude&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;Latitude&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+    <span class="p">]</span>
+
+    <span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">JointGrid</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">pp</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Longitude&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Latitude&quot;</span><span class="p">,</span> <span class="n">marginal_ticks</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">g</span><span class="o">.</span><span class="n">plot_joint</span><span class="p">(</span>
+        <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">,</span>
+        <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">states</span><span class="p">[</span><span class="n">states</span><span class="p">[</span><span class="s1">&#39;NAME&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;California&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">boundary</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">g</span><span class="o">.</span><span class="n">ax_joint</span><span class="p">)</span>
+    <span class="n">g</span><span class="o">.</span><span class="n">ax_joint</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">*</span><span class="n">xlims</span><span class="p">)</span>
+    <span class="n">g</span><span class="o">.</span><span class="n">ax_joint</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">*</span><span class="n">ylims</span><span class="p">)</span>
+
+    <span class="n">g</span><span class="o">.</span><span class="n">plot_marginals</span><span class="p">(</span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">,</span> <span class="n">element</span><span class="o">=</span><span class="s2">&quot;step&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#03012d&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">title</span><span class="p">:</span>
+        <span class="n">g</span><span class="o">.</span><span class="n">ax_joint</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+<span class="c1"># Get geographic files</span>
+<span class="n">states</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;geopandas-tutorial/data/usa-states-census-2014.shp&#39;</span><span class="p">)</span>
+<span class="n">states</span> <span class="o">=</span> <span class="n">states</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">)</span>  <span class="c1"># GPS Projection</span>
+
+<span class="c1"># Get the California housing dataset</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">fetch_california_housing</span><span class="p">(</span><span class="n">as_frame</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">frame</span>
+
+<span class="c1"># We create a model with small epochs for the demo, default is 200.</span>
+<span class="n">rtf_model</span> <span class="o">=</span> <span class="n">REaLTabFormer</span><span class="p">(</span>
+    <span class="n">model_type</span><span class="o">=</span><span class="s2">&quot;tabular&quot;</span><span class="p">,</span>
+    <span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>
+    <span class="n">epochs</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">gradient_accumulation_steps</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+    <span class="n">logging_steps</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Fit the specified model. We also reduce the num_bootstrap, default is 500.</span>
+<span class="n">rtf_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">num_bootstrap</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># Save the trained model</span>
+<span class="n">rtf_model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;rtf_model/&quot;</span><span class="p">)</span>
+
+<span class="c1"># Sample raw data without validator</span>
+<span class="n">samples_raw</span> <span class="o">=</span> <span class="n">rtf_model</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">10240</span><span class="p">,</span> <span class="n">gen_batch</span><span class="o">=</span><span class="mi">512</span><span class="p">)</span>
+
+<span class="c1"># Sample data with the geographic validator</span>
+<span class="n">obs_validator</span> <span class="o">=</span> <span class="n">rtf_val</span><span class="o">.</span><span class="n">ObservationValidator</span><span class="p">()</span>
+<span class="n">obs_validator</span><span class="o">.</span><span class="n">add_validator</span><span class="p">(</span>
+    <span class="s2">&quot;geo_validator&quot;</span><span class="p">,</span>
+    <span class="n">rtf_val</span><span class="o">.</span><span class="n">GeoValidator</span><span class="p">(</span>
+        <span class="n">MultiPolygon</span><span class="p">(</span><span class="n">states</span><span class="p">[</span><span class="n">states</span><span class="p">[</span><span class="s1">&#39;NAME&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;California&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">geometry</span><span class="p">[</span><span class="mi">0</span><span class="p">])),</span>
+    <span class="p">(</span><span class="s2">&quot;Longitude&quot;</span><span class="p">,</span> <span class="s2">&quot;Latitude&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">samples_validated</span> <span class="o">=</span> <span class="n">rtf_model</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span>
+    <span class="n">n_samples</span><span class="o">=</span><span class="mi">10240</span><span class="p">,</span> <span class="n">gen_batch</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span>
+    <span class="n">validator</span><span class="o">=</span><span class="n">obs_validator</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># Visualize the samples</span>
+<span class="n">plot_sf</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">samples_raw</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Raw samples&quot;</span><span class="p">)</span>
+<span class="n">plot_sf</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">samples_validated</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Validated samples&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="citation">
+<h2>Citation<a class="headerlink" href="#citation" title="Permalink to this heading">#</a></h2>
+<p>Please cite our work if you use the REaLTabFormer in your projects or research.</p>
+<div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="nc">@article</span><span class="p">{</span><span class="nl">solatorio2023realtabformer</span><span class="p">,</span>
+<span class="w">  </span><span class="na">title</span><span class="p">=</span><span class="s">{REaLTabFormer: Generating Realistic Relational and Tabular Data using Transformers}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">author</span><span class="p">=</span><span class="s">{Solatorio, Aivin V. and Dupriez, Olivier}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">journal</span><span class="p">=</span><span class="s">{arXiv preprint arXiv:2302.02041}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">year</span><span class="p">=</span><span class="s">{2023}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="acknowledgments">
+<h2>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Permalink to this heading">#</a></h2>
+<p>We thank the <a class="reference external" href="https://www.jointdatacenter.org/">World Bank-UNHCR Joint Data Center on Forced Displacement (JDC)</a> for funding the project “Enhancing Responsible Microdata Access to Improve
+Policy and Response in Forced Displacement Situations” (KP-P174174-GINP-TF0B5124). A part of the fund went into supporting the development of the REaLTabFormer framework which was used to generate the synthetic population for research on disclosure risk and the mosaic effect.</p>
+<p>We also send :hugs: to the <a class="reference external" href="https://huggingface.co/">HuggingFace</a> :hugs: for all the open-sourced software they release. And to all open-sourced projects, thank you!</p>
+</section>
+</section>
+<section id="documentation">
+<h1>Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading">#</a></h1>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">REaLTabFormer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autoapi/index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="autoapi/realtabformer/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/realtabformer/index.html#submodules">Submodules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/realtabformer/__main__/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.__main__</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/realtabformer/data_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.data_utils</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/realtabformer/realtabformer/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.realtabformer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/realtabformer/rtf_analyze/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_analyze</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/realtabformer/rtf_datacollator/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_datacollator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/realtabformer/rtf_exceptions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_exceptions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/realtabformer/rtf_sampler/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_sampler</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/realtabformer/rtf_trainer/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_trainer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/realtabformer/rtf_validators/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">realtabformer.rtf_validators</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/realtabformer/index.html#package-contents">Package Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/realtabformer/index.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">REaLTabFormer</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer-for-regular-tabular-data">REaLTabFormer for regular tabular data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#realtabformer-for-relational-data">REaLTabFormer for relational data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validators-for-synthetic-samples">Validators for synthetic samples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citation">Citation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">Acknowledgments</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Aivin Solatorio
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023, World Bank.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
