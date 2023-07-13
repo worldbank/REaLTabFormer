@@ -67,7 +67,7 @@ def _normalize_gpt2_state_dict(state_dict):
 
 
 def _validate_get_device(device: str) -> str:
-    if torch.cuda.device_count() == 0:
+    if (device == "cuda") and (torch.cuda.device_count() == 0):
         if torch.backends.mps.is_available():
             _device = "mps"
         else:
@@ -1209,6 +1209,7 @@ class REaLTabFormer:
             DataFrame with n_samples rows of generated data
         """
         self._check_model()
+        device = _validate_get_device(device)
 
         # Clear the cache
         torch.cuda.empty_cache()
@@ -1341,6 +1342,7 @@ class REaLTabFormer:
             self.model_type == ModelType.tabular
         ), "The predict method is only implemented for tabular data..."
         self._check_model()
+        device = _validate_get_device(device)
         batch = min(batch, data.shape[0])
 
         # Clear the cache
