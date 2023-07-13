@@ -425,7 +425,9 @@ def process_data(
                 # Don't cast datetime types.
                 continue
 
-            df[c] = df[c].astype(pd.Int64Dtype())
+            if pd.api.types.is_numeric_dtype(df[c].dtype):
+                # Only cast if the column is explicitly numeric type.
+                df[c] = df[c].astype(pd.Int64Dtype())
         except TypeError:
             pass
         except ValueError:
