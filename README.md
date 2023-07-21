@@ -78,6 +78,7 @@ rtf_model2 = REaLTabFormer.load_from_dir(
 # pip install realtabformer
 import os
 import pandas as pd
+from pathlib import Path
 from realtabformer import REaLTabFormer
 
 parent_df = pd.read_csv("foo.csv")
