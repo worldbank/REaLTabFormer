@@ -209,6 +209,7 @@ class REaLTabFormer:
             eval_steps=100,
             load_best_model_at_end=True,
             save_total_limit=early_stopping_patience + 1,
+            optim="adamw_torch",
         )
 
         # Remove experiment params from `training_args_kwargs`
