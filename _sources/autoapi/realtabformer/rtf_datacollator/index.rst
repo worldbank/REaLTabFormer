@@ -19,6 +19,7 @@ Classes
 
 .. py:class:: RelationalDataCollator
 
+
    Data collator that will dynamically pad the inputs received, as well as the labels.
    Adopted from the DataCollatorForSeq2Seq:
     https://github.com/huggingface/transformers/blob/v4.24.0/src/transformers/data/data_collator.py#L510

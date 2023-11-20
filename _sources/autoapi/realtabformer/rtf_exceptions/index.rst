@@ -9,6 +9,7 @@ Module Contents
 
 .. py:exception:: SampleEmptyError(message='Generated sample is empty after validation.', in_size=None)
 
+
    Bases: :py:obj:`Exception`
 
    Exception raised for generated samples without valid observations.
@@ -28,6 +29,7 @@ Module Contents
 
 
 .. py:exception:: SampleEmptyLimitError(message='Generated sample is still empty after the set limit.', in_size=None)
+
 
    Bases: :py:obj:`SampleEmptyError`
 

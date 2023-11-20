@@ -85,6 +85,7 @@ Attributes
 
 .. py:class:: TabularArtefact
 
+
    .. py:attribute:: best_disc_model
       :type: str
       :value: 'best-disc-model'
@@ -116,6 +117,7 @@ Attributes
 
 .. py:class:: ModelFileName
 
+
    .. py:attribute:: rtf_config_json
       :type: str
       :value: 'rtf_config.json'
@@ -135,6 +137,7 @@ Attributes
 
 .. py:class:: ModelType
 
+
    .. py:attribute:: tabular
       :type: str
       :value: 'tabular'
@@ -153,6 +156,7 @@ Attributes
 
 
 .. py:class:: ColDataType
+
 
    .. py:attribute:: NUMERIC
       :type: str
@@ -178,6 +182,7 @@ Attributes
 
 
 .. py:class:: SpecialTokens
+
 
    .. py:attribute:: UNK
       :type: str

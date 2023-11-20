@@ -40,6 +40,7 @@ Attributes
 
 .. py:class:: REaLSampler(model_type: str, model: transformers.PreTrainedModel, vocab: Dict, processed_columns: List, max_length: int, col_size: int, col_idx_ids: Dict, columns: List, datetime_columns: List, column_dtypes: Dict, column_has_missing: Dict, drop_na_cols: List, col_transform_data: Dict, random_state: Optional[int] = 1029, device='cuda')
 
+
    .. py:method:: _prefix_allowed_tokens_fn(batch_id, input_ids) -> List
       :abstractmethod:
 
@@ -68,6 +69,7 @@ Attributes
 
 .. py:class:: TabularSampler(model_type: str, model: transformers.PreTrainedModel, vocab: Dict, processed_columns: List, max_length: int, col_size: int, col_idx_ids: Dict, columns: List, datetime_columns: List, column_dtypes: Dict, column_has_missing: Dict, drop_na_cols: List, col_transform_data: Dict, random_state: Optional[int] = 1029, device='cuda')
 
+
    Bases: :py:obj:`REaLSampler`
 
    Sampler class for tabular data generation.
@@ -94,6 +96,7 @@ Attributes
 
 
 .. py:class:: RelationalSampler(model_type: str, model: transformers.PreTrainedModel, vocab: Dict, processed_columns: List, max_length: int, col_size: int, col_idx_ids: Dict, columns: List, datetime_columns: List, column_dtypes: Dict, column_has_missing: Dict, drop_na_cols: List, col_transform_data: Dict, in_col_transform_data: Dict, random_state: Optional[int] = 1029, device='cuda')
+
 
    Bases: :py:obj:`REaLSampler`
 

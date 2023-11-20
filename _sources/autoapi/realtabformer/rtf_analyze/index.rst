@@ -20,6 +20,7 @@ Classes
 
 .. py:class:: SyntheticDataBench(data: pandas.DataFrame, target_col: str, categorical: bool, target_pos_val: Any = None, test_size: float = 0.2, test_df: Optional[pandas.DataFrame] = None, random_state: int = 1029)
 
+
    This class handles all the assessments
    needed for testing the synthetic data.
 
@@ -196,6 +197,7 @@ Classes
 
 
 .. py:class:: SyntheticDataExperiment(data_id: str, model_type: str, categorical: bool, target_col: str, target_pos_val: Any = None)
+
 
    For each data and model:
    1. Split train/test data -> save data

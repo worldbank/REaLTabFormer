@@ -22,12 +22,14 @@ Classes
 
 .. py:class:: ValidatorBase
 
+
    .. py:method:: validate(*args: Any, **kwargs: Any) -> bool
       :abstractmethod:
 
 
 
 .. py:class:: RangeValidator(min_val: Union[float, int, numpy.number], max_val: Union[float, int, numpy.number])
+
 
    Bases: :py:obj:`ValidatorBase`
 
@@ -37,6 +39,7 @@ Classes
 
 .. py:class:: GeoValidator(geo_bound: Union[shapely.geometry.Polygon, shapely.geometry.MultiPolygon])
 
+
    Bases: :py:obj:`ValidatorBase`
 
    .. py:method:: validate(lon: float, lat: float) -> bool
@@ -44,6 +47,7 @@ Classes
 
 
 .. py:class:: ObservationValidator(validators: Optional[Dict[str, Tuple[ValidatorBase, Tuple[str]]]] = None)
+
 
    Bases: :py:obj:`ValidatorBase`
 
