@@ -433,6 +433,11 @@ class REaLSampler:
                 samples, columns=self.processed_columns, index=group_ids
             )
 
+        # Initial check for an empty sample frame.
+        if synth_sample.empty:
+            # Handle this exception in the sampling function.
+            raise SampleEmptyError(in_size=len(sample_outputs))
+
         # # Is this useful when we actually filter the vocabulary
         # # during generation???
         # # Let's try removing this for now and see what happens... XD
