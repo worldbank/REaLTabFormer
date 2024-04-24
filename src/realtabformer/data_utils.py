@@ -256,10 +256,19 @@ def process_datetime_data(
     # Make sure that we don't convert the NaT
     # to some integer.
     series = series.copy()
-    series.loc[series.notnull()] = (series[series.notnull()].view(int) / 1e9).astype(
-        int
-    )
-    series = series.fillna(pd.NA)
+
+    # Track null values (NaT)
+    null_idx = series.isnull()
+
+    # Convert to the numerical representation
+    # of the datetime (UNIX timestamp)
+    series = (series.astype(int) / 1e9)
+
+    # Fill NA
+    series.loc[null_idx] = pd.NA
+
+    # Cast as integer type
+    series = series.astype("Int64")
 
     # Take the mean value to re-align the data.
     # This will help reduce the scale of the numeric
