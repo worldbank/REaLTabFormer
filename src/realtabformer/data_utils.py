@@ -262,7 +262,7 @@ def process_datetime_data(
 
     # Convert to the numerical representation
     # of the datetime (UNIX timestamp)
-    series = (series.astype(int) / 1e9)
+    series = (series.astype("int64") / 1e9)
 
     # Fill NA
     series.loc[null_idx] = pd.NA
