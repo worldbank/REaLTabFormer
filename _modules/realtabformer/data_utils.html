@@ -139,7 +139,7 @@
     <script>document.write(`<img src="../../_static/REalTabFormer_Final_EQ.png" class="logo__image only-dark" alt=""/>`);</script>
   
   
-    <p class="title logo__title">REaLTabFormer 0.1.6</p>
+    <p class="title logo__title">REaLTabFormer 0.1.7</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -576,7 +576,7 @@ document.write(`
 
     <span class="c1"># Convert to the numerical representation</span>
     <span class="c1"># of the datetime (UNIX timestamp)</span>
-    <span class="n">series</span> <span class="o">=</span> <span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1e9</span><span class="p">)</span>
+    <span class="n">series</span> <span class="o">=</span> <span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;int64&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1e9</span><span class="p">)</span>
 
     <span class="c1"># Fill NA</span>
     <span class="n">series</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">null_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">NA</span>
