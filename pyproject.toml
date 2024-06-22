@@ -1,47 +1,48 @@
 [build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
 
-[project]
+[tool.poetry]
 name = "REaLTabFormer"
-dynamic = ["version"]
-authors = [
-  { name="Aivin V. Solatorio", email="asolatorio@worldbank.org" },
-]
 description = "A novel method for generating tabular and relational data using language models."
+authors = ["Aivin V. Solatorio <asolatorio@worldbank.org>"]
 readme = "README.md"
-license = { file="LICENSE" }
-requires-python = ">=3.7"
+license = "MIT"
+version = "0.1.7"
+homepage = "https://github.com/avsolatorio/REaLTabFormer"
+documentation = "https://worldbank.github.io/REaLTabFormer/"
+
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
+    "Operating System :: OS Independent"
 ]
+
 keywords = [
     "REaLTabFormer", "deep learning", "tabular data",
     "transformers", "data generation", "seq2seq model",
     "synthetic data", "pytorch", "language models",
     "synthetic data generation"
 ]
-dependencies = [
-    "accelerate >= 0.20.3",
-    "datasets >= 2.6.1",
-    "numpy >= 1.21.6",  # "numpy >= 1.23.4",
-    "pandas >= 1.3.5",  # "pandas >= 1.5.1",
-    "scikit_learn >= 1.0.2",  # "scikit_learn >= 1.1.3",
-    "torch >= 1.13.0",
-    "tqdm >= 4.64.1",
-    "transformers >= 4.24.0",
-    "shapely >= 1.8.5.post1",
-]
 
-[project.urls]
-"Homepage" = "https://github.com/avsolatorio/REaLTabFormer"
-"Documentation" = "https://avsolatorio.github.io/REaLTabFormer/"
+[tool.poetry.dependencies]
+python = ">=3.8"
+datasets = ">=2.6.1"
+numpy = ">=1.21.6"  # ">=1.23.4"
+pandas = ">=1.3.5"  # ">=1.5.1"
+scikit-learn = ">=1.0.2"  # ">=1.1.3"
+tqdm = ">=4.64.1"
+transformers = {extras = ["torch"], version = ">=4.41.0"}
+shapely = ">=1.8.5.post1"
 
-[tool.setuptools.packages.find]
-where = ["src"]
+[tool.poetry.urls]
+Homepage = "https://github.com/avsolatorio/REaLTabFormer"
+Documentation = "https://avsolatorio.github.io/REaLTabFormer/"
 
-[tool.setuptools.dynamic]
-# version = {attr = "realtabformer.__version__"}
-version = {file = "src/realtabformer/VERSION"}
+[tool.poetry.scripts]
+realtabformer = "realtabformer:main"
+
+[tool.poetry_bumpversion.file."src/realtabformer/VERSION"]
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.4"
