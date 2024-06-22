@@ -46,3 +46,9 @@ realtabformer = "realtabformer:main"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.4"
+pytest = "^8.2.2"
+isort = "^5.13.2"
+black = "^24.4.2"
+bandit = "^1.7.9"
+trufflehog = "^2.2.1"
+pytest-mock = "^3.14.0"
