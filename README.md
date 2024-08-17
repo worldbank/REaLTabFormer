@@ -1,4 +1,4 @@
-<a href="https://colab.research.google.com/github/avsolatorio/RealTabFormer/blob/main/colab/REaLTabFormer_GeoValidator_Example.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+<a href="https://colab.research.google.com/github/avsolatorio/RealTabFormer/blob/main/colab/REaLTabFormer_GeoValidator_Example.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> [![Downloads](https://static.pepy.tech/badge/realtabformer)](https://pepy.tech/project/realtabformer) [![Downloads](https://static.pepy.tech/badge/realtabformer/month)](https://pepy.tech/project/realtabformer) [![Downloads](https://static.pepy.tech/badge/realtabformer/week)](https://pepy.tech/project/realtabformer)
 
 # REaLTabFormer
 

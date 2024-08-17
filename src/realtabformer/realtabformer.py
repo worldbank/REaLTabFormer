@@ -822,10 +822,10 @@ class REaLTabFormer:
         loaded_model_path = None
 
         if not load_from_best_mean_sensitivity:
-            if (bdm_path / "pytorch_model.bin").exists():
+            if (bdm_path / "pytorch_model.bin").exists() or (bdm_path / "model.safetensors").exists():
                 loaded_model_path = bdm_path
         else:
-            if (mean_closest_bdm_path / "pytorch_model.bin").exists():
+            if (mean_closest_bdm_path / "pytorch_model.bin").exists() or (mean_closest_bdm_path / "model.safetensors").exists():
                 loaded_model_path = mean_closest_bdm_path
 
         if loaded_model_path is None:

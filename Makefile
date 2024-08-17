@@ -14,7 +14,10 @@ lint:
 	pre-commit run -a --hook-stage manual $(hook)
 
 test:
-	pytest tests --cov-config pyproject.toml --numprocesses 4 --dist loadfile
+	poetry run pytest tests --cov-config pyproject.toml --numprocesses 4 --dist loadfile
+
+bump-version:
+	poetry version patch
 
 pip-compile:
 	pip-compile -q -o -
@@ -23,13 +26,16 @@ secret-scan:
 	trufflehog --max_depth 1 --exclude_paths trufflehog-ignore.txt .
 
 package: clean install
-	python setup.py sdist bdist_wheel
+	# python setup.py sdist bdist_wheel
+	poetry build
 
 test-pypi-upload: package
-	twine upload --repository testpypi dist/*
+	# poetry run twine upload --repository testpypi dist/*
+	poetry publish --build --repository testpypi
 
 pypi-upload: package
-	twine upload dist/*
+	# poetry run twine upload dist/*
+	poetry publish --build
 
 install-test-requirements:
 	pip install -r test_requirements.txt
