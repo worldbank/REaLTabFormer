@@ -34,7 +34,7 @@ Classes
 
 
 
-.. py:class:: REaLTabFormer(model_type: str, tabular_config: Optional[transformers.models.gpt2.GPT2Config] = None, relational_config: Optional[transformers.EncoderDecoderConfig] = None, parent_realtabformer_path: Optional[pathlib.Path] = None, freeze_parent_model: Optional[bool] = True, checkpoints_dir: str = 'rtf_checkpoints', samples_save_dir: str = 'rtf_samples', epochs: int = 100, batch_size: int = 8, random_state: int = 1029, train_size: float = 1, output_max_length: int = 512, early_stopping_patience: int = 5, early_stopping_threshold: float = 0, mask_rate: float = 0, numeric_nparts: int = 1, numeric_precision: int = 4, numeric_max_len: int = 10, **training_args_kwargs)
+.. py:class:: REaLTabFormer(model_type: str, tabular_config: Optional[transformers.models.gpt2.GPT2Config] = None, relational_config: Optional[transformers.EncoderDecoderConfig] = None, parent_realtabformer_path: Optional[pathlib.Path] = None, freeze_parent_model: Optional[bool] = True, checkpoints_dir: str = 'rtf_checkpoints', samples_save_dir: str = 'rtf_samples', epochs: int = 1000, batch_size: int = 8, random_state: int = 1029, train_size: float = 1, output_max_length: int = 512, early_stopping_patience: int = 5, early_stopping_threshold: float = 0, mask_rate: float = 0, numeric_nparts: int = 1, numeric_precision: int = 4, numeric_max_len: int = 10, **training_args_kwargs)
 
 
    .. py:method:: _invalid_model_type(model_type)

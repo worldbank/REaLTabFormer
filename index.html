@@ -144,7 +144,7 @@
     <script>document.write(`<img src="_static/REalTabFormer_Final_EQ.png" class="logo__image only-dark" alt=""/>`);</script>
   
   
-    <p class="title logo__title">REaLTabFormer 0.2.0</p>
+    <p class="title logo__title">REaLTabFormer 0.2.1</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -431,6 +431,13 @@ Tabular data is a common form of organizing data. Multiple models are available 
 <section id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">#</a></h2>
 <p>We show examples of using the REaLTabFormer for modeling and generating synthetic data from a trained model.</p>
+<blockquote>
+<div><p>[!INFO]
+The model implements an optimal stopping criterion based on the synthetic data distribution when training a non-relational tabular model.
+The model will stop training when the synthetic data distribution is close to the real data distribution.</p>
+<p><strong>Make sure to set the <code class="docutils literal notranslate"><span class="pre">epochs</span></code> parameter to a large number to allow the model to fit the data better.</strong>
+The model will stop training when the optimal stopping criterion is met.</p>
+</div></blockquote>
 <section id="realtabformer-for-regular-tabular-data">
 <h3>REaLTabFormer for regular tabular data<a class="headerlink" href="#realtabformer-for-regular-tabular-data" title="Permalink to this heading">#</a></h3>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># pip install realtabformer</span>
