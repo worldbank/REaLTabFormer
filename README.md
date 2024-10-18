@@ -30,7 +30,7 @@ pip install realtabformer
 
 We show examples of using the REaLTabFormer for modeling and generating synthetic data from a trained model.
 
-> [!INFO]
+> [!NOTE]
 > The model implements an optimal stopping criterion based on the synthetic data distribution when training a non-relational tabular model.
 > The model will stop training when the synthetic data distribution is close to the real data distribution.
 >
