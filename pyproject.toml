@@ -32,7 +32,7 @@ numpy = ">=1.21.6"  # ">=1.23.4"
 pandas = ">=1.3.5"  # ">=1.5.1"
 scikit-learn = ">=1.0.2"  # ">=1.1.3"
 tqdm = ">=4.64.1"
-transformers = {extras = ["torch", "sentencepiece"], version = ">=4.41.0"}
+transformers = {extras = ["torch", "sentencepiece"], version = ">=4.46.0"}
 shapely = ">=1.8.5.post1"
 
 [tool.poetry.urls]
