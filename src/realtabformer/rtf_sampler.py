@@ -330,7 +330,7 @@ class REaLSampler:
                         # can later be implemented to remove these.
                         group_series = (
                             group_series.str.replace("[^0-9]", "", regex=True)
-                            .map(lambda x: int(x) if x else None)
+                            .map(lambda x: int(x) if x == x else None)
                             .fillna(pd.NA)
                         )
                     else:
