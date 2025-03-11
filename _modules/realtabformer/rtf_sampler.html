@@ -16,8 +16,8 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
+  <!--
+    this give us a css class that will be invisible only if js is disabled
   -->
   <noscript>
     <style>
@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
@@ -36,10 +36,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
   
   <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -166,9 +166,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -303,19 +308,19 @@
 <span></span><span class="sd">&quot;&quot;&quot;This module contains the implementation for the sampling</span>
 <span class="sd">algorithms used for tabular and relational data generation.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="kn">import</span> <span class="nn">logging</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span>
 
-<span class="kn">import</span> <span class="nn">datasets</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">torch</span>
-<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
-<span class="kn">from</span> <span class="nn">tqdm.auto</span> <span class="kn">import</span> <span class="n">tqdm</span>
-<span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">DefaultDataCollator</span><span class="p">,</span> <span class="n">PreTrainedModel</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">datasets</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">torch.utils.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataLoader</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tqdm.auto</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">DefaultDataCollator</span><span class="p">,</span> <span class="n">PreTrainedModel</span>
 
-<span class="kn">from</span> <span class="nn">.data_utils</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.data_utils</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
     <span class="n">INVALID_NUMS_RE</span><span class="p">,</span>
     <span class="n">NUMERIC_NA_TOKEN</span><span class="p">,</span>
     <span class="n">ModelType</span><span class="p">,</span>
@@ -330,14 +335,14 @@
     <span class="n">make_dataset</span><span class="p">,</span>
     <span class="n">process_data</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="kn">from</span> <span class="nn">.rtf_exceptions</span> <span class="kn">import</span> <span class="n">SampleEmptyError</span><span class="p">,</span> <span class="n">SampleEmptyLimitError</span>
-<span class="kn">from</span> <span class="nn">.rtf_validators</span> <span class="kn">import</span> <span class="n">ObservationValidator</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.rtf_exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">SampleEmptyError</span><span class="p">,</span> <span class="n">SampleEmptyLimitError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.rtf_validators</span><span class="w"> </span><span class="kn">import</span> <span class="n">ObservationValidator</span>
 
 <div class="viewcode-block" id="NQ_COL"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.NQ_COL">[docs]</a><span class="n">NQ_COL</span> <span class="o">=</span> <span class="s2">&quot;_nq_ds_&quot;</span></div>
 
 
-<div class="viewcode-block" id="REaLSampler"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.REaLSampler">[docs]</a><span class="k">class</span> <span class="nc">REaLSampler</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<div class="viewcode-block" id="REaLSampler"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.REaLSampler">[docs]</a><span class="k">class</span><span class="w"> </span><span class="nc">REaLSampler</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">model_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">model</span><span class="p">:</span> <span class="n">PreTrainedModel</span><span class="p">,</span>
@@ -386,11 +391,11 @@
         <span class="c1"># Set the model to eval mode</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
 
-<div class="viewcode-block" id="REaLSampler._prefix_allowed_tokens_fn"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.REaLSampler._prefix_allowed_tokens_fn">[docs]</a>    <span class="k">def</span> <span class="nf">_prefix_allowed_tokens_fn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_id</span><span class="p">,</span> <span class="n">input_ids</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">:</span>
+<div class="viewcode-block" id="REaLSampler._prefix_allowed_tokens_fn"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.REaLSampler._prefix_allowed_tokens_fn">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">_prefix_allowed_tokens_fn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_id</span><span class="p">,</span> <span class="n">input_ids</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">:</span>
         <span class="c1"># https://huggingface.co/docs/transformers/v4.24.0/en/main_classes/text_generation#transformers.generation_utils.GenerationMixin.generate.prefix_allowed_tokens_fn</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
-<div class="viewcode-block" id="REaLSampler._convert_to_table"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.REaLSampler._convert_to_table">[docs]</a>    <span class="k">def</span> <span class="nf">_convert_to_table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">synth_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<div class="viewcode-block" id="REaLSampler._convert_to_table"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.REaLSampler._convert_to_table">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">_convert_to_table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">synth_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
         <span class="c1"># Perform additional standardization</span>
         <span class="c1"># processing.</span>
         <span class="n">synth_df</span> <span class="o">=</span> <span class="n">synth_df</span><span class="p">[</span><span class="nb">sorted</span><span class="p">(</span><span class="n">synth_df</span><span class="o">.</span><span class="n">columns</span><span class="p">)]</span>
@@ -510,7 +515,7 @@
 
         <span class="k">return</span> <span class="n">synth_df</span></div>
 
-<div class="viewcode-block" id="REaLSampler._generate"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.REaLSampler._generate">[docs]</a>    <span class="k">def</span> <span class="nf">_generate</span><span class="p">(</span>
+<div class="viewcode-block" id="REaLSampler._generate"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.REaLSampler._generate">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">_generate</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">device</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">,</span>
         <span class="n">as_numpy</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
@@ -556,7 +561,7 @@
 
         <span class="k">return</span> <span class="n">_samples</span></div>
 
-<div class="viewcode-block" id="REaLSampler._validate_synth_sample"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.REaLSampler._validate_synth_sample">[docs]</a>    <span class="k">def</span> <span class="nf">_validate_synth_sample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">synth_sample</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<div class="viewcode-block" id="REaLSampler._validate_synth_sample"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.REaLSampler._validate_synth_sample">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">_validate_synth_sample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">synth_sample</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
         <span class="c1"># Validate data</span>
         <span class="n">valid_mask</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -579,7 +584,7 @@
 
         <span class="k">return</span> <span class="n">synth_sample</span></div>
 
-<div class="viewcode-block" id="REaLSampler._recover_data_values"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.REaLSampler._recover_data_values">[docs]</a>    <span class="k">def</span> <span class="nf">_recover_data_values</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">synth_sample</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<div class="viewcode-block" id="REaLSampler._recover_data_values"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.REaLSampler._recover_data_values">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">_recover_data_values</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">synth_sample</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
         <span class="n">processed_columns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Index</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processed_columns</span><span class="p">)</span>
         <span class="n">numeric_datetime_cols</span> <span class="o">=</span> <span class="n">processed_columns</span><span class="p">[</span>
             <span class="n">processed_columns</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">is_numeric_datetime_col</span><span class="p">)</span>
@@ -632,7 +637,7 @@
                         <span class="c1"># can later be implemented to remove these.</span>
                         <span class="n">group_series</span> <span class="o">=</span> <span class="p">(</span>
                             <span class="n">group_series</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;[^0-9]&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-                            <span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+                            <span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">x</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
                             <span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">NA</span><span class="p">)</span>
                         <span class="p">)</span>
                     <span class="k">else</span><span class="p">:</span>
@@ -668,7 +673,7 @@
 
         <span class="k">return</span> <span class="n">synth_df</span></div>
 
-<div class="viewcode-block" id="REaLSampler._processes_sample"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.REaLSampler._processes_sample">[docs]</a>    <span class="k">def</span> <span class="nf">_processes_sample</span><span class="p">(</span>
+<div class="viewcode-block" id="REaLSampler._processes_sample"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.REaLSampler._processes_sample">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">_processes_sample</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">sample_outputs</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
         <span class="n">vocab</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span>
@@ -677,7 +682,7 @@
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
         <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sample_outputs</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span>
 
-        <span class="k">def</span> <span class="nf">_decode_tokens</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">_decode_tokens</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
             <span class="c1"># No need to remove [BOS] and [EOS] tokens</span>
             <span class="c1"># here, it will be handled later.</span>
             <span class="k">return</span> <span class="p">[</span><span class="n">vocab</span><span class="p">[</span><span class="s2">&quot;id2token&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">s</span><span class="p">]</span>
@@ -769,7 +774,7 @@
 
         <span class="k">return</span> <span class="n">synth_df</span></div>
 
-<div class="viewcode-block" id="REaLSampler._validate_data"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.REaLSampler._validate_data">[docs]</a>    <span class="k">def</span> <span class="nf">_validate_data</span><span class="p">(</span>
+<div class="viewcode-block" id="REaLSampler._validate_data"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.REaLSampler._validate_data">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">_validate_data</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">synth_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">validator</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ObservationValidator</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">validator</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -777,16 +782,16 @@
 
         <span class="k">return</span> <span class="n">synth_df</span></div>
 
-<div class="viewcode-block" id="REaLSampler._validate_missing"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.REaLSampler._validate_missing">[docs]</a>    <span class="k">def</span> <span class="nf">_validate_missing</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">synth_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<div class="viewcode-block" id="REaLSampler._validate_missing"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.REaLSampler._validate_missing">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">_validate_missing</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">synth_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
         <span class="c1"># Drop the rows where any one of the columns that should not have</span>
         <span class="c1"># a missing value have at least one.</span>
         <span class="k">return</span> <span class="n">synth_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">drop_na_cols</span><span class="p">)</span></div></div>
 
 
-<div class="viewcode-block" id="TabularSampler"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.TabularSampler">[docs]</a><span class="k">class</span> <span class="nc">TabularSampler</span><span class="p">(</span><span class="n">REaLSampler</span><span class="p">):</span>
+<div class="viewcode-block" id="TabularSampler"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.TabularSampler">[docs]</a><span class="k">class</span><span class="w"> </span><span class="nc">TabularSampler</span><span class="p">(</span><span class="n">REaLSampler</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Sampler class for tabular data generation.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">model_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">model</span><span class="p">:</span> <span class="n">PreTrainedModel</span><span class="p">,</span>
@@ -825,7 +830,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">output_vocab</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vocab</span>
 
     <span class="nd">@staticmethod</span>
-<div class="viewcode-block" id="TabularSampler.sampler_from_model"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.TabularSampler.sampler_from_model">[docs]</a>    <span class="k">def</span> <span class="nf">sampler_from_model</span><span class="p">(</span><span class="n">rtf_model</span><span class="p">,</span> <span class="n">device</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;cuda&quot;</span><span class="p">):</span>
+<div class="viewcode-block" id="TabularSampler.sampler_from_model"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.TabularSampler.sampler_from_model">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">sampler_from_model</span><span class="p">(</span><span class="n">rtf_model</span><span class="p">,</span> <span class="n">device</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;cuda&quot;</span><span class="p">):</span>
         <span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
 
         <span class="k">assert</span> <span class="n">rtf_model</span><span class="o">.</span><span class="n">tabular_max_length</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
@@ -850,7 +855,7 @@
             <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="TabularSampler._prefix_allowed_tokens_fn"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.TabularSampler._prefix_allowed_tokens_fn">[docs]</a>    <span class="k">def</span> <span class="nf">_prefix_allowed_tokens_fn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_id</span><span class="p">,</span> <span class="n">input_ids</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">:</span>
+<div class="viewcode-block" id="TabularSampler._prefix_allowed_tokens_fn"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.TabularSampler._prefix_allowed_tokens_fn">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">_prefix_allowed_tokens_fn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_id</span><span class="p">,</span> <span class="n">input_ids</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">:</span>
         <span class="c1"># https://huggingface.co/docs/transformers/v4.24.0/en/main_classes/text_generation#transformers.generation_utils.GenerationMixin.generate.prefix_allowed_tokens_fn</span>
         <span class="c1"># For the tabular data, len(input_ids) == 1 -&gt; [BOS]</span>
 
@@ -860,7 +865,7 @@
             <span class="nb">len</span><span class="p">(</span><span class="n">input_ids</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">vocab</span><span class="p">[</span><span class="s2">&quot;token2id&quot;</span><span class="p">][</span><span class="n">SpecialTokens</span><span class="o">.</span><span class="n">EOS</span><span class="p">]]</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="TabularSampler._process_seed_input"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.TabularSampler._process_seed_input">[docs]</a>    <span class="k">def</span> <span class="nf">_process_seed_input</span><span class="p">(</span>
+<div class="viewcode-block" id="TabularSampler._process_seed_input"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.TabularSampler._process_seed_input">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">_process_seed_input</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">seed_input</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
         <span class="c1"># TODO: The heuristic of choosing the valid columns shouldn&#39;t contradict</span>
@@ -895,7 +900,7 @@
 
         <span class="k">return</span> <span class="n">generated</span></div>
 
-<div class="viewcode-block" id="TabularSampler.sample_tabular"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.TabularSampler.sample_tabular">[docs]</a>    <span class="k">def</span> <span class="nf">sample_tabular</span><span class="p">(</span>
+<div class="viewcode-block" id="TabularSampler.sample_tabular"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.TabularSampler.sample_tabular">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">sample_tabular</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">n_samples</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
         <span class="n">gen_batch</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">128</span><span class="p">,</span>
@@ -966,7 +971,7 @@
                     <span class="k">if</span> <span class="n">empty_limit</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
                         <span class="k">raise</span> <span class="n">SampleEmptyLimitError</span><span class="p">(</span>
                             <span class="sa">f</span><span class="s2">&quot;The model has generated empty sample batches for </span><span class="si">{</span><span class="n">continuous_empty_limit</span><span class="si">}</span><span class="s2"> consecutive rounds!&quot;</span>
-                        <span class="p">)</span> <span class="kn">from</span> <span class="nn">exc</span>
+                        <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">exc</span>
                     <span class="k">continue</span>
 
                 <span class="n">num_generated</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">synth_sample</span><span class="p">)</span>
@@ -987,7 +992,7 @@
 
         <span class="k">return</span> <span class="n">synth_df</span></div>
 
-<div class="viewcode-block" id="TabularSampler.predict"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.TabularSampler.predict">[docs]</a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span>
+<div class="viewcode-block" id="TabularSampler.predict"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.TabularSampler.predict">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
         <span class="n">target_col</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -1066,10 +1071,10 @@
         <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">preds</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">)</span></div></div>
 
 
-<div class="viewcode-block" id="RelationalSampler"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.RelationalSampler">[docs]</a><span class="k">class</span> <span class="nc">RelationalSampler</span><span class="p">(</span><span class="n">REaLSampler</span><span class="p">):</span>
+<div class="viewcode-block" id="RelationalSampler"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.RelationalSampler">[docs]</a><span class="k">class</span><span class="w"> </span><span class="nc">RelationalSampler</span><span class="p">(</span><span class="n">REaLSampler</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Sampler class for relational data generation.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">model_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">model</span><span class="p">:</span> <span class="n">PreTrainedModel</span><span class="p">,</span>
@@ -1110,7 +1115,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">in_col_transform_data</span> <span class="o">=</span> <span class="n">in_col_transform_data</span>
 
     <span class="nd">@staticmethod</span>
-<div class="viewcode-block" id="RelationalSampler.sampler_from_model"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.RelationalSampler.sampler_from_model">[docs]</a>    <span class="k">def</span> <span class="nf">sampler_from_model</span><span class="p">(</span><span class="n">rtf_model</span><span class="p">,</span> <span class="n">device</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;cuda&quot;</span><span class="p">):</span>
+<div class="viewcode-block" id="RelationalSampler.sampler_from_model"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.RelationalSampler.sampler_from_model">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">sampler_from_model</span><span class="p">(</span><span class="n">rtf_model</span><span class="p">,</span> <span class="n">device</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;cuda&quot;</span><span class="p">):</span>
         <span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
 
         <span class="k">assert</span> <span class="n">rtf_model</span><span class="o">.</span><span class="n">relational_max_length</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
@@ -1137,7 +1142,7 @@
             <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="RelationalSampler.sample_relational"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.RelationalSampler.sample_relational">[docs]</a>    <span class="k">def</span> <span class="nf">sample_relational</span><span class="p">(</span>
+<div class="viewcode-block" id="RelationalSampler.sample_relational"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.RelationalSampler.sample_relational">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">sample_relational</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">input_unique_ids</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="n">List</span><span class="p">],</span>
         <span class="n">input_df</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1268,7 +1273,7 @@
 
         <span class="k">return</span> <span class="n">synth_df</span></div>
 
-<div class="viewcode-block" id="RelationalSampler._get_min_max_length"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.RelationalSampler._get_min_max_length">[docs]</a>    <span class="k">def</span> <span class="nf">_get_min_max_length</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">related_num</span><span class="p">):</span>
+<div class="viewcode-block" id="RelationalSampler._get_min_max_length"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.RelationalSampler._get_min_max_length">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">_get_min_max_length</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">related_num</span><span class="p">):</span>
         <span class="c1"># The `min_length = 2` corresponds to the ([EOS], [BOS])</span>
         <span class="c1"># sequence that is used in the encoder-decoder</span>
         <span class="c1"># model. This is why a related num of zero will have a</span>
@@ -1290,7 +1295,7 @@
 
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">min_length</span><span class="o">=</span><span class="n">min_length</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="n">max_length</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RelationalSampler._sample_input_batch"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.RelationalSampler._sample_input_batch">[docs]</a>    <span class="k">def</span> <span class="nf">_sample_input_batch</span><span class="p">(</span>
+<div class="viewcode-block" id="RelationalSampler._sample_input_batch"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.RelationalSampler._sample_input_batch">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">_sample_input_batch</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">input_df</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">gen_batch</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">128</span><span class="p">,</span>
@@ -1330,7 +1335,7 @@
 
             <span class="k">yield</span> <span class="n">_samples</span></div>
 
-<div class="viewcode-block" id="RelationalSampler._get_relational_col_idx_ids"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.RelationalSampler._get_relational_col_idx_ids">[docs]</a>    <span class="k">def</span> <span class="nf">_get_relational_col_idx_ids</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">len_ids</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">:</span>
+<div class="viewcode-block" id="RelationalSampler._get_relational_col_idx_ids"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.RelationalSampler._get_relational_col_idx_ids">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">_get_relational_col_idx_ids</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">len_ids</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;This method returns the true index given the generation step `i`.</span>
 
 <span class="sd">        col_size: The expected number of variables for a single observation.</span>
@@ -1380,7 +1385,7 @@
 
         <span class="k">return</span> <span class="n">return_ids</span></div>
 
-<div class="viewcode-block" id="RelationalSampler._prefix_allowed_tokens_fn"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.RelationalSampler._prefix_allowed_tokens_fn">[docs]</a>    <span class="k">def</span> <span class="nf">_prefix_allowed_tokens_fn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_id</span><span class="p">,</span> <span class="n">input_ids</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">:</span>
+<div class="viewcode-block" id="RelationalSampler._prefix_allowed_tokens_fn"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_sampler/index.html#realtabformer.rtf_sampler.RelationalSampler._prefix_allowed_tokens_fn">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">_prefix_allowed_tokens_fn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_id</span><span class="p">,</span> <span class="n">input_ids</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">:</span>
         <span class="c1"># https://huggingface.co/docs/transformers/v4.24.0/en/main_classes/text_generation#transformers.generation_utils.GenerationMixin.generate.prefix_allowed_tokens_fn</span>
         <span class="c1"># For the relational data, len(input_ids) == 2 -&gt; [EOS, BOS]</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_relational_col_idx_ids</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">input_ids</span><span class="p">))</span></div></div>
@@ -1446,8 +1451,8 @@ By Aivin Solatorio
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -16,8 +16,8 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
+  <!--
+    this give us a css class that will be invisible only if js is disabled
   -->
   <noscript>
     <style>
@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
@@ -36,10 +36,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
   
   <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -166,9 +166,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -300,18 +305,18 @@
                 <article class="bd-article">
                   
   <h1>Source code for realtabformer.data_utils</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">logging</span>
-<span class="kn">import</span> <span class="nn">random</span>
-<span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">import</span> <span class="nn">uuid</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
-<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">fields</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">uuid</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">fields</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span>
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">datasets</span> <span class="kn">import</span> <span class="n">Dataset</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dataset</span>
 
 <div class="viewcode-block" id="TEACHER_FORCING_PRE"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.TEACHER_FORCING_PRE">[docs]</a><span class="n">TEACHER_FORCING_PRE</span> <span class="o">=</span> <span class="s2">&quot;_TEACHERFORCING&quot;</span></div>
 <div class="viewcode-block" id="SPECIAL_COL_SEP"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.SPECIAL_COL_SEP">[docs]</a><span class="n">SPECIAL_COL_SEP</span> <span class="o">=</span> <span class="s2">&quot;___&quot;</span></div>
@@ -320,50 +325,50 @@
 
 
 <span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<div class="viewcode-block" id="TabularArtefact"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.TabularArtefact">[docs]</a><span class="k">class</span> <span class="nc">TabularArtefact</span><span class="p">:</span>
+<div class="viewcode-block" id="TabularArtefact"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.TabularArtefact">[docs]</a><span class="k">class</span><span class="w"> </span><span class="nc">TabularArtefact</span><span class="p">:</span>
 <div class="viewcode-block" id="TabularArtefact.best_disc_model"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.TabularArtefact.best_disc_model">[docs]</a>    <span class="n">best_disc_model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;best-disc-model&quot;</span></div>
 <div class="viewcode-block" id="TabularArtefact.mean_best_disc_model"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.TabularArtefact.mean_best_disc_model">[docs]</a>    <span class="n">mean_best_disc_model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;mean-best-disc-model&quot;</span></div>
 <div class="viewcode-block" id="TabularArtefact.not_best_disc_model"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.TabularArtefact.not_best_disc_model">[docs]</a>    <span class="n">not_best_disc_model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;not-best-disc-model&quot;</span></div>
 <div class="viewcode-block" id="TabularArtefact.last_epoch_model"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.TabularArtefact.last_epoch_model">[docs]</a>    <span class="n">last_epoch_model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;last-epoch-model&quot;</span></div>
 
     <span class="nd">@staticmethod</span>
-<div class="viewcode-block" id="TabularArtefact.artefacts"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.TabularArtefact.artefacts">[docs]</a>    <span class="k">def</span> <span class="nf">artefacts</span><span class="p">():</span>
+<div class="viewcode-block" id="TabularArtefact.artefacts"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.TabularArtefact.artefacts">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">artefacts</span><span class="p">():</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">field</span><span class="o">.</span><span class="n">default</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">(</span><span class="n">TabularArtefact</span><span class="p">)]</span></div></div>
 
 
 <span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<div class="viewcode-block" id="ModelFileName"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.ModelFileName">[docs]</a><span class="k">class</span> <span class="nc">ModelFileName</span><span class="p">:</span>
+<div class="viewcode-block" id="ModelFileName"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.ModelFileName">[docs]</a><span class="k">class</span><span class="w"> </span><span class="nc">ModelFileName</span><span class="p">:</span>
 <div class="viewcode-block" id="ModelFileName.rtf_config_json"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.ModelFileName.rtf_config_json">[docs]</a>    <span class="n">rtf_config_json</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;rtf_config.json&quot;</span></div>
 <div class="viewcode-block" id="ModelFileName.rtf_model_pt"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.ModelFileName.rtf_model_pt">[docs]</a>    <span class="n">rtf_model_pt</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;rtf_model.pt&quot;</span></div>
 
     <span class="nd">@staticmethod</span>
-<div class="viewcode-block" id="ModelFileName.names"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.ModelFileName.names">[docs]</a>    <span class="k">def</span> <span class="nf">names</span><span class="p">():</span>
+<div class="viewcode-block" id="ModelFileName.names"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.ModelFileName.names">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">names</span><span class="p">():</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">field</span><span class="o">.</span><span class="n">default</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">(</span><span class="n">ModelFileName</span><span class="p">)]</span></div></div>
 
 
 <span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<div class="viewcode-block" id="ModelType"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.ModelType">[docs]</a><span class="k">class</span> <span class="nc">ModelType</span><span class="p">:</span>
+<div class="viewcode-block" id="ModelType"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.ModelType">[docs]</a><span class="k">class</span><span class="w"> </span><span class="nc">ModelType</span><span class="p">:</span>
 <div class="viewcode-block" id="ModelType.tabular"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.ModelType.tabular">[docs]</a>    <span class="n">tabular</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;tabular&quot;</span></div>
 <div class="viewcode-block" id="ModelType.relational"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.ModelType.relational">[docs]</a>    <span class="n">relational</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;relational&quot;</span></div>
 
     <span class="nd">@staticmethod</span>
-<div class="viewcode-block" id="ModelType.types"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.ModelType.types">[docs]</a>    <span class="k">def</span> <span class="nf">types</span><span class="p">():</span>
+<div class="viewcode-block" id="ModelType.types"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.ModelType.types">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">types</span><span class="p">():</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">field</span><span class="o">.</span><span class="n">default</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">(</span><span class="n">ModelType</span><span class="p">)]</span></div></div>
 
 
 <span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<div class="viewcode-block" id="ColDataType"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.ColDataType">[docs]</a><span class="k">class</span> <span class="nc">ColDataType</span><span class="p">:</span>
+<div class="viewcode-block" id="ColDataType"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.ColDataType">[docs]</a><span class="k">class</span><span class="w"> </span><span class="nc">ColDataType</span><span class="p">:</span>
 <div class="viewcode-block" id="ColDataType.NUMERIC"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.ColDataType.NUMERIC">[docs]</a>    <span class="n">NUMERIC</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;NUMERIC&quot;</span></div>
 <div class="viewcode-block" id="ColDataType.DATETIME"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.ColDataType.DATETIME">[docs]</a>    <span class="n">DATETIME</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;DATETIME&quot;</span></div>
 <div class="viewcode-block" id="ColDataType.CATEGORICAL"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.ColDataType.CATEGORICAL">[docs]</a>    <span class="n">CATEGORICAL</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;CATEGORICAL&quot;</span></div>
 
     <span class="nd">@staticmethod</span>
-<div class="viewcode-block" id="ColDataType.types"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.ColDataType.types">[docs]</a>    <span class="k">def</span> <span class="nf">types</span><span class="p">():</span>
+<div class="viewcode-block" id="ColDataType.types"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.ColDataType.types">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">types</span><span class="p">():</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">field</span><span class="o">.</span><span class="n">default</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">(</span><span class="n">ColDataType</span><span class="p">)]</span></div></div>
 
 
 <span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<div class="viewcode-block" id="SpecialTokens"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.SpecialTokens">[docs]</a><span class="k">class</span> <span class="nc">SpecialTokens</span><span class="p">:</span>
+<div class="viewcode-block" id="SpecialTokens"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.SpecialTokens">[docs]</a><span class="k">class</span><span class="w"> </span><span class="nc">SpecialTokens</span><span class="p">:</span>
 <div class="viewcode-block" id="SpecialTokens.UNK"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.SpecialTokens.UNK">[docs]</a>    <span class="n">UNK</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;[UNK]&quot;</span></div>
 <div class="viewcode-block" id="SpecialTokens.SEP"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.SpecialTokens.SEP">[docs]</a>    <span class="n">SEP</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;[SEP]&quot;</span></div>
 <div class="viewcode-block" id="SpecialTokens.PAD"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.SpecialTokens.PAD">[docs]</a>    <span class="n">PAD</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;[PAD]&quot;</span></div>
@@ -377,22 +382,22 @@
 <div class="viewcode-block" id="SpecialTokens.SPTYPE"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.SpecialTokens.SPTYPE">[docs]</a>    <span class="n">SPTYPE</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;[SPTYPE]&quot;</span></div>
 
     <span class="nd">@staticmethod</span>
-<div class="viewcode-block" id="SpecialTokens.tokens"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.SpecialTokens.tokens">[docs]</a>    <span class="k">def</span> <span class="nf">tokens</span><span class="p">():</span>
+<div class="viewcode-block" id="SpecialTokens.tokens"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.SpecialTokens.tokens">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">tokens</span><span class="p">():</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">field</span><span class="o">.</span><span class="n">default</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">(</span><span class="n">SpecialTokens</span><span class="p">)]</span></div></div>
 
 
-<div class="viewcode-block" id="get_uuid"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.get_uuid">[docs]</a><span class="k">def</span> <span class="nf">get_uuid</span><span class="p">():</span>
+<div class="viewcode-block" id="get_uuid"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.get_uuid">[docs]</a><span class="k">def</span><span class="w"> </span><span class="nf">get_uuid</span><span class="p">():</span>
     <span class="k">return</span> <span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()</span><span class="o">.</span><span class="n">hex</span></div>
 
 
-<div class="viewcode-block" id="fix_multi_decimal"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.fix_multi_decimal">[docs]</a><span class="k">def</span> <span class="nf">fix_multi_decimal</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+<div class="viewcode-block" id="fix_multi_decimal"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.fix_multi_decimal">[docs]</a><span class="k">def</span><span class="w"> </span><span class="nf">fix_multi_decimal</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">v</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
         <span class="n">v</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
         <span class="n">v</span> <span class="o">=</span> <span class="s2">&quot;.&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">:])])</span>
     <span class="k">return</span> <span class="n">v</span></div>
 
 
-<div class="viewcode-block" id="build_vocab"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.build_vocab">[docs]</a><span class="k">def</span> <span class="nf">build_vocab</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">special_tokens</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">add_columns</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="build_vocab"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.build_vocab">[docs]</a><span class="k">def</span><span class="w"> </span><span class="nf">build_vocab</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">special_tokens</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">add_columns</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
     <span class="k">assert</span> <span class="p">(</span>
         <span class="n">df</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="ow">or</span> <span class="n">special_tokens</span><span class="p">,</span> <span class="s2">&quot;At least one of `df` or `special_tokens` must not be None.&quot;</span>
@@ -438,7 +443,7 @@
     <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="process_numeric_data"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.process_numeric_data">[docs]</a><span class="k">def</span> <span class="nf">process_numeric_data</span><span class="p">(</span>
+<div class="viewcode-block" id="process_numeric_data"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.process_numeric_data">[docs]</a><span class="k">def</span><span class="w"> </span><span class="nf">process_numeric_data</span><span class="p">(</span>
     <span class="n">series</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span>
     <span class="n">max_len</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
     <span class="n">numeric_precision</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>
@@ -544,7 +549,7 @@
     <span class="k">return</span> <span class="n">series</span><span class="p">,</span> <span class="n">transform_data</span></div>
 
 
-<div class="viewcode-block" id="process_datetime_data"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.process_datetime_data">[docs]</a><span class="k">def</span> <span class="nf">process_datetime_data</span><span class="p">(</span>
+<div class="viewcode-block" id="process_datetime_data"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.process_datetime_data">[docs]</a><span class="k">def</span><span class="w"> </span><span class="nf">process_datetime_data</span><span class="p">(</span>
     <span class="n">series</span><span class="p">,</span> <span class="n">transform_data</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="n">Dict</span><span class="p">]:</span>
     <span class="c1"># Get the max_len from the current time.</span>
@@ -603,24 +608,24 @@
     <span class="k">return</span> <span class="n">series</span><span class="p">,</span> <span class="n">transform_data</span></div>
 
 
-<div class="viewcode-block" id="process_categorical_data"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.process_categorical_data">[docs]</a><span class="k">def</span> <span class="nf">process_categorical_data</span><span class="p">(</span><span class="n">series</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
+<div class="viewcode-block" id="process_categorical_data"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.process_categorical_data">[docs]</a><span class="k">def</span><span class="w"> </span><span class="nf">process_categorical_data</span><span class="p">(</span><span class="n">series</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
     <span class="c1"># Simply convert the categorical data to string.</span>
     <span class="k">return</span> <span class="n">series</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="encode_partition_numeric_col"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.encode_partition_numeric_col">[docs]</a><span class="k">def</span> <span class="nf">encode_partition_numeric_col</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">tr</span><span class="p">,</span> <span class="n">col_zfill</span><span class="p">):</span>
+<div class="viewcode-block" id="encode_partition_numeric_col"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.encode_partition_numeric_col">[docs]</a><span class="k">def</span><span class="w"> </span><span class="nf">encode_partition_numeric_col</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">tr</span><span class="p">,</span> <span class="n">col_zfill</span><span class="p">):</span>
     <span class="c1"># Generate a derived column name for the partitioned</span>
     <span class="c1"># numeric data. For example: Latitude_00, Latitude_01, etc.</span>
     <span class="k">return</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="n">col_zfill</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tr</span><span class="o">.</span><span class="n">columns</span><span class="p">))]</span></div>
 
 
-<div class="viewcode-block" id="decode_partition_numeric_col"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.decode_partition_numeric_col">[docs]</a><span class="k">def</span> <span class="nf">decode_partition_numeric_col</span><span class="p">(</span><span class="n">partition_col</span><span class="p">):</span>
+<div class="viewcode-block" id="decode_partition_numeric_col"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.decode_partition_numeric_col">[docs]</a><span class="k">def</span><span class="w"> </span><span class="nf">decode_partition_numeric_col</span><span class="p">(</span><span class="n">partition_col</span><span class="p">):</span>
     <span class="c1"># Decode the encoded column for the partitioned numeric data.</span>
     <span class="c1"># For example: Latitude_00 -&gt; Latitude, Latitude_01 -&gt; Latitude, etc.</span>
     <span class="k">return</span> <span class="s2">&quot;_&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">partition_col</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span></div>
 
 
-<div class="viewcode-block" id="tokenize_numeric_col"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.tokenize_numeric_col">[docs]</a><span class="k">def</span> <span class="nf">tokenize_numeric_col</span><span class="p">(</span><span class="n">series</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="n">nparts</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">col_zfill</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+<div class="viewcode-block" id="tokenize_numeric_col"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.tokenize_numeric_col">[docs]</a><span class="k">def</span><span class="w"> </span><span class="nf">tokenize_numeric_col</span><span class="p">(</span><span class="n">series</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="n">nparts</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">col_zfill</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
     <span class="c1"># After normalizing the numeric values, we then segment</span>
     <span class="c1"># them based on a fixed partition size (nparts).</span>
     <span class="n">col</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">name</span>
@@ -647,16 +652,16 @@
     <span class="k">return</span> <span class="n">tr</span></div>
 
 
-<div class="viewcode-block" id="encode_column_values"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.encode_column_values">[docs]</a><span class="k">def</span> <span class="nf">encode_column_values</span><span class="p">(</span><span class="n">series</span><span class="p">):</span>
+<div class="viewcode-block" id="encode_column_values"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.encode_column_values">[docs]</a><span class="k">def</span><span class="w"> </span><span class="nf">encode_column_values</span><span class="p">(</span><span class="n">series</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">series</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="n">SPECIAL_COL_SEP</span> <span class="o">+</span> <span class="n">series</span></div>
 
 
-<div class="viewcode-block" id="decode_column_values"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.decode_column_values">[docs]</a><span class="k">def</span> <span class="nf">decode_column_values</span><span class="p">(</span><span class="n">series</span><span class="p">):</span>
+<div class="viewcode-block" id="decode_column_values"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.decode_column_values">[docs]</a><span class="k">def</span><span class="w"> </span><span class="nf">decode_column_values</span><span class="p">(</span><span class="n">series</span><span class="p">):</span>
     <span class="c1"># return series.str.split(SPECIAL_COL_SEP).map(lambda x: x[-1])</span>
     <span class="k">return</span> <span class="n">series</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">SPECIAL_COL_SEP</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span></div>
 
 
-<div class="viewcode-block" id="encode_processed_column"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.encode_processed_column">[docs]</a><span class="k">def</span> <span class="nf">encode_processed_column</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
+<div class="viewcode-block" id="encode_processed_column"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.encode_processed_column">[docs]</a><span class="k">def</span><span class="w"> </span><span class="nf">encode_processed_column</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
     <span class="c1"># The idx indicates the position of the column in the original</span>
     <span class="c1"># data.</span>
     <span class="c1"># The dtype corresponds to the data type of the column.</span>
@@ -665,7 +670,7 @@
     <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">idx</span><span class="si">}{</span><span class="n">SPECIAL_COL_SEP</span><span class="si">}{</span><span class="n">dtype</span><span class="si">}{</span><span class="n">SPECIAL_COL_SEP</span><span class="si">}{</span><span class="n">col</span><span class="si">}</span><span class="s2">&quot;</span></div>
 
 
-<div class="viewcode-block" id="decode_processed_column"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.decode_processed_column">[docs]</a><span class="k">def</span> <span class="nf">decode_processed_column</span><span class="p">(</span><span class="n">col</span><span class="p">):</span>
+<div class="viewcode-block" id="decode_processed_column"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.decode_processed_column">[docs]</a><span class="k">def</span><span class="w"> </span><span class="nf">decode_processed_column</span><span class="p">(</span><span class="n">col</span><span class="p">):</span>
     <span class="c1"># Reverts the process in `encode_processed_column`</span>
     <span class="c1"># Do nothing if the format is not as expected.</span>
 
@@ -680,7 +685,7 @@
     <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="extract_processed_column"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.extract_processed_column">[docs]</a><span class="k">def</span> <span class="nf">extract_processed_column</span><span class="p">(</span><span class="n">col</span><span class="p">):</span>
+<div class="viewcode-block" id="extract_processed_column"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.extract_processed_column">[docs]</a><span class="k">def</span><span class="w"> </span><span class="nf">extract_processed_column</span><span class="p">(</span><span class="n">col</span><span class="p">):</span>
     <span class="c1"># Extracts the data generated by `encode_processed_column`</span>
     <span class="c1"># Return None if not found.</span>
 
@@ -693,23 +698,23 @@
     <span class="k">return</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="k">if</span> <span class="n">match</span> <span class="k">else</span> <span class="kc">None</span></div>
 
 
-<div class="viewcode-block" id="is_numeric_col"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.is_numeric_col">[docs]</a><span class="k">def</span> <span class="nf">is_numeric_col</span><span class="p">(</span><span class="n">col</span><span class="p">):</span>
+<div class="viewcode-block" id="is_numeric_col"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.is_numeric_col">[docs]</a><span class="k">def</span><span class="w"> </span><span class="nf">is_numeric_col</span><span class="p">(</span><span class="n">col</span><span class="p">):</span>
     <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">SPECIAL_COL_SEP</span><span class="si">}{</span><span class="n">ColDataType</span><span class="o">.</span><span class="n">NUMERIC</span><span class="si">}{</span><span class="n">SPECIAL_COL_SEP</span><span class="si">}</span><span class="s2">&quot;</span> <span class="ow">in</span> <span class="n">col</span></div>
 
 
-<div class="viewcode-block" id="is_datetime_col"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.is_datetime_col">[docs]</a><span class="k">def</span> <span class="nf">is_datetime_col</span><span class="p">(</span><span class="n">col</span><span class="p">):</span>
+<div class="viewcode-block" id="is_datetime_col"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.is_datetime_col">[docs]</a><span class="k">def</span><span class="w"> </span><span class="nf">is_datetime_col</span><span class="p">(</span><span class="n">col</span><span class="p">):</span>
     <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">SPECIAL_COL_SEP</span><span class="si">}{</span><span class="n">ColDataType</span><span class="o">.</span><span class="n">DATETIME</span><span class="si">}{</span><span class="n">SPECIAL_COL_SEP</span><span class="si">}</span><span class="s2">&quot;</span> <span class="ow">in</span> <span class="n">col</span></div>
 
 
-<div class="viewcode-block" id="is_categorical_col"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.is_categorical_col">[docs]</a><span class="k">def</span> <span class="nf">is_categorical_col</span><span class="p">(</span><span class="n">col</span><span class="p">):</span>
+<div class="viewcode-block" id="is_categorical_col"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.is_categorical_col">[docs]</a><span class="k">def</span><span class="w"> </span><span class="nf">is_categorical_col</span><span class="p">(</span><span class="n">col</span><span class="p">):</span>
     <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">SPECIAL_COL_SEP</span><span class="si">}{</span><span class="n">ColDataType</span><span class="o">.</span><span class="n">CATEGORICAL</span><span class="si">}{</span><span class="n">SPECIAL_COL_SEP</span><span class="si">}</span><span class="s2">&quot;</span> <span class="ow">in</span> <span class="n">col</span></div>
 
 
-<div class="viewcode-block" id="is_numeric_datetime_col"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.is_numeric_datetime_col">[docs]</a><span class="k">def</span> <span class="nf">is_numeric_datetime_col</span><span class="p">(</span><span class="n">col</span><span class="p">):</span>
+<div class="viewcode-block" id="is_numeric_datetime_col"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.is_numeric_datetime_col">[docs]</a><span class="k">def</span><span class="w"> </span><span class="nf">is_numeric_datetime_col</span><span class="p">(</span><span class="n">col</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">is_numeric_col</span><span class="p">(</span><span class="n">col</span><span class="p">)</span> <span class="ow">or</span> <span class="n">is_datetime_col</span><span class="p">(</span><span class="n">col</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="process_data"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.process_data">[docs]</a><span class="k">def</span> <span class="nf">process_data</span><span class="p">(</span>
+<div class="viewcode-block" id="process_data"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.process_data">[docs]</a><span class="k">def</span><span class="w"> </span><span class="nf">process_data</span><span class="p">(</span>
     <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
     <span class="n">numeric_max_len</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
     <span class="n">numeric_precision</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
@@ -858,7 +863,7 @@
     <span class="k">return</span> <span class="n">df</span><span class="p">,</span> <span class="n">col_transform_data</span></div>
 
 
-<div class="viewcode-block" id="get_token_id"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.get_token_id">[docs]</a><span class="k">def</span> <span class="nf">get_token_id</span><span class="p">(</span>
+<div class="viewcode-block" id="get_token_id"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.get_token_id">[docs]</a><span class="k">def</span><span class="w"> </span><span class="nf">get_token_id</span><span class="p">(</span>
     <span class="n">token</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">vocab_token2id</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span> <span class="n">mask_rate</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="n">token_id</span> <span class="o">=</span> <span class="n">vocab_token2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">vocab_token2id</span><span class="p">[</span><span class="n">SpecialTokens</span><span class="o">.</span><span class="n">UNK</span><span class="p">])</span>
@@ -872,7 +877,7 @@
     <span class="k">return</span> <span class="n">token_id</span></div>
 
 
-<div class="viewcode-block" id="get_input_ids"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.get_input_ids">[docs]</a><span class="k">def</span> <span class="nf">get_input_ids</span><span class="p">(</span>
+<div class="viewcode-block" id="get_input_ids"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.get_input_ids">[docs]</a><span class="k">def</span><span class="w"> </span><span class="nf">get_input_ids</span><span class="p">(</span>
     <span class="n">example</span><span class="p">,</span>
     <span class="n">vocab</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span>
     <span class="n">columns</span><span class="p">:</span> <span class="n">List</span><span class="p">,</span>
@@ -915,7 +920,7 @@
     <span class="k">return</span> <span class="n">data</span></div>
 
 
-<div class="viewcode-block" id="make_dataset"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.make_dataset">[docs]</a><span class="k">def</span> <span class="nf">make_dataset</span><span class="p">(</span>
+<div class="viewcode-block" id="make_dataset"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.make_dataset">[docs]</a><span class="k">def</span><span class="w"> </span><span class="nf">make_dataset</span><span class="p">(</span>
     <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
     <span class="n">vocab</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span>
     <span class="n">mask_rate</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
@@ -941,7 +946,7 @@
     <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="get_relational_input_ids"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.get_relational_input_ids">[docs]</a><span class="k">def</span> <span class="nf">get_relational_input_ids</span><span class="p">(</span>
+<div class="viewcode-block" id="get_relational_input_ids"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.get_relational_input_ids">[docs]</a><span class="k">def</span><span class="w"> </span><span class="nf">get_relational_input_ids</span><span class="p">(</span>
     <span class="n">example</span><span class="p">,</span>
     <span class="n">input_idx</span><span class="p">,</span>
     <span class="n">vocab</span><span class="p">,</span>
@@ -1006,7 +1011,7 @@
     <span class="k">return</span> <span class="n">payload</span></div>
 
 
-<div class="viewcode-block" id="make_relational_dataset"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.make_relational_dataset">[docs]</a><span class="k">def</span> <span class="nf">make_relational_dataset</span><span class="p">(</span>
+<div class="viewcode-block" id="make_relational_dataset"><a class="viewcode-back" href="../../autoapi/realtabformer/data_utils/index.html#realtabformer.data_utils.make_relational_dataset">[docs]</a><span class="k">def</span><span class="w"> </span><span class="nf">make_relational_dataset</span><span class="p">(</span>
     <span class="n">in_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
     <span class="n">out_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
     <span class="n">vocab</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
@@ -1131,8 +1136,8 @@ By Aivin Solatorio
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

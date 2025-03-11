@@ -16,8 +16,8 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
+  <!--
+    this give us a css class that will be invisible only if js is disabled
   -->
   <noscript>
     <style>
@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
@@ -36,10 +36,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
   
   <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -166,9 +166,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -300,13 +305,13 @@
                 <article class="bd-article">
                   
   <h1>Source code for realtabformer.rtf_trainer</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">math</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span>
 
-<span class="kn">import</span> <span class="nn">torch</span>
-<span class="kn">from</span> <span class="nn">datasets</span> <span class="kn">import</span> <span class="n">Dataset</span>
-<span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
-<span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dataset</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">torch</span><span class="w"> </span><span class="kn">import</span> <span class="n">nn</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
     <span class="n">DataCollator</span><span class="p">,</span>
     <span class="n">EvalPrediction</span><span class="p">,</span>
     <span class="n">PreTrainedModel</span><span class="p">,</span>
@@ -318,20 +323,20 @@
     <span class="n">TrainingArguments</span><span class="p">,</span>
     <span class="n">logging</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="kn">from</span> <span class="nn">transformers.optimization</span> <span class="kn">import</span> <span class="n">get_scheduler</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">transformers.optimization</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_scheduler</span>
 
 <div class="viewcode-block" id="logger"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_trainer/index.html#realtabformer.rtf_trainer.logger">[docs]</a><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">get_logger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="SaveEpochEndCallback"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_trainer/index.html#realtabformer.rtf_trainer.SaveEpochEndCallback">[docs]</a><span class="k">class</span> <span class="nc">SaveEpochEndCallback</span><span class="p">(</span><span class="n">TrainerCallback</span><span class="p">):</span>
+<div class="viewcode-block" id="SaveEpochEndCallback"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_trainer/index.html#realtabformer.rtf_trainer.SaveEpochEndCallback">[docs]</a><span class="k">class</span><span class="w"> </span><span class="nc">SaveEpochEndCallback</span><span class="p">(</span><span class="n">TrainerCallback</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;This callback forces a checkpoint save at each epoch end.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">save_epochs</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">save_epochs</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">save_epochs</span> <span class="o">=</span> <span class="n">save_epochs</span>
 
-<div class="viewcode-block" id="SaveEpochEndCallback.on_epoch_end"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_trainer/index.html#realtabformer.rtf_trainer.SaveEpochEndCallback.on_epoch_end">[docs]</a>    <span class="k">def</span> <span class="nf">on_epoch_end</span><span class="p">(</span>
+<div class="viewcode-block" id="SaveEpochEndCallback.on_epoch_end"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_trainer/index.html#realtabformer.rtf_trainer.SaveEpochEndCallback.on_epoch_end">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_epoch_end</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">args</span><span class="p">:</span> <span class="n">TrainingArguments</span><span class="p">,</span>
         <span class="n">state</span><span class="p">:</span> <span class="n">TrainerState</span><span class="p">,</span>
@@ -346,14 +351,14 @@
         <span class="k">return</span> <span class="n">control</span></div></div>
 
 
-<div class="viewcode-block" id="ResumableTrainer"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_trainer/index.html#realtabformer.rtf_trainer.ResumableTrainer">[docs]</a><span class="k">class</span> <span class="nc">ResumableTrainer</span><span class="p">(</span><span class="n">Trainer</span><span class="p">):</span>
+<div class="viewcode-block" id="ResumableTrainer"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_trainer/index.html#realtabformer.rtf_trainer.ResumableTrainer">[docs]</a><span class="k">class</span><span class="w"> </span><span class="nc">ResumableTrainer</span><span class="p">(</span><span class="n">Trainer</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;This trainer makes the scheduler consistent over pauses</span>
 <span class="sd">    in the training. The scheduler should return values similar</span>
 <span class="sd">    to when a training is done either intermittently or continuously</span>
 <span class="sd">    over the `target_epochs`.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">target_epochs</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">save_epochs</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -397,7 +402,7 @@
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">target_epochs</span> <span class="o">=</span> <span class="n">target_epochs</span>
 
-<div class="viewcode-block" id="ResumableTrainer.create_scheduler"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_trainer/index.html#realtabformer.rtf_trainer.ResumableTrainer.create_scheduler">[docs]</a>    <span class="k">def</span> <span class="nf">create_scheduler</span><span class="p">(</span>
+<div class="viewcode-block" id="ResumableTrainer.create_scheduler"><a class="viewcode-back" href="../../autoapi/realtabformer/rtf_trainer/index.html#realtabformer.rtf_trainer.ResumableTrainer.create_scheduler">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">create_scheduler</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">num_training_steps</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Optimizer</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">lr_scheduler</span><span class="o">.</span><span class="n">LambdaLR</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -491,8 +496,8 @@ By Aivin Solatorio
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
