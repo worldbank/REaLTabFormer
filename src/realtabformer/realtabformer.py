@@ -196,7 +196,7 @@ class REaLTabFormer:
         self.early_stopping_threshold = early_stopping_threshold
 
         self.training_args_kwargs = dict(
-            evaluation_strategy="steps",
+            eval_strategy="steps",
             output_dir=self.checkpoints_dir.as_posix(),
             metric_for_best_model="loss",  # This will be replaced with "eval_loss" if `train_size` < 1
             overwrite_output_dir=True,
@@ -364,7 +364,7 @@ class REaLTabFormer:
             self.training_args_kwargs["greater_is_better"] = False
         else:
             dataset = dict(train_dataset=dataset)
-            self.training_args_kwargs["evaluation_strategy"] = "no"
+            self.training_args_kwargs["eval_strategy"] = "no"
             self.training_args_kwargs["load_best_model_at_end"] = False
 
         return dataset
