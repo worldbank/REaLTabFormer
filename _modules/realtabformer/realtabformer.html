@@ -503,7 +503,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">early_stopping_threshold</span> <span class="o">=</span> <span class="n">early_stopping_threshold</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">training_args_kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-            <span class="n">evaluation_strategy</span><span class="o">=</span><span class="s2">&quot;steps&quot;</span><span class="p">,</span>
+            <span class="n">eval_strategy</span><span class="o">=</span><span class="s2">&quot;steps&quot;</span><span class="p">,</span>
             <span class="n">output_dir</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">checkpoints_dir</span><span class="o">.</span><span class="n">as_posix</span><span class="p">(),</span>
             <span class="n">metric_for_best_model</span><span class="o">=</span><span class="s2">&quot;loss&quot;</span><span class="p">,</span>  <span class="c1"># This will be replaced with &quot;eval_loss&quot; if `train_size` &lt; 1</span>
             <span class="n">overwrite_output_dir</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
@@ -671,7 +671,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">training_args_kwargs</span><span class="p">[</span><span class="s2">&quot;greater_is_better&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">dataset</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">train_dataset</span><span class="o">=</span><span class="n">dataset</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">training_args_kwargs</span><span class="p">[</span><span class="s2">&quot;evaluation_strategy&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;no&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">training_args_kwargs</span><span class="p">[</span><span class="s2">&quot;eval_strategy&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;no&quot;</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">training_args_kwargs</span><span class="p">[</span><span class="s2">&quot;load_best_model_at_end&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
 
         <span class="k">return</span> <span class="n">dataset</span></div>
