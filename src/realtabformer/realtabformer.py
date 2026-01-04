@@ -814,7 +814,7 @@ class REaLTabFormer:
                 and save_full_every_epoch
                 and p_epoch % save_full_every_epoch == 0
             ):
-                full_save_dir = self.full_save_dir / f"epoch_{p_epoch}"
+                full_save_dir = self.full_save_dir / f"epoch_{p_epoch:03d}"
                 full_save_dir.mkdir(parents=True, exist_ok=True)
                 self.save(path=full_save_dir)
 
