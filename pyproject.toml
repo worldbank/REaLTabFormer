@@ -8,7 +8,7 @@ description = "A novel method for generating tabular and relational data using l
 authors = ["Aivin V. Solatorio <asolatorio@worldbank.org>"]
 readme = "README.md"
 license = "MIT"
-version = "0.2.3"
+version = "0.2.4"
 homepage = "https://github.com/avsolatorio/REaLTabFormer"
 documentation = "https://worldbank.github.io/REaLTabFormer/"
 

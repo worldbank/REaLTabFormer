@@ -91,9 +91,9 @@ def fix_multi_decimal(v):
 
 
 def build_vocab(df: pd.DataFrame = None, special_tokens=None, add_columns: bool = True):
-    assert (
-        df is not None
-    ) or special_tokens, "At least one of `df` or `special_tokens` must not be None."
+    assert (df is not None) or special_tokens, (
+        "At least one of `df` or `special_tokens` must not be None."
+    )
 
     if add_columns and df is not None:
         # We limit this feature to data that are likely
@@ -207,9 +207,9 @@ def process_numeric_data(
         # The max_len should be greater than the mx_sig.
         # Add a +1 to generate a minimum of tenth place resolution
         # for this data.
-        assert max_len > (
-            mx_sig + 1
-        ), f"The target length {max_len} of the data doesn't include the numeric precision at {mx_sig}. Increase max_len to at least {max_len + (mx_sig + 2 - max_len)}."
+        assert max_len > (mx_sig + 1), (
+            f"The target length {max_len} of the data doesn't include the numeric precision at {mx_sig}. Increase max_len to at least {max_len + (mx_sig + 2 - max_len)}."
+        )
 
         # Left align first based on the magnitude of the values.
         # We compute the difference in the most significant digits
@@ -262,7 +262,7 @@ def process_datetime_data(
 
     # Convert to the numerical representation
     # of the datetime (UNIX timestamp)
-    series = (series.astype("int64") / 1e9)
+    series = series.astype("int64") / 1e9
 
     # Fill NA
     series.loc[null_idx] = pd.NA
@@ -443,13 +443,13 @@ def process_data(
             pass
 
     if target_col is not None:
-        assert (
-            first_col_type is None
-        ), "Implicit ordering of columns when teacher-forcing of target is used is not supported yet!"
+        assert first_col_type is None, (
+            "Implicit ordering of columns when teacher-forcing of target is used is not supported yet!"
+        )
         tf_col_name = f"{TEACHER_FORCING_PRE}_{target_col}"
-        assert (
-            tf_col_name not in df.columns
-        ), f"The column name ({tf_col_name}) must not be in the raw data. Found instead..."
+        assert tf_col_name not in df.columns, (
+            f"The column name ({tf_col_name}) must not be in the raw data. Found instead..."
+        )
 
         target_ser = df[target_col].copy()
         target_ser.name = tf_col_name
@@ -469,6 +469,8 @@ def process_data(
     if col_transform_data is None:
         col_transform_data = dict()
 
+    col_name_to_transform_data: Dict[str, Dict] = dict()
+
     for c in numeric_cols:
         col_name = encode_processed_column(col_idx[c], ColDataType.NUMERIC, c)
         _col_transform_data = col_transform_data.get(c)
@@ -481,8 +483,10 @@ def process_data(
         if _col_transform_data is None:
             # This means that no transform data is available
             # before the processing.
+            transform_data["numeric_nparts"] = numeric_nparts
             col_transform_data[c] = transform_data
         series.name = col_name
+        col_name_to_transform_data[col_name] = transform_data
         processed_series.append(series)
 
     # Process datetime data
@@ -499,8 +503,10 @@ def process_data(
         if _col_transform_data is None:
             # This means that no transform data is available
             # before the processing.
+            transform_data["numeric_nparts"] = numeric_nparts
             col_transform_data[c] = transform_data
         series.name = col_name
+        col_name_to_transform_data[col_name] = transform_data
         processed_series.append(series)
 
     processed_df = pd.concat([pd.DataFrame()] + processed_series, axis=1)
@@ -509,7 +515,12 @@ def process_data(
         # Combine the processed numeric and datetime data.
         processed_df = pd.concat(
             [
-                tokenize_numeric_col(processed_df[col], nparts=numeric_nparts)
+                tokenize_numeric_col(
+                    processed_df[col],
+                    nparts=col_name_to_transform_data[col].get(
+                        "numeric_nparts", numeric_nparts
+                    ),
+                )
                 for col in processed_df.columns
             ],
             axis=1,
